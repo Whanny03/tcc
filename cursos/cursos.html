@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Cursos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="cursos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Qwitcher+Grypen:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+</head>
+<body>
+
+    <!-- Cabeçalho1 -->
+
+    <header>
+        <div class="header-content">
+            <img src="/media/logo1-removebg-preview.png" alt="Logo ASN" class="logo">
+            <h1 class="school-name">EEEFM Antonio dos Santos Neves</h1>
+            <nav>
+                <a href="/login/login.html" style="color: white; text-decoration: none;" class="butao">Login</a>
+                <a href="/index.html" style="color: white; text-decoration: none;"  class="butao">Voltar</a>
+
+            </nav>
+                    <div class="search-bar">
+                <input type="text" placeholder="Buscar..." class="search-input">
+                <button class="search-btn"><i class="bi bi-search"></i></button>
+            </div>
+    </header>
+
+
+    <!-- Menu de navegação de cursos -->
+    <section class="courses-nav">
+        <div class="container">
+            <ul >
+                <li><a href="#" class="tab-link"  onclick="showTab(event, 'sisu')">Ensino Médio Integrado</a></li>
+                <li><a href="#" class="tab-link" onclick="showTab(event, 'aluno-especial')">Ensino Médio Integral</a></li>
+                <li><a href="#" class="tab-link" onclick="showTab(event, 'ead')">Ensino Fundamental</a></li>
+                <li><a href="#" class="tab-link" onclick="showTab(event, 'novo-curso')">EJA</a></li>
+                <li><a href="#" class="tab-link" onclick="showTab(event, 'remocao')">Aula de Violão</a></li>
+                <li><a href="#" class="tab-link" onclick="showTab(event, 'transferencia')">CEI</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Conteúdo das abas -->
+    <section class="course-content">
+        <div class="container">
+            <div id="sisu" class="tab-content">
+                <h2>Sisu - MEC</h2>
+                <p>Informações sobre o ingresso via Sisu e MEC...</p>
+            </div>
+            <div id="aluno-especial" class="tab-content" style="display:none;">
+                <h2>Aluno especial</h2>
+                <p>Informações sobre a inscrição como aluno especial...</p>
+            </div>
+            <div id="ead" class="tab-content" style="display:none;">
+                <h2>Ensino a distância (EAD)</h2>
+                <p>Informações sobre os cursos a distância...</p>
+            </div>
+            <div id="novo-curso" class="tab-content" style="display:none;">
+                <h2>Novo curso</h2>
+                <p>Informações sobre novos cursos...</p>
+            </div>
+            <div id="remocao" class="tab-content" style="display:none;">
+                <h2>Remoção e Reopção</h2>
+                <p>Informações sobre remoção e reopção de cursos...</p>
+            </div>
+            <div id="transferencia" class="tab-content" style="display:block;">
+                <h2>Transferência</h2>
+                <p>Um aluno matriculado em outra instituição pode solicitar transferência...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script para navegação por abas -->
+    <script src="cursos.js"></script>
+
+</body>
+</html>

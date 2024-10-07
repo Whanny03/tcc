@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        <div id="email-card" class="card">
+            <h2>Bem vindo de volta!</h2>
+            <p>Insira seu e-mail para continuar</p>
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            <button id="next-step" class="btn">Continuar</button>
+        </div>
+
+        <div id="password-card" class="card hidden">
+            <h2>Insira sua senha</h2>
+            <div class="password-placeholder"></div>
+            <input type="password" id="password" placeholder="Digite sua senha" required>
+            <button id="login" class="btn">Entrar</button>
+        </div>
+
+        <div id="success-card" class="card hidden mint">
+            <h2>Login bem-sucedido!</h2>
+            <p>Você será redirecionado em breve...</p>
+        </div>
+    </div>
+
+    <div class="background-icons">
+        <img src="icon-pencil.svg" alt="Ícone de lápis" class="icon pencil">
+        <img src="icon-book.svg" alt="Ícone de livro" class="icon book">
+        <img src="icon-calculator.svg" alt="Ícone de calculadora" class="icon calculator">
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

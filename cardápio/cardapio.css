@@ -1,0 +1,77 @@
+.regulares{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+.imagebar img{
+    width: 100%;
+}
+
+.titleRegular{
+    align-self: center;
+    margin-top: 5%;
+}
+
+.NoIdeaForClassName{
+    align-self: center;
+}
+
+.cardRegular{
+    background-color: white;
+    border:solid#d0a933, 10px;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Para alinhar os itens em coluna */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center;      /* Centraliza o texto */
+
+    
+
+}
+
+.cardRegular img{
+    align-self: center;
+    border-radius: 100%;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.textRegular{
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Para alinhar os itens em coluna */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center;      /* Centraliza o texto */
+}
+
+.cardRegular {
+    background-color: white;
+    border: solid #d0a933 4px; /* Adjusted for a thinner gold border */
+    border-radius: 10px;
+    padding: 15px; /* Added padding for a spacious look */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for a floating effect */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cardRegular img {
+    border-radius: 10px; /* Rounded the images more subtly */
+    width: 80px; /* Adjusted width */
+    height: 80px; /* Ensured the placeholder stays square */
+    object-fit: cover;
+}
+
+.textRegular {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}

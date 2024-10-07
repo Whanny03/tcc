@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Matrícula</title>
+    <link rel="stylesheet" href="mtr.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulário de Matrícula</h2>
+        <form action="submit_matricula.php" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome completo do aluno:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="data-nascimento">Data de nascimento:</label>
+                <input type="date" id="data-nascimento" name="data_nascimento" required>
+            </div>
+
+            <div class="form-group">
+                <label for="turma">Turma desejada:</label>
+                <select id="turma" name="turma" required>
+                    <option value="" disabled selected>Selecione uma turma</option>
+                    <option value="turma1">3°EMI - Manhã</option>
+                    <option value="turma2">2°EMI - Manhã</option>
+                    <option value="turma3">1°EMI - Manhã</option>
+                    <option value="turma4">9° Ano - Manhã e Tarde</option>
+                    <option value="turma4">8° Ano - Manhã e Tarde</option>
+                    <option value="turma4">7° Ano - Manhã e Tarde</option>
+                    <option value="turma4">6° Ano - Manhã e Tarde</option>
+
+
+                    
+                </select>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="responsavel">Nome do responsável:</label>
+                <input type="text" id="responsavel" name="responsavel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF do responsável:</label>
+                <input type="text" id="cpf" name="cpf_responsavel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="documentos">Documentos anexados (Certidão de Nascimento, Comprovante de Residência, etc.):</label>
+                <input type="file" id="documentos" name="documentos" multiple required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone para contato:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail do responsável:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <button type="submit" class="btn">Enviar Matrícula</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Rematrícula</title>
+    <link rel="stylesheet" href="mtr.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulário de Rematrícula</h2>
+        <form action="submit_rematricula.php" method="POST">
+            <div class="form-group">
+                <label for="nome-aluno">Nome completo do aluno:</label>
+                <input type="text" id="nome-aluno" name="nome_aluno" required>
+            </div>
+
+            <div class="form-group">
+                <label for="turma-atual">Turma atual:</label>
+                <select id="turma" name="turma" required>
+                    <option value="" disabled selected>Selecione uma turma</option>
+                    <option value="turma1">3°EMI - Manhã</option>
+                    <option value="turma2">2°EMI - Manhã</option>
+                    <option value="turma3">1°EMI - Manhã</option>
+                    <option value="turma4">9° Ano - Manhã e Tarde</option>
+                    <option value="turma4">8° Ano - Manhã e Tarde</option>
+                    <option value="turma4">7° Ano - Manhã e Tarde</option>
+                    <option value="turma4">6° Ano - Manhã e Tarde</option>
+
+
+                    
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="turma-desejada">Turma desejada para o próximo ano:</label>
+                <select id="turma" name="turma" required>
+                    <option value="" disabled selected>Selecione uma turma</option>
+                    <option value="turma1">3°EMI - Manhã</option>
+                    <option value="turma2">2°EMI - Manhã</option>
+                    <option value="turma3">1°EMI - Manhã</option>
+                    <option value="turma4">9° Ano - Manhã e Tarde</option>
+                    <option value="turma4">8° Ano - Manhã e Tarde</option>
+                    <option value="turma4">7° Ano - Manhã e Tarde</option>
+                    <option value="turma4">6° Ano - Manhã e Tarde</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone-contato">Telefone para contato:</label>
+                <input type="tel" id="telefone-contato" name="telefone_contato" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email-contato">E-mail do responsável:</label>
+                <input type="email" id="email-contato" name="email_contato" required>
+            </div>
+
+            <div class="form-group">
+                <label for="documentos-atualizados">Documentos atualizados (se necessário):</label>
+                <input type="file" id="documentos-atualizados" name="documentos_atualizados" multiple>
+            </div>
+
+            <button type="submit" class="btn">Enviar Rematrícula</button>
+        </form>
+    </div>
+</body>
+</html>

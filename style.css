@@ -1,0 +1,513 @@
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Varela Round";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*fontes*/
+.varela-round-regular {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 50px;
+    scale: 1.2;
+    transition: 0.5s;
+}
+
+
+header .logo img:hover{
+    scale: 1.8;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 200px;
+}
+
+nav a {
+    margin: 0 3%;
+    font-size: 15pt;
+}
+
+/* Botões de Ação Rápida */
+.quick-actions .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.quick-actions .btn:hover {
+    background-color: #003366;
+}
+
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Define uma altura fixa para todas as imagens */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%; /* Faz com que a imagem preencha o contêiner */
+    object-fit: cover; /* Garante que a imagem mantenha a proporção e preencha o contêiner */
+}
+
+/* Seção de depoimentos */
+#testimonials {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.testimonial-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.testimonial-item {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item h5 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilo da Notícia em Destaque */
+.highlighted-news .carousel-item {
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.highlighted-news .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Galeria de Fotos */
+#gallery {
+    padding: 40px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Calendário de Eventos */
+
+
+.calendar-events {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-left: 5px solid #004080;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.footer-social {
+    position: relative;
+    bottom: 10px;
+    gap: 20px;
+    margin: 5px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 24px;
+}
+
+#youtube {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+
+}
+
+#youtube:hover {
+    color: rgb(241, 111, 111);
+}
+
+#twitter {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+
+}
+
+#twitter:hover {
+    color: rgb(131, 178, 231);
+}
+
+#tiktok {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+
+}
+
+#tiktok:hover {
+    transition: color 0.3s ease;
+    color: rgb(149, 248, 82);
+}
+
+#instagram {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+
+
+}
+
+#instagram:hover {
+    color: rgb(241, 136, 50);
+}
+
+/* Efeito de Hover para Botões */
+#hover1, #hover2, #hover3 {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: 0.9s;
+}
+
+#hover1:hover, #hover2:hover, #hover3:hover {
+    background-color: #004080;
+    color: white;
+    padding: 5%;
+    
+}
+
+.satanas {
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.satanas:hover {
+    background-color: #004080;
+    color: rgb(126, 123, 123);
+    padding-top: 1%;
+}
+
+/* Ajuste do Carrossel Caption */
+.carousel-caption {
+    position: absolute;
+    padding: 50px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, #000 100%);
+}
+
+a {
+    color: #000;
+}
+
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    
+
+}
+
+.card-body{
+    background-color: #f0f0f0;
+    padding-right: 50px;
+    border-left: 5px solid #004080;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+}
+
+
+.card{
+    border: none;
+}
+.butao{
+    transition: 0.5s;
+}
+.butao:hover{
+    scale: 1.4;
+}
+
+/*O pau vai torar agora*/
+
+
+header {
+    background-color: #004080; /* Deep blue color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    border-bottom: 10px solid #FFCC00; /* Yellow bottom border */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header .logo {
+    height: 60px; /* Adjust as needed */
+}
+
+.school-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* Modern Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 5px 5px;
+    margin-left: auto;
+}
+
+.search-input {
+    border: none;
+    padding: 10px;
+    width: 200px;
+    outline: none;
+    font-size: 14px;
+    font-family: "Varela Round", sans-serif;
+    transition: width 0.4s ease;
+}
+
+.search-input:focus {
+    width: 300px; /* Expands when focused */
+}
+
+.search-btn {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+ }
+
+
+
+.search-btn i {
+    font-size: 16px;
+    color: #004080;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .search-input {
+        width: 100px;
+    }
+
+    .search-input:focus {
+        width: 200px;
+    }
+}
+
+
+
+
+/*seção de cursos*/
+
+/* Container for the main content */
+.important-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 75px;
+    background-color: #004080;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Left text block */
+.left-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.left-content h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.left-content p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+.btn-matricula {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: white;
+    color: #004080;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    
+}
+
+.btn-matricula:hover{
+    color: #ffffff;
+    background-color: #0254a7;
+}
+
+/* Cards on the right side */
+.right-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+    max-width: 40%;
+}
+
+.right-cards .card {
+    background-color: white;
+    color: #004080;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    
+}
+
+ .card:hover{
+        scale: 1.1;
+        color: #ffffff;
+        background-color: #004080;
+    }
+
+.right-cards .card i{
+    
+    scale: 2.5;
+    margin-bottom: 3px;
+
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .important-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-content, .right-cards {
+        max-width: 100%;
+    }
+
+    .right-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Transições*/
+
+#dynamic-title, #dynamic-description {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+
+#curso5{
+justify-content: space-around;
+}
+#curso3{
+    justify-content: space-around;
+    }
