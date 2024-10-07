@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas, nossa_historia, add_historia, add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia
+from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,8 +40,6 @@ urlpatterns = [
     path('<int:maissobre_id>maissobre/', apagar_maissobre, name='apagar_maissobre'),
     path('add_link_eletivas/', add_link_eletivas, name='add_link_eletivas'),
     path('delete/<int:link_id>/', apagar_link_eletivas, name='apagar_link_eletivas'),
-    path('nossa_historia/', nossa_historia, name='nossa_historia'),
-    path('add_historia/', add_historia, name='add_historia'),
     path('add_news_one/', add_news_one, name='add_news_one'),
     path('/<int:noticia_id>/', view_news_one, name='view_news_one'),
     path('<int:noticia_id>noticia/', apagar_news_one, name='apagar_news_one'),
@@ -52,6 +50,11 @@ urlpatterns = [
     path('adicionar/', adicionar_noticia, name='adicionar_noticia'),
     path('editar/<int:id>/', editar_noticia, name='editar_noticia'),
     path('apagar<int:id>/', apagar_noticia, name='apagar_noticia'),
+    path('nossa_historia/', nossa_historia, name='nossa_historia'),
+    path('adicionar_historia/', adicionar_historia, name='adicionar_historia'),
+    path('editar<int:pk>/', editar_historia, name='editar_historia'),
+    path('deletar<int:pk>/', deletar_historia, name='deletar_historia'),
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm, NossaHistoriaForm, NewsOneForm, EventoForm, Noticia2Form
-from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva, NossaHistoria, NewsOne, Evento, Noticia2
+from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form
+from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2
 
 #Pagina inicial
 def home(request):
@@ -192,19 +192,38 @@ def apagar_evento(request, id):
 
 # Nossa história
 
-def nossa_historia(request):
-    nossa_historia = NossaHistoria.objects.all()
-    return render(request, 'historia/nossa_historia.html', {'nossa_historia': nossa_historia})
-
-def add_historia(request):
+def adicionar_historia(request):
     if request.method == 'POST':
-        form = NossaHistoriaForm(request.POST)
+        form = HistoriaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('nossa_historia')
     else:
-        form = NossaHistoriaForm()
-    return render(request, 'historia/add_historia.html', {'form': form})
+        form = HistoriaForm()
+    return render(request, 'historia/adicionar_historia.html', {'form': form})
+
+def editar_historia(request, pk):
+    historia = get_object_or_404(Historia, pk=pk)
+    if request.method == 'POST':
+        form = HistoriaForm(request.POST, request.FILES, instance=historia)
+        if form.is_valid():
+            form.save()
+            return redirect('nossa_historia')
+    else:
+        form = HistoriaForm(instance=historia)
+    return render(request, 'historia/editar_historia.html', {'form': form})
+
+def deletar_historia(request, pk):
+    historia = get_object_or_404(Historia, pk=pk)
+    if request.method == 'POST':
+        historia.delete()
+        return redirect('nossa_historia')
+    return render(request, 'historia/deletar_historia.html', {'historia': historia})
+
+def nossa_historia(request):
+    historias = Historia.objects.all()
+    return render(request, 'historia/nossa_historia.html', {'historias': historias})
+
 
 
 #NOTICIAS 1

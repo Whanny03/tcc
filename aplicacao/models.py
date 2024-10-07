@@ -73,13 +73,14 @@ class MaisSobre(models.Model):
 
 # Nossa História
 
-class NossaHistoria(models.Model):
-    title = models.CharField(max_length=100)
-    data_publicacao = models.DateField(null=True)
-    image = models.ImageField(upload_to='tutoria_images/', null=True)
-    
+class Historia(models.Model):
+    nome = models.CharField(max_length=255)
+    data = models.DateField()
+    imagem = models.ImageField(upload_to='imagens/')
+
     def __str__(self):
-        return self.title
+        return self.nome
+
     
 class NewsOne(models.Model):
     title = models.CharField(max_length=255)

@@ -6,19 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    {% for historia in nossa_historia %}
-            <div class="card">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <div class="card-image">
-                        <img src="{{ historia.imagem.url }}" class="card-img">
-                    </div>
-                </div>
-                <div class="card-content" style="font-family: Arial, Helvetica, sans-serif;">
-                    <h2 class="name">{{ historia.title }}</h2>
-                    <p class="sub-titulo">{{ historia.data_publicacao }}</p>
-                </div>
-            </div>
-            {% endfor %} 
+    <h2>Lista de Histórias</h2>
+    <ul>
+        {% for historia in historias %}
+            <li>
+                {{ historia.nome }} - {{ historia.data }} <br>
+                <img src="{{ historia.imagem.url }}" alt="{{ historia.nome }}" width="100">
+                <a href="{% url 'editar_historia' historia.pk %}">Editar</a>
+                <a href="{% url 'deletar_historia' historia.pk %}">Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'adicionar_historia' %}">Adicionar Nova História</a>
+    
+     
 </body>
 </html>

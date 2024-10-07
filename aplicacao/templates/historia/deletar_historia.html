@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar História</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'historia/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Deletar História</h2>
+            <p>Tem certeza que deseja deletar "{{ historia.nome }}"?</p>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn danger">Deletar</button>
+                <a href="{% url 'nossa_historia' %}" class="btn secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
