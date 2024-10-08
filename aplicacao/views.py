@@ -47,7 +47,7 @@ def add_carrossel(request):
 def lista(request):
     eletivas = Eletiva.objects.all()
     link = LinkEletiva.objects.all()
-    return render(request, 'lista.html', {'eletivas': eletivas , 'link': link})
+    return render(request, 'eletivas/lista.html', {'eletivas': eletivas , 'link': link})
 
 def adicionar_eletivas(request):
     if request.method == 'POST':
@@ -57,18 +57,18 @@ def adicionar_eletivas(request):
             return redirect('lista')
     else:
         form = EletivaForm()
-    return render(request, 'adicionar_eletivas.html', {'form': form})
+    return render(request, 'eletivas/adicionar_eletivas.html', {'form': form})
 
 def apagar_eletivas(request, eletiva_id):
     eletiva = get_object_or_404(Eletiva, pk=eletiva_id)
     if request.method == 'POST':
         eletiva.delete()
         return redirect('lista')
-    return render(request, 'apagar_eletivas.html', {'eletiva': eletiva})
+    return render(request, 'eletivas/apagar_eletivas.html', {'eletiva': eletiva})
 
 def view_eletivas(request, eletiva_id):
     eletiva = get_object_or_404(Eletiva, pk=eletiva_id)
-    return render(request, 'view_eletivas.html', {'eletiva': eletiva})
+    return render(request, 'eletivas/view_eletivas.html', {'eletiva': eletiva})
 
 # Link para inscrever eletivas
 
@@ -81,14 +81,14 @@ def add_link_eletivas(request):
     else:
         form = LinkEletivaForm()
 
-    return render(request, 'add_link_eletivas.html', {'form': form})
+    return render(request, 'eletivas/add_link_eletivas.html', {'form': form})
 
 def apagar_link_eletivas(request, link_id):
     link = get_object_or_404(LinkEletiva, pk=link_id)
     if request.method == 'POST':
         link.delete()
         return redirect('lista')
-    return render(request, 'apagar_link_eletivas.html', {'link': link})
+    return render(request, 'eletivas/apagar_link_eletivas.html', {'link': link})
 #tutoria
 
 def lista_tutoria(request):
@@ -161,11 +161,11 @@ def criar_evento(request):
     else:
         form = EventoForm()
 
-    return render(request, 'criar_evento.html', {'form': form})
+    return render(request, 'evento/criar_evento.html', {'form': form})
 
 def listar_eventos(request):
     eventos = Evento.objects.all()
-    return render(request, 'listar_eventos.html', {'eventos': eventos})
+    return render(request, 'evento/listar_eventos.html', {'eventos': eventos})
 
 def editar_evento(request, id):
     evento = get_object_or_404(Evento, id=id)
@@ -178,7 +178,7 @@ def editar_evento(request, id):
     else:
         form = EventoForm(instance=evento)
     
-    return render(request, 'editar_evento.html', {'form': form, 'evento': evento})
+    return render(request, 'evento/editar_evento.html', {'form': form, 'evento': evento})
 
 def apagar_evento(request, id):
     evento = get_object_or_404(Evento, id=id)
@@ -187,7 +187,7 @@ def apagar_evento(request, id):
         evento.delete()
         return redirect('listar_eventos')  # Redireciona para a página de listagem de eventos após a exclusão
     
-    return render(request, 'apagar_evento.html', {'evento': evento})
+    return render(request, 'evento/apagar_evento.html', {'evento': evento})
 
 
 
