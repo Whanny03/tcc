@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form
-from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2
+from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form
+from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3
 
 #Pagina inicial
 def home(request):
@@ -9,7 +9,8 @@ def home(request):
     social_link = SocialLinks.objects.all().values()
     newsone = NewsOne.objects.all().order_by('-date_published')
     noticias = Noticia2.objects.all()
-    return render(request, 'home.html', {'images': images,'social_link':social_link,  'newsone': newsone, 'noticias': noticias})
+    noticia3 = Noticia3.objects.all()
+    return render(request, 'home.html', {'images': images,'social_link':social_link,  'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3})
 
 
 
@@ -236,12 +237,12 @@ def add_news_one(request):
             return redirect('home')
     else:
         form = NewsOneForm()
-    return render(request, 'add_news_one.html', {'form': form})
+    return render(request, 'noticia1/add_news_one.html', {'form': form})
 
 
 def view_news_one(request, noticia_id):
     newsone = get_object_or_404(NewsOne, pk=noticia_id)
-    return render(request, 'view_news_one.html', {'noticia': newsone})
+    return render(request, 'noticia1/view_news_one.html', {'noticia': newsone})
 
 
 #apagar
@@ -250,7 +251,9 @@ def apagar_news_one(request, noticia_id):
     if request.method == 'POST':
         newsone.delete()
         return redirect('home')
-    return render(request, 'apagar_news_one.html', {'noticia': newsone})
+    return render(request, 'noticia1/apagar_news_one.html', {'noticia': newsone})
+
+
 # NOTICIA 2
 def adicionar_noticia(request):
     if request.method == 'POST':
@@ -260,7 +263,7 @@ def adicionar_noticia(request):
             return redirect('home')
     else:
         form = Noticia2Form()
-    return render(request, 'noticias/adicionar_noticia.html', {'form': form})
+    return render(request, 'noticia2/adicionar_noticia.html', {'form': form})
 
 def editar_noticia(request, id):
     noticia = get_object_or_404(Noticia2, id=id)
@@ -271,11 +274,42 @@ def editar_noticia(request, id):
             return redirect('home')
     else:
         form = Noticia2Form(instance=noticia)
-    return render(request, 'noticias/editar_noticia.html', {'form': form, 'noticia': noticia})
+    return render(request, 'noticia2/editar_noticia.html', {'form': form, 'noticia': noticia})
 
 def apagar_noticia(request, id):
     noticia = get_object_or_404(Noticia2, id=id)
     if request.method == 'POST':
         noticia.delete()
         return redirect('home')
-    return render(request, 'noticias/apagar_noticia.html', {'noticia': noticia})
+    return render(request, 'noticia2/apagar_noticia.html', {'noticia': noticia})
+
+
+
+# NOTICIA 3
+def adicionar_noticia3(request):
+    if request.method == 'POST':
+        form = Noticia3Form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = Noticia3Form()
+    return render(request, 'noticia3/adicionar_noticia3.html', {'form': form})
+
+def editar_noticia3(request, id):
+    noticia = get_object_or_404(Noticia3, id=id)
+    if request.method == 'POST':
+        form = Noticia3Form(request.POST, request.FILES, instance=noticia)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = Noticia3Form(instance=noticia)
+    return render(request, 'noticia3/editar_noticia3.html', {'form': form, 'noticia': noticia})
+
+def apagar_noticia3(request, id):
+    noticia = get_object_or_404(Noticia3, id=id)
+    if request.method == 'POST':
+        noticia.delete()
+        return redirect('home')
+    return render(request, 'noticia3/apagar_noticia3.html', {'noticia': noticia})

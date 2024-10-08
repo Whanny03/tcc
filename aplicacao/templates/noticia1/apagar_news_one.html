@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Apagar Notícia</h1>
-    <p>Tem certeza que deseja apagar a notícia "{{ noticia.title }}"?</p>
+    <p>Tem certeza que deseja apagar a notícia "{{ item.title }}"?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Confirmar</button>

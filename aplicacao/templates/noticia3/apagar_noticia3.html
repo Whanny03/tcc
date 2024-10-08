@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tem certeza que deseja apagar a notícia "{{ noti3.titulo }}"?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Apagar</button>
+    <a href="{% url 'home' %}">Cancelar</a>
+</form>
+
+</body>
+</html>

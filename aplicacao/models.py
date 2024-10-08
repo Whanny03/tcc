@@ -103,6 +103,13 @@ class Noticia2(models.Model):
     def __str__(self):
         return self.titulo
 
+class Noticia3(models.Model):
+    title = models.CharField(max_length=255)
+    description1 = models.TextField()
+    description2 = models.TextField()
+    image = models.ImageField(upload_to='news_images/')
+    data_publicacao = models.DateField()
+    
 
 class Evento(models.Model):
     nome = models.CharField(max_length=100)

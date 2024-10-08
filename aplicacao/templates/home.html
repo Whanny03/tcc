@@ -73,6 +73,22 @@
             </li>
         {% endfor %}
     </ul>
+
+     <!-- NOTÍCIA 3 -->
+ 
+     <ul>
+        {% for noti3 in noticia3 %}
+            <li>
+                <h3>{{ noti3.title }}</h3>
+                <p>{{ noti3.description1 }}</p>
+                <p>{{ noti3.description2 }}</p>
+                <img src="{{ noti3.image.url }}" alt="Imagem da Notícia">
+                <p>Data de Publicação: {{ noti3.data_publicacao }}</p>
+                <a href="{% url 'editar_noticia3' noti3.id %}">Editar</a> |
+                <a href="{% url 'apagar_noticia3' noti3.id %}">Apagar</a>
+            </li>
+        {% endfor %}
+    </ul>
     {% endblock content %}
 
 

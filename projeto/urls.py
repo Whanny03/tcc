@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia
+from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -54,6 +54,9 @@ urlpatterns = [
     path('adicionar_historia/', adicionar_historia, name='adicionar_historia'),
     path('editar<int:pk>/', editar_historia, name='editar_historia'),
     path('deletar<int:pk>/', deletar_historia, name='deletar_historia'),
+    path('adicionar_noticia3/', adicionar_noticia3, name='adicionar_noticia3'),
+    path('editar3<int:id>/', editar_noticia3, name='editar_noticia3'),
+    path('apagar3/<int:id>/', apagar_noticia3, name='apagar_noticia3'),
 
 
 
