@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio escolar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link href="https://fonts.cdnfonts.com/css/playlist" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +31,26 @@
             </div>
     </header>
 
+    <!--MENU DE TURMAS-->
+
+
+    <div class="MenuTurmas">
+        <i class="fa-solid fa-bars" id="menu-icon" style="scale: 2; cursor: pointer;"></i>
+    </div>
+    
+    <!-- O menu oculto que será exibido -->
+    <nav class="oculto" id="menu">
+        <ul>
+            <li><a href="#" onclick="showMenu('integrado')">Integrado</a></li>
+            <li><a href="#" onclick="showMenu('integral')">Integral</a></li>
+            <li><a href="#" onclick="showMenu('fundamental')">Fundamental</a></li>
+            <li><a href="#" onclick="showMenu('eja')">EJA</a></li>
+        </ul>
+    </nav>
+
+
+
+    
     <div class="titleRegular">
         <h1> Explore nosso  <span style="font-family: 'Playlist', sans-serif; color:#d0a933">#Cardapio Escolar !</span></h1>
     </div>
@@ -38,15 +60,31 @@
     </section>
 
     <div class="NoIdeaForClassName">
-        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933">
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards" id="regular">
             Regular
         </h1>
-    </div>
 
-    <section class="sectionRegular">
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards integrado"  >
+            Integrado
+        </h1>
+
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards integral"  >
+            Integral
+        </h1>
+
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards fundamental"  >
+            Fundamental
+        </h1>
+
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards eja"  >
+            EJA
+        </h1>
+    </div>
+<!--regular----------------------------------------------------------------------------->
+    <section class="sectionRegular" id="Regular">
         <div class="regulares">
             <!-- Monday Card -->
-            <div class="regularCards">
+            <div class="regularCards" id="regular">
                 <h2 class="textRegular">Segunda-feira</h2>
                 <div class="cardRegular">
                     <img src="https://placehold.jp/80x80.png" alt="Placeholder">
@@ -56,7 +94,7 @@
             </div>
     
             <!-- Tuesday Card -->
-            <div class="regularCards">
+            <div class="regularCards" id="regular">
                 <h2 class="textRegular">Terça-feira</h2>
                 <div class="cardRegular">
                     <img src="https://placehold.jp/80x80.png" alt="Placeholder">
@@ -66,7 +104,7 @@
             </div>
     
             <!-- Wednesday Card -->
-            <div class="regularCards">
+            <div class="regularCards" id="regular">
                 <h2 class="textRegular">Quarta-feira</h2>
                 <div class="cardRegular">
                     <img src="https://placehold.jp/80x80.png" alt="Placeholder">
@@ -76,7 +114,7 @@
             </div>
     
             <!-- Thursday Card -->
-            <div class="regularCards">
+            <div class="regularCards"id="regular">
                 <h2 class="textRegular">Quinta-feira</h2>
                 <div class="cardRegular">
                     <img src="https://placehold.jp/80x80.png" alt="Placeholder">
@@ -86,7 +124,223 @@
             </div>
     
             <!-- Friday Card -->
-            <div class="regularCards">
+            <div class="regularCards"id="regular">
+                <h2 class="textRegular">Sexta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--integrado----------------------------------------------------------------------------->
+    <section class="sectionRegular" id="integrado">
+        <div class="regulares">
+            <!-- Monday Card -->
+            <div class="regularCards integrado">
+                <h2 class="textRegular">Segunda-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>PÃO COM OVO E <br> CUZCUZ</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Tuesday Card -->
+            <div class="regularCards integrado">
+                <h2 class="textRegular">Terça-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Wednesday Card -->
+            <div class="regularCards integrado">
+                <h2 class="textRegular">Quarta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Thursday Card -->
+            <div class="regularCards integrado">
+                <h2 class="textRegular">Quinta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Friday Card -->
+            <div class="regularCards integrado">
+                <h2 class="textRegular">Sexta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--integral------------------------------------------------------------------------------------>
+    <section class="sectionRegular" id="integral">
+        <div class="regulares">
+            <!-- Monday Card -->
+            <div class="regularCards integral">
+                <h2 class="textRegular">Segunda-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>PÃO COM OVO E <br> SUCO.</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Tuesday Card -->
+            <div class="regularCards integral">
+                <h2 class="textRegular">Terça-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Wednesday Card -->
+            <div class="regularCards integral">
+                <h2 class="textRegular">Quarta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Thursday Card -->
+            <div class="regularCards integral">
+                <h2 class="textRegular">Quinta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Friday Card -->
+            <div class="regularCards integral">
+                <h2 class="textRegular">Sexta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--fundamental-------------------------------------------------------------------------------------->
+    <section class="sectionRegular" id="fundamental">
+        <div class="regulares">
+            <!-- Monday Card -->
+            <div class="regularCards fundamental">
+                <h2 class="textRegular">Segunda-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>PÃO COM OVO E <br> SUCO.</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Tuesday Card -->
+            <div class="regularCards fundamental">
+                <h2 class="textRegular">Terça-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Wednesday Card -->
+            <div class="regularCards fundamental">
+                <h2 class="textRegular">Quarta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Thursday Card -->
+            <div class="regularCards fundamental">
+                <h2 class="textRegular">Quinta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Friday Card -->
+            <div class="regularCards fundamental">
+                <h2 class="textRegular">Sexta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--EJA--------------------------------------------------------------------------------------------->
+    <section class="sectionRegular" id="eja">
+        <div class="regulares">
+            <!-- Monday Card -->
+            <div class="regularCards eja">
+                <h2 class="textRegular">Segunda-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>PÃO COM OVO E <br> SUCO.</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Tuesday Card -->
+            <div class="regularCards eja">
+                <h2 class="textRegular">Terça-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Wednesday Card -->
+            <div class="regularCards eja">
+                <h2 class="textRegular">Quarta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Thursday Card -->
+            <div class="regularCards eja">
+                <h2 class="textRegular">Quinta-feira</h2>
+                <div class="cardRegular">
+                    <img src="https://placehold.jp/80x80.png" alt="Placeholder">
+                    <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
+                    <h3>10/10/2024</h3>
+                </div>
+            </div>
+    
+            <!-- Friday Card -->
+            <div class="regularCards eja">
                 <h2 class="textRegular">Sexta-feira</h2>
                 <div class="cardRegular">
                     <img src="https://placehold.jp/80x80.png" alt="Placeholder">
@@ -97,5 +351,7 @@
         </div>
     </section>
     
+
+    <script src="cardapio.js"></script>
 </body>
 </html>
