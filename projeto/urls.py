@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3
+from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -57,6 +57,11 @@ urlpatterns = [
     path('adicionar_noticia3/', adicionar_noticia3, name='adicionar_noticia3'),
     path('editar3<int:id>/', editar_noticia3, name='editar_noticia3'),
     path('apagar3/<int:id>/', apagar_noticia3, name='apagar_noticia3'),
+    path('lista_cardapios/', lista_cardapios, name='lista_cardapios'),
+    path('adicionar_cardapio/', adicionar_cardapio, name='adicionar_cardapio'),
+    path('editar_cardapio<int:id>/', editar_cardapio, name='editar_cardapio'),
+    path('apagar_cardapio<int:id>/', apagar_cardapio, name='apagar_cardapio'),
+
 
 
 

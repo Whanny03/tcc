@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apagar Cardápio - {{ cardapio.nome_comida }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cardapio/apagar.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="delete-container">
+            <h1>Apagar Cardápio</h1>
+            <h2>Você tem certeza que deseja apagar o cardápio de <span>{{ cardapio.nome_comida }}</span> no dia {{ cardapio.data_cardapio }}?</h2>
+            {% if cardapio.foto_cardapio %}
+                <img src="{{ cardapio.foto_cardapio.url }}" alt="Foto do cardápio" class="img-preview">
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-actions">
+                    <button type="submit" class="btn-danger">Sim, apagar</button>
+                    <a href="{% url 'lista_cardapios' %}" class="btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

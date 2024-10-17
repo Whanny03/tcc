@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lista de Cardápios</h2>
+<a href="{% url 'adicionar_cardapio' %}">Adicionar Novo Cardápio</a>
+<ul>
+    {% for cardapio in cardapios %}
+        <li>
+            {{ cardapio.nome_semana }} - {{ cardapio.nome_comida }} - {{ cardapio.data_cardapio }}
+            <a href="{% url 'editar_cardapio' cardapio.id %}">Editar</a>
+            <a href="{% url 'apagar_cardapio' cardapio.id %}">Apagar</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

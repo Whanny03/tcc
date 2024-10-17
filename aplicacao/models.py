@@ -119,3 +119,16 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Integrado(models.Model):
+    nome_semana = models.CharField(max_length=50)
+    foto_cardapio = models.ImageField(upload_to='fotos_cardapio/')
+    nome_comida = models.CharField(max_length=100)
+    data_cardapio = models.DateField()
+
+    def __str__(self):
+        return f'{self.nome_semana} - {self.nome_comida}'
+
+    class Meta:
+        verbose_name = 'Cardápio Integrado'
+        verbose_name_plural = 'Cardápios Integrados'

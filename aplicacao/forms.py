@@ -1,5 +1,5 @@
 from django import forms
-from .models import ImageCarousel, Eletiva, Tutoria, SocialLinks, MaisSobre, LinkEletiva, Historia, NewsOne, Evento, Noticia2, Noticia3
+from .models import ImageCarousel, Eletiva, Tutoria, SocialLinks, MaisSobre, LinkEletiva, Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado
 
 
 class ImageCarouselForm(forms.ModelForm):
@@ -70,3 +70,8 @@ class Noticia3Form(forms.ModelForm):
     class Meta:
         model = Noticia3
         fields = ['title', 'description1', 'description2', 'image', 'data_publicacao']
+        
+class IntegradoForm(forms.ModelForm):
+    class Meta:
+        model = Integrado
+        fields = ['nome_semana', 'foto_cardapio', 'nome_comida', 'data_cardapio']

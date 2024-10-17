@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cardápio - {{ cardapio.nome_comida }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cardapio/editar.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Editar Cardápio</h1>
+            <h2>{{ cardapio.nome_comida }} - {{ cardapio.data_cardapio }}</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_nome_semana">Nome da Semana</label>
+                    {{ form.nome_semana }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_foto_cardapio">Foto do Cardápio Atual</label>
+                    {% if cardapio.foto_cardapio %}
+                        <img src="{{ cardapio.foto_cardapio.url }}" alt="Foto atual do cardápio" class="img-preview">
+                    {% endif %}
+                    {{ form.foto_cardapio }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_nome_comida">Nome da Comida</label>
+                    {{ form.nome_comida }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_data_cardapio">Data do Cardápio</label>
+                    {{ form.data_cardapio }}
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Salvar Alterações</button>
+                    <a href="{% url 'lista_cardapios' %}" class="btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

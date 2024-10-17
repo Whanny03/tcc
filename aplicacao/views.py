@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form
-from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3
+from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm
+from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado
 
 #Pagina inicial
 def home(request):
@@ -313,3 +313,41 @@ def apagar_noticia3(request, id):
         noticia.delete()
         return redirect('home')
     return render(request, 'noticia3/apagar_noticia3.html', {'noticia': noticia})
+
+
+# CARDAPIO
+# View para adicionar um cardápio
+def adicionar_cardapio(request):
+    if request.method == 'POST':
+        form = IntegradoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')  # Redireciona para a lista de cardápios
+    else:
+        form = IntegradoForm()
+    return render(request, 'cardapio/adicionar_cardapio.html', {'form': form})
+
+# View para editar um cardápio
+def editar_cardapio(request, id):
+    cardapio = get_object_or_404(Integrado, id=id)
+    if request.method == 'POST':
+        form = IntegradoForm(request.POST, request.FILES, instance=cardapio)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = IntegradoForm(instance=cardapio)
+    return render(request, 'cardapio/editar_cardapio.html', {'form': form, 'cardapio': cardapio})
+
+# View para apagar um cardápio
+def apagar_cardapio(request, id):
+    cardapio = get_object_or_404(Integrado, id=id)
+    if request.method == 'POST':
+        cardapio.delete()
+        return redirect('lista_cardapios')
+    return render(request, 'cardapio/apagar_cardapio.html', {'cardapio': cardapio})
+
+# View para listar os cardápios
+def lista_cardapios(request):
+    cardapios = Integrado.objects.all()
+    return render(request, 'cardapio/lista_cardapios.html', {'cardapios': cardapios})
