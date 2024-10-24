@@ -132,3 +132,22 @@ class Integrado(models.Model):
     class Meta:
         verbose_name = 'Cardápio Integrado'
         verbose_name_plural = 'Cardápios Integrados'
+
+class RegularLanche(models.Model):
+    nome_dia_semana = models.CharField(max_length=20)  # Nome do dia da semana (e.g. Segunda-feira)
+    nome_comida = models.CharField(max_length=100)  # Nome da comida
+    imagem = models.ImageField(upload_to='lanche_imagens/')  # Campo de imagem
+    data_cardapio = models.DateField()  # Data do cardápio
+
+    def __str__(self):
+        return f"{self.nome_dia_semana}: {self.nome_comida} ({self.data_cardapio})"
+
+
+class RegularAlmoco(models.Model):
+    dia_da_semana = models.CharField(max_length=100, null=True)  # Ex: 'Segunda'
+    nome_da_comida = models.CharField(max_length=100)  # Ex: 'Arroz com Feijão'
+    imagem = models.ImageField(upload_to='imagens/')  # Ex: 'imagem.jpg'
+    data_do_cardapio = models.DateField()  # Ex: '2024-10-22'
+
+    def __str__(self):
+        return f"{self.dia_da_semana} - {self.nome_da_comida}"

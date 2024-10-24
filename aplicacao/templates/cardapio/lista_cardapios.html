@@ -18,5 +18,26 @@
     {% endfor %}
 </ul>
 
+<ul>
+    {% for regularlanche in regularlanches %}
+    <li>
+        <img src="{{ regularlanche.imagem.url }}" alt="">
+        {{ regularlanche.nome_dia_semana }} - {{ regularlanche.nome_comida }} - {{ regularlanche.data_cardapio }}
+        <a href="{% url 'editar_regularlanche' regularlanche.pk %}">Editar</a>
+        <a href="{% url 'apagar_regularlanche' regularlanche.pk %}">Apagar</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for regularalmoco in regularalmocos %}
+    <li>
+        <img src="{{ regularalmoco.imagem.url }}" alt="">
+        {{ regularalmoco.nome_dia_semana }} - {{ regularalmoco.nome_comida }} - {{ regularalmoco.data_cardapio }}
+        <a href="{% url 'editar_regularalmoco' regularalmoco.pk %}">Editar</a>
+        <a href="{% url 'apagar_regularalmoco' regularalmoco.pk %}">Apagar</a>
+    </li>
+    {% endfor %}
+</ul>
 </body>
 </html>

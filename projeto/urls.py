@@ -20,8 +20,7 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio
-
+from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio, apagar_regularlanche, editar_regularlanche, adicionar_regularlanche, adicionar_regularalmoco, editar_regularalmoco, apagar_regularalmoco
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload_image/', upload_image, name='upload_image'),
@@ -61,6 +60,13 @@ urlpatterns = [
     path('adicionar_cardapio/', adicionar_cardapio, name='adicionar_cardapio'),
     path('editar_cardapio<int:id>/', editar_cardapio, name='editar_cardapio'),
     path('apagar_cardapio<int:id>/', apagar_cardapio, name='apagar_cardapio'),
+    path('adicionar_regularlanche/', adicionar_regularlanche, name='adicionar_regularlanche'),  # Adicionar regular lanche
+    path('editar_regularlanche<int:pk>/', editar_regularlanche, name='editar_regularlanche'),  # Editar regular lanche
+    path('apagar_regularlanche<int:pk>/', apagar_regularlanche, name='apagar_regularlanche'),  # Apagar regular lanche
+    path('adicionar_regularalmoco/', adicionar_regularalmoco, name='adicionar_regularalmoco'),  # Adicionar regular almoço
+    path('editar_regularalmoco<int:pk>/', editar_regularalmoco, name='editar_regularalmoco'),  # Editar regular almoço
+    path('apagar_regularalmoco<int:pk>/', apagar_regularalmoco, name='apagar_regularalmoco'),  # Apagar regular almoço
+
 
 
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm
-from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado
+from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm, RegularLancheForm, RegularAlmocoForm
+from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco
 
 #Pagina inicial
 def home(request):
@@ -350,4 +350,74 @@ def apagar_cardapio(request, id):
 # View para listar os cardápios
 def lista_cardapios(request):
     cardapios = Integrado.objects.all()
-    return render(request, 'cardapio/lista_cardapios.html', {'cardapios': cardapios})
+    regularlanches = RegularLanche.objects.all()
+    regularalmocos = RegularAlmoco.objects.all()
+    return render(request, 'cardapio/lista_cardapios.html', {'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos})
+
+
+# REGULAR 
+# regular lanche
+
+# View para adicionar um novo cardápio
+def adicionar_regularlanche(request):
+    if request.method == 'POST':
+        form = RegularLancheForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = RegularLancheForm()
+    return render(request, 'cardapio/adicionar_regularlanche.html', {'form': form})
+
+# View para editar um cardápio existente
+def editar_regularlanche(request, pk):
+    cardapio = get_object_or_404(RegularLanche, pk=pk)
+    if request.method == 'POST':
+        form = RegularLancheForm(request.POST, request.FILES, instance=cardapio)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = RegularLancheForm(instance=cardapio)
+    return render(request, 'cardapio/editar_regularlanche.html', {'form': form})
+
+# View para apagar um cardápio existente
+def apagar_regularlanche(request, pk):
+    cardapio = get_object_or_404(RegularLanche, pk=pk)
+    if request.method == 'POST':
+        cardapio.delete()
+        return redirect('lista_cardapios')
+    return render(request, 'cardapio/apagar_regularlanche.html', {'cardapio': cardapio})
+
+# regular almoço
+
+# Adicionar cardápio
+def adicionar_regularalmoco(request):
+    if request.method == 'POST':
+        form = RegularAlmocoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = RegularAlmocoForm()
+    return render(request, 'cardapio/adicionar_regularalmoco.html', {'form': form})
+
+# Editar cardápio
+def editar_regularalmoco(request, pk):
+    cardapio = get_object_or_404(RegularAlmoco, pk=pk)
+    if request.method == 'POST':
+        form = RegularAlmocoForm(request.POST, request.FILES, instance=cardapio)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = RegularAlmocoForm(instance=cardapio)
+    return render(request, 'cardapio/editar_regularalmoco.html', {'form': form})
+
+# Apagar cardápio
+def apagar_regularalmoco(request, pk):
+    cardapio = get_object_or_404(RegularAlmoco, pk=pk)
+    if request.method == 'POST':
+        cardapio.delete()
+        return redirect('lista_cardapios')
+    return render(request, 'cardapio/apagar_regularalmoco.html', {'cardapio': cardapio})
