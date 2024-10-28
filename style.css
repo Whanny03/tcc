@@ -411,6 +411,7 @@ header .logo {
     border-radius: 5px;
 }
 
+
 /* Left text block */
 .left-content {
     flex: 1;
@@ -440,6 +441,7 @@ header .logo {
     margin-bottom: 10px;
     
 }
+
 
 .btn-matricula:hover{
     color: #ffffff;
@@ -471,7 +473,7 @@ header .logo {
  .card:hover{
         scale: 1.1;
         color: #ffffff;
-        background-color: #004080;
+        background-color: #386999;
     }
 
 .right-cards .card i{
@@ -511,3 +513,25 @@ justify-content: space-around;
 #curso3{
     justify-content: space-around;
     }
+
+#curso4{
+    justify-content: space-around;
+}
+
+#cursos6{
+    justify-content: space-around;
+}
+
+.video-section{
+    gap: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.vidio{
+    width: 100%;
+    border: solid cornflowerblue;
+    box-shadow: #000;
+}
