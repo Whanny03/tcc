@@ -1,24 +1,952 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+       *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+   
+  }
+  .secondary-bar {
+      background-color: #ffd500; /* Example background color */
+      height: 50px; /* Example height */
+      position: relative; /* Required for positioning child elements */
+      width: 36%;
+      z-index: 1;
+      }
+   
+      .parallelogram {
+      width: 120px; /* Example width */
+      height: 63px; /* Example height */
+      background-color: #ffd500; /* Example color */
+      position: absolute; /* Allows for precise positioning */
+      left: 90%; /* Example horizontal positioning */
+      clip-path: polygon(62% -9%, 100% 100%, 48% 100%, 0% 0%);
+      z-index: 2; /* Ensure this is above .blue */
+      }
+   
+      .yellow-section {
+      background-color: #ffd500;
+      height: 8%;
+      width: 62%;
+      position: absolute;
+      top: 20%;
+      right: 0;
+      clip-path: polygon(100% 0%, 100% 100%, 7% 100%, 0% 0%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; /* Alinha o conteúdo à direita */
+      padding: 0 1rem;
+      z-index: 1;
+      }
+   
+      .triangulo{
+      width: 130px;
+      height: 120px;
+      background-color: #1C69D1;
+      position: absolute;
+      left: 49%;
+      clip-path: polygon(162% -40%, 96% -2%, 45% 94%, 6% -1%);
+      z-index: 1;
+      top: 1%;
+      }
+      .triangulo-2{
+      width: 130px;
+      height: 90px;
+      background-color: #1C69D1;
+      position: absolute;
+      left: 49%;
+      clip-path: polygon(29% -43%, 74% 85%, 20% 97%, 57% -40%);
+      z-index: 1;
+      top: 12%;
+      }
+      .blue {
+      background-color: #005bbb;
+      height: 8%;
+      width: 94%;
+      position: absolute;
+      top: 1%;
+      right: 0;
+      clip-path: polygon(112% 3%, 115% 50%, 0% 447%, 36% -46%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      z-index: 0;
+      }
+   
+      .blue-2 {
+      background-color: #005bbb;
+      height: 11%;
+      width: 70%;
+      position: absolute;
+      top: 9%;
+      right: 0;
+      clip-path: polygon(100% 0%, 100% 100%, 9% 105%, 0% 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      z-index: 0;
+      }
+      .blue-1{
+      top: 5%;
+      background-color: #005bbb;
+      height: 50px;
+      position: absolute;
+      width: 22%;
+      z-index: 1;
+      clip-path: polygon(100% -8%, 86% 100%, -6% 105%, 0% 0%);
+      }
+      .topo-asn {
+      position: absolute;
+      left: 46%;
+           color: #fff;
+           font-size: 1.2rem; /* Adjust the font size as needed */
+           text-align: center; /* Center text horizontally */
+           flex-grow: 1;
+           z-index: 1;
+           font-family: Arial, sans-serif;
+       }
+   
+      .logo{
+      position: absolute;
+      top: -2%;
+      left: 84%;
+      width: 9%; /* Set the logo size */
+      height: auto; /* Maintain aspect ratio */
+       /* Adjust this value to lower the image */
+      z-index: 1;
+   
+       }
+                                                          /* FOOTER */
+  footer {
+              position: relative;
+          margin-top: 100px;
+          background-color: #fff;
+          color: black;
+          text-align: center;
+          position: relative;
+          padding: 20px 0; /* Ajusta o espaçamento interno do footer */
+          overflow: hidden; /* Garante que o conteúdo não vaze do footer */
+          }
+       
+       
+          .footer-container {
+          position: relative;
+          z-index: 1;
+       
+          }
+          .yellow-section-footer {
+          background-color: #004AAD;
+          height: 15%;
+          width: 48%;
+          position: absolute;
+          top: 3%;
+          right: 0;
+          clip-path: polygon(100% 0%, 100% 100%, 6% 100%, 0% 0%);
+          display: flex;
+          align-items: center;
+          justify-content: flex-end; /* Alinha o conteúdo à direita */
+          padding: 0 1rem;
+          z-index: 1;
+          }
+          .blue-footer {
+          background-color: #1C69D1;
+          height: 19%;
+          width: 50%;
+          position: absolute;
+          top: 10%;
+          left: 46%;
+          transform: translateX(-50%);
+          clip-path: polygon(112% 3%, 115% 50%, 0% 439%, 36% -46%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 1rem;
+          z-index: 0;
+          }
+       
+       
+          .blue-2-footer {
+          background-color: #1C69D1;
+          height: 18%;
+          width: 38%;
+          position: absolute;
+          top: 28%;
+          left: 52%;
+          transform: translateX(-50%);
+          clip-path: polygon(100% 0%, 100% 100%, 9% 105%, 1.6% 0%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 1rem;
+          z-index: 0;
+          }
+          .footer-info{
+              position: relative;
+          bottom: 25px;
+          gap: 20px;
+          margin: 15px;
+          }
+          .footer-social {
+          position: relative;
+          bottom: 25px;
+          gap: 20px;
+          margin: 15px;
+          }
+       
+       
+          .footer-social a {
+          color: black;
+          font-size: 24px;
+          }
+       
+          #whatsapp a {
+          color: #fff;
+          font-size: 24px
+          }
+       
+       
+          #whatsapp:hover{
+          transition: color 0.3s ease;
+          color: rgb(149, 248, 82);
+              transition: color 0.3s ease;
+       
+       
+          }
+       
+       
+          #instagram a {
+          color: #fff;
+          font-size: 24px
+       
+          }
+       
+       
+          #instagram:hover{
+          transition: color 0.3s ease;
+          color: rgb(241, 136, 50);
+          }
+       
+       
+          .footer-logo {
+           
+          position: relative;
+          top: -35px; /* Ajuste o valor conforme necessário */
+          margin-bottom: 10px; /* Espaçamento abaixo da imagem, ajuste conforme necessário */
+          }
+       
+          .secondary-bar-rodape {
+              background-color: #004AAD; /* Example background color */
+              height: 50px; /* Example height */
+              position: relative; /* Required for positioning child elements */
+              width: 36%;
+              z-index: 1;
+            }
+         
+            .parallelogram-rodape {
+              width: 120px; /* Example width */
+              height: 73px; /* Example height */
+              background-color: #004AAD; /* Example color */
+              position: absolute; /* Allows for precise positioning */
+              left: 90%; /* Example horizontal positioning */
+              clip-path: polygon(62% -9%, 100% 100%, 48% 100%, 0% 0%);
+              z-index: 2; /* Ensure this is above .blue */
+            }
+       
+         
+      
+    .wrapper .outer {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           position: relative; /* Added to ensure positioning of cards */
+       }
+       .wrapper .card {
+           background: #fff;
+           width: 430px;
+           height: 145px;
+           display: flex;
+           align-items: center;
+           padding: 20px;
+           opacity: 0;
+           pointer-events: none;
+           position: absolute;
+           justify-content: space-between;
+           box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+           animation: animate 15s linear infinite;
+           animation-delay: calc(3s * var(--delay));
+       }
+       .outer:hover .card {
+           animation-play-state: paused;
+       }
+       .wrapper .card:last-child {
+           animation-delay: calc(-3s * var(--delay));
+       }
+       @keyframes animate {
+           0% {
+               opacity: 0;
+               transform: translateY(100%) scale(0.5);
+           }
+           5%, 20% {
+               opacity: 0.4;
+               transform: translateY(100%) scale(0.7);
+           }
+           25%, 40% {
+               opacity: 1;
+               pointer-events: auto;
+               transform: translateY(0%) scale(1);
+           }
+           45%, 60% {
+               opacity: 0.4;
+               transform: translateY(-100%) scale(0.7);
+           }
+           65%, 100% {
+               opacity: 0;
+               transform: translateY(-100%) scale(0.5);
+           }
+       }
+       .card .content {
+           display: flex;
+           align-items: center;
+           width: 100%;
+       }
+       .wrapper .card .img {
+         height: 83%;
+         width: 36%;
+           background: #fff;
+           padding: 5px;
+           box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+       }
+       .card .img img {
+         display: flex;
+         justify-content: center;
+           height: 100%;
+           width: 100%;
+           object-fit: cover;
+       }
+       .card .details {
+           margin-left: 20px; /* Adjust the space between image and details */
+           width: 60%; /* Adjust the width to fit the remaining space */
+       }
+       .details span {
+           font-weight: 600;
+           font-size: 18px;
+       }
+       .details p {
+           margin: 0; /* Remove default margin */
+           display: flex;
+           align-items: center;
+       }
+       .details i {
+           margin-right: 10px; /* Adjust the space between icon and text */
+       }
+       .card a {
+           text-decoration: none;
+           padding: 7px 18px;
+           border-radius: 25px;
+           color: #fff;
+           background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+           transition: all 0.3s ease;
+       }
+       .card a:hover {
+           transform: scale(0.94);
+       }
+       .main-content {
+   display: flex;
+   width: 100vw; /* Ocupa toda a largura da tela */
+   height: 100vh; /* Ocupa toda a altura da tela */
+   margin-top: 12%;
+   align-items: center; /* Centraliza verticalmente */
+   justify-content: center; /* Centraliza horizontalmente */
+   gap: 20px; /* Espaço entre os elementos, ajuste conforme necessário */
+   font-family: Arial, sans-serif;
+   padding: 0 165px; /* Adiciona espaçamento nas laterais se necessário */
+   box-sizing: border-box; /* Inclui padding na largura e altura */
+}
+
+
+.contente {
+   flex: 1; /* Permite que o conteúdo ocupe o máximo espaço disponível */
+   text-align: center;
+   max-width: 500px; /* Ajuste conforme necessário */
+   text-align: justify;
+   margin-right: 30px;
+}
+
+
+.wrapper {
+   flex: 1; /* Permite que o wrapper ocupe o máximo espaço disponível */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    /* Garante que o conteúdo não exceda o tamanho do wrapper */
+}
+
+
+
+
+       .contente h1 {
+           font-size: 28px;
+           color: #003399;
+       }
+
+
+       .contente p {
+           font-size: 18px;
+           margin-top: 20px;
+       }
+        /* Container do botão */
+        .return-button {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin: 20px; /* Espaço ao redor do botão */
+           gap: 10px;
+       }
+
+
+       /* Estilo do botão */
+       .return-button button {
+           background-color: #1C69D1; /* Cor de fundo do botão */
+           color: white; /* Cor do texto */
+           border: none; /* Remove a borda padrão */
+           border-radius: 5px; /* Bordas arredondadas */
+           padding: 10px 20px; /* Espaçamento interno */
+           font-size: 16px; /* Tamanho da fonte */
+           cursor: pointer; /* Muda o cursor para uma mãozinha ao passar sobre o botão */
+           transition: background-color 0.3s, transform 0.2s; /* Transição suave para cor e transformação */
+       }
+
+
+       /* Estilo do botão ao passar o mouse */
+       .return-button button:hover {
+           background-color: #005bbb; /* Cor de fundo ao passar o mouse */
+           transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+       }
+
+
+       /* Estilo do botão ao clicar */
+       .return-button button:active {
+           background-color: #003d7a; /* Cor de fundo ao clicar */
+           transform: scale(0.98); /* Leve redução de tamanho ao clicar */
+       }
+       @media (max-width: 1400px){
+           .secondary-bar {
+ background-color: #ffd500; /* Example background color */
+ height: 50px; /* Example height */
+ position: relative; /* Required for positioning child elements */
+ width: 36%;
+ z-index: 1;
+}
+
+
+.parallelogram {
+ width: 120px; /* Example width */
+ height: 63px; /* Example height */
+ background-color: #ffd500; /* Example color */
+ position: absolute; /* Allows for precise positioning */
+ left: 86%; /* Example horizontal positioning */
+ clip-path: polygon(62% -9%, 100% 100%, 48% 100%, 0% 0%);
+ z-index: 2; /* Ensure this is above .blue */
+}
+
+
+.yellow-section {
+ background-color: #ffd500;
+ height: 8%;
+ width: 62%;
+ position: absolute;
+ top: 20%;
+ right: 0;
+ clip-path: polygon(100% 0%, 100% 100%, 7% 100%, 0% 0%);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0 1rem;
+ z-index: 1;
+}
+.triangulo{
+ width: 120px;
+ height: 84px;
+ background-color: #1C69D1;
+ position: absolute;
+ left: 49%;
+ clip-path: polygon(162% -40%, 96% -2%, 45% 94%, 6% -1%);
+ z-index: 1;
+ top: 1%;
+}
+.triangulo-2{
+ width: 120px;
+ height: 52px;
+ background-color: #1C69D1;
+ position: absolute;
+ left: 49%;
+ clip-path: polygon(29% -43%, 74% 85%, 20% 97%, 57% -40%);
+ z-index: 1;
+ top: 13%;
+}
+.blue {
+ background-color: #005bbb;
+ height: 8%;
+ width: 94%;
+ position: absolute;
+ top: 1%;
+ right: 0;
+ clip-path: polygon(112% 3%, 115% 50%, 0% 447%, 36% -46%);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0 1rem;
+ z-index: 0;
+}
+
+
+.blue-2 {
+ background-color: #005bbb;
+ height: 11%;
+ width: 70%;
+ position: absolute;
+ top: 9%;
+ right: 0;
+ clip-path: polygon(100% 0%, 100% 100%, 9% 105%, 0% 0%);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0 1rem;
+ z-index: 0;
+}
+.blue-1{
+ top: 5%;
+ background-color: #005bbb;
+ height: 50px;
+ position: absolute;
+ width: 22%;
+ z-index: 1;
+ clip-path: polygon(100% -8%, 86% 100%, -6% 105%, 0% 0%);
+}
+.topo-asn {
+ position: absolute;
+ left: 46%;
+         color: #fff;
+         font-size: 1.2rem; /* Adjust the font size as needed */
+         text-align: center; /* Center text horizontally */
+         flex-grow: 1;
+         z-index: 1;
+     }
+
+
+.logo {
+ position: absolute;
+ top: -6%;
+ left: 84%;
+ width: 130px; /* Set the logo size */
+ height: auto; /* Maintain aspect ratio */
+ margin-top: 20px; /* Adjust this value to lower the image */
+ z-index: 1;
+      }
+       }
+       @media (max-width: 1050px) {
+   .main-content {
+       display: flex;
+       flex-direction: column; /* Empilha os elementos em uma coluna */
+       align-items: center; /* Centraliza os elementos horizontalmente */
+       margin-top: 20%; /* Distância do header */
+       padding: 0 20px; /* Adiciona um pequeno padding lateral para garantir espaçamento */
+       gap: 20px; /* Espaço entre .contente e .wrapper */
+   }
+
+
+   .contente {
+       width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+       max-width: none; /* Remove a limitação de largura máxima */
+       text-align: center; /* Centraliza o texto */
+       margin-right: 0; /* Remove a margem direita para melhor alinhamento */
+   }
+
+
+   .wrapper {
+       width: 100%; /* Garante que o wrapper ocupe toda a largura disponível */
+       display: flex; /* Mantém o layout flexível dentro do wrapper */
+       align-items: center; /* Alinha os itens no centro verticalmente */
+       justify-content: center; /* Centraliza os itens horizontalmente */
+   }
+   .blue {
+             top: 0;
+             width: 100%;
+             height: 20%;
+             clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+             display: flex;
+ 
+         
+         }
+         .topo-asn{
+             top: 8%;
+            position: absolute;
+            left: 5%;
+            font-size: 1rem;
+            flex-grow: 0;
+         }
+         .logo{
+             position: absolute;
+             left: 71%;
+             width: 130px;
+             margin-top: 20px;
+ 
+         }
+         .yellow-section{
+             width: 100%;
+             clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+         }
+         .card-wrapper {
+             flex-direction: column;
+             align-items: center;
+             }
+         
+             .slide-container{
+                 position: relative;
+                   margin-top: 40%; /* Adjust position to center vertically */
+               }
+               .card{
+                 position: relative;
+                 margin-top: 60%;
+               }
+               .blue-1,.blue-2, .secondary-bar, .triangulo, .triangulo-2{
+                 display: none;
+             }
+             footer{
+              background-color: #004080;
+              color: white;
+              text-align: center;
+             
+          }
+       
+          .footer-social {
+              position: relative;
+              bottom: 10px;
+              gap: 20px;
+              margin: 5px;
+          }
+       
+          .footer-social a {
+              color: #fff;
+              font-size: 24px;
+          }
+       
+       
+          #youtube a {
+              color: #fff;
+              font-size: 24px
+          }
+       
+          #youtube:hover{
+              transition: color 0.3s ease;
+              color: rgb(241, 111, 111);
+          }
+       
+          #twitter a {
+              color: #fff;
+              font-size: 24px
+          }
+       
+          #twitter:hover{
+              transition: color 0.3s ease;
+              color: rgb(131, 178, 231);
+          }
+       
+          #tiktok a {
+              color: #fff;
+              font-size: 24px
+          }
+       
+          #tiktok:hover{
+              transition: color 0.3s ease;
+              color: rgb(149, 248, 82);
+                  transition: color 0.3s ease;
+       
+          }
+       
+          #instagram a {
+              color: #fff;
+              font-size: 24px
+           
+          }
+       
+          #instagram:hover{
+              transition: color 0.3s ease;
+              color: rgb(241, 136, 50);
+          }
+       
+          .blue-2-footer, .blue-footer,.parallelogram-rodape, .secondary-bar-rodape, .yellow-section-footer, .footer-logo{
+              display: none;
+          }
+}
+@media (max-width: 900px) {
+   .main-content {
+       display: flex;
+       flex-direction: column; /* Empilha os elementos em uma coluna */
+       align-items: center; /* Centraliza os elementos horizontalmente */
+       margin-top: 30%; /* Distância do header */
+       padding: 0 20px; /* Adiciona um pequeno padding lateral para garantir espaçamento */
+       gap: 200px; /* Espaço entre .contente e .wrapper */
+   }
+
+
+   .contente {
+       width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+       max-width: none; /* Remove a limitação de largura máxima */
+       text-align: center; /* Centraliza o texto */
+       margin-right: 0; /* Remove a margem direita para melhor alinhamento */
+   }
+
+
+   .wrapper {
+       width: 100%; /* Garante que o wrapper ocupe toda a largura disponível */
+       display: flex; /* Mantém o layout flexível dentro do wrapper */
+       align-items: center; /* Alinha os itens no centro verticalmente */
+       justify-content: center; /* Centraliza os itens horizontalmente */
+       margin-bottom: 100px; /* Espaço abaixo do wrapper */
+   }
+
+
+   .blue {
+       top: 0;
+       width: 100%;
+       height: 20%;
+       clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+       display: flex;
+   }
+   .topo-asn {
+       top: 8%;
+       position: absolute;
+       left: 5%;
+       font-size: 1rem;
+       flex-grow: 0;
+   }
+   .logo {
+       position: absolute;
+       left: 71%;
+       width: 130px;
+       margin-top: 20px;
+   }
+   .yellow-section {
+       width: 100%;
+       clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+   }
+   .card-wrapper {
+       flex-direction: column;
+       align-items: center;
+   }
+
+
+   .slide-container {
+       position: relative;
+       margin-top: 40%; /* Ajusta a posição para centralizar verticalmente */
+   }
+   .card {
+       position: relative;
+       margin-top: 60%;
+   }
+   .blue-1, .blue-2, .secondary-bar, .triangulo, .triangulo-2 {
+       display: none;
+   }
+   footer {
+       background-color: #004080;
+       color: white;
+       text-align: center;
+       margin-top: 150px; /* Ajusta a margem superior para garantir espaço suficiente */
+   }
+
+
+   .footer-social {
+       position: relative;
+       bottom: 10px;
+       gap: 20px;
+       margin: 5px;
+   }
+
+
+   .footer-social a {
+       color: #fff;
+       font-size: 24px;
+   }
+
+
+   #youtube a {
+       color: #fff;
+       font-size: 24px;
+   }
+
+
+   #youtube:hover {
+       transition: color 0.3s ease;
+       color: rgb(241, 111, 111);
+   }
+
+
+   #twitter a {
+       color: #fff;
+       font-size: 24px;
+   }
+
+
+   #twitter:hover {
+       transition: color 0.3s ease;
+       color: rgb(131, 178, 231);
+   }
+
+
+   #tiktok a {
+       color: #fff;
+       font-size: 24px;
+   }
+
+
+   #tiktok:hover {
+       transition: color 0.3s ease;
+       color: rgb(149, 248, 82);
+   }
+
+
+   #instagram a {
+       color: #fff;
+       font-size: 24px;
+   }
+
+
+   #instagram:hover {
+       transition: color 0.3s ease;
+       color: rgb(241, 136, 50);
+   }
+
+
+   .blue-2-footer, .blue-footer, .parallelogram-rodape, .secondary-bar-rodape, .yellow-section-footer, .footer-logo {
+       display: none;
+   }
+}
+@media (max-width: 600px) {
+   .main-content {
+       display: flex;
+       flex-direction: column; /* Empilha os elementos em uma coluna */
+       align-items: center; /* Centraliza os elementos horizontalmente */
+       margin-top: 45%; /* Distância do header */
+       padding: 0 20px; /* Adiciona um pequeno padding lateral para garantir espaçamento */
+       gap: 200px; /* Espaço entre .contente e .wrapper */
+   }
+   .logo{
+       position: absolute;
+       width: 18%;
+       margin-top: 31px;
+   }
+}
+@media (max-width: 480px) {
+   .main-content {
+       display: flex;
+       flex-direction: column; /* Empilha os elementos em uma coluna */
+       align-items: center; /* Centraliza os elementos horizontalmente */
+       margin-top: 60%; /* Distância do header */
+       padding: 0 20px; /* Adiciona um pequeno padding lateral para garantir espaçamento */
+       gap: 200px; /* Espaço entre .contente e .wrapper */
+   }
+   .logo{
+       position: absolute;
+       width: 21%;
+       margin-top: 35px;
+   }
+   .topo-asn{
+       font-size: .8em;
+   }
+   footer{
+       margin-top: 45%;
+   }
+}
+@media (max-width: 480px) {
+   .main-content {
+       display: flex;
+       flex-direction: column; /* Empilha os elementos em uma coluna */
+       align-items: center; /* Centraliza os elementos horizontalmente */
+       margin-top: 65%; /* Distância do header */
+       padding: 0 20px; /* Adiciona um pequeno padding lateral para garantir espaçamento */
+       gap: 200px; /* Espaço entre .contente e .wrapper */
+   }
+}
+   </style>
 </head>
 <body>
-    <h2>Lista de Histórias</h2>
-    <ul>
+   <header class="topo">
+       <div class="secondary-bar secondary-bar-top">
+           <div class="parallelogram parallelogram-1"></div>
+       </div>
+       <div class="blue-1"></div>
+       <div class="blue"></div>
+       <div class="triangulo"></div>
+       <div class="triangulo-2"></div>
+       <h1 class="topo-asn">EEEFM ANTONIO DOS SANTOS NEVES</h1>
+       <img class="logo" src="https://images.sympla.com.br/65087b3baa195-lg.png" alt="Logo">
+       <div class="blue-2"></div>
+       <div class="yellow-section">
+       </div>
+   </header>
+   <div class="main-content">
+   <div class="contente">
+       <h1>ASN: UM PILAR PARA A EDUCAÇÃO DE BOA ESPERANÇA.</h1>
+       <p style="text-align: justify;">A Escola Estadual Antônio dos Santos Neves, em Boa Esperança, foi fundada na década de 1970 e se tornou um importante centro educacional local. Nos seus primeiros anos, destacou-se pela qualidade acadêmica e pelo envolvimento em atividades culturais e esportivas, refletindo o espírito de comunidade e esperança da região. Ao longo das décadas, a escola continuou a evoluir, mantendo-se como um pilar fundamental na educação da área.</p>
+       <div class="return-button">
+           <button>RETORNAR</button>
+           <button>MAIS SOBRE</button>
+       </div>
+   </div>
+   <div class="wrapper">
+       <div class="outer">
         {% for historia in historias %}
-            <li>
-                {{ historia.nome }} - {{ historia.data }} <br>
-                <img src="{{ historia.imagem.url }}" alt="{{ historia.nome }}" width="100">
-                <a href="{% url 'editar_historia' historia.pk %}">Editar</a>
-                <a href="{% url 'deletar_historia' historia.pk %}">Deletar</a>
-            </li>
+           <div class="card" style="--delay:-1;">
+               <div class="content">
+                   <div class="img"><img src="{{ historia.imagem.url }}" alt="" style="width: 100%;"></div>
+                   <div class="details">
+                       <span class="name">{{ historia.nome }}</span>
+                       <p><i class="bi bi-calendar-event"></i>{{ historia.data }}</p>
+                   </div>
+               </div>
+           </div>
         {% endfor %}
-    </ul>
-    <a href="{% url 'adicionar_historia' %}">Adicionar Nova História</a>
-    
-     
+       </div>
+   </div>
+   </div>
+   <footer class="custom-footer bg-body-tertiary text-center text-lg-start">
+       <div class="secondary-bar-rodape">
+           <div class="parallelogram-rodape"></div>
+       </div>
+       <div class="blue-2-footer" ></div>
+           <div class="blue-footer" ></div>
+       <div class="yellow-section-footer"></div>
+       <div class="footer-bar">
+           <div class="footer-container">
+               <div class="footer-logo">
+                   <img src="https://images.sympla.com.br/65087b3baa195-lg.png" alt="ASN Logo" style="width: 8%;" />
+               </div>
+               <div class="footer-social">
+                   <a href="#"><i class="bi bi-instagram" id="instagram"></i></a>
+                   <a href="#"><i class="bi bi-whatsapp" id="whatsapp"></i></a>
+               </div>
+               <div class="footer-info">
+                   <p><strong>ANTONIO DOS SANTOS NEVES (ASN)</strong></p>
+                   <p>Avenida Democrata - Centro</p>
+                   <p>CEP: 29845-000 - Boa Esperança - ES</p>
+                   <p>Tel: (27) 1234-5678</p>
+               </div>
+           </div>
+       </div>
+    </footer>
 </body>
 </html>
+
+
+
+
