@@ -1,99 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Menu on Yellow Section</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Página Principal</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ {% load static %}
+ <link rel="stylesheet" href="{% static 'principal.css' %}">
 </head>
 <body>
-    {% extends "header.html" %}
-    {% block content %}
+ <header class="topo">
+   <div class="secondary-bar secondary-bar-top">
+       <div class="parallelogram parallelogram-1"></div>
+   </div>
+   <div class="blue-1"></div>
+   <div class="blue"></div>
+   <div class="triangulo"></div>
+   <div class="triangulo-2"></div>
+   <h1 class="topo-asn">EEEFM ANTONIO DOS SANTOS NEVES</h1>
+   <img class="logo" src="https://images.sympla.com.br/65087b3baa195-lg.png" alt="Logo">
+   <div class="blue-2"></div>
+   <div class="yellow-section">
+       <button class="menu-icon" onclick="toggleMenu()">☰</button>
+       <div class="menu-container" id="menu">
+           <button class="close-icon" onclick="toggleMenu()">×</button>
+           <a href="{% url 'lista' %}">Eletivas</a>
+           <a href="{% url 'lista_tutoria' %}">Tutoria</a>
+           <a href="#">Horario</a>
+       </div>
+   </div>
+</header>
+{% for i in images %}   
+ <div class="container">
+     <div class="texto">
+         <h1 class="asn">Estude no ASN</h1>
+         <p class="intro">A escola EEEFM “Antonio dos Santos Neves”, fundada em 1978 é uma Instituição dedicada ao ensino fundamental e médio que oferece um curso Técnico de Informática integrado ao ensino médio ofertando 40 vagas para aqueles que desejam ingressar no mercado de trabalho.</p>
+     </div>
+     <div class="carousel">
+         <div class="carousel-images">
+             <img src="../../media/{{i.image1}}" alt="Imagem 1">
+             <img src="../../media/{{i.image2}}" alt="Imagem 2">
+             <img src="../../media/{{i.image3}}" alt="Imagem 3">
+         </div>
+         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+         <button class="next" onclick="moveSlide(1)">&#10095;</button>
+         <div class="indicators">
+             <!-- Indicadores serão adicionados dinamicamente -->
+         </div>
+     </div>
+ </div>
+{% endfor %}
 
-    {%for link in social_link%}
-    <a href="{{link.instagram_url}}" class="instagram-button"><i class="fab fa-instagram"></i></a>
-    <a href="{{link.whatsapp_number}}" class="facebook-button"><i class="fab fa-whatsapp"></i></a>
 
-    {% endfor %}  
-    <!-- CARROSSEL -->
-    {% for i in images %}
-    <div class="main-content">    
-    <div class="container">
-        <div class="texto">
-            <h1 class="asn">Estude no ASN</h1>
-            <p class="intro">A escola EEEFM “Antonio dos Santos Neves”, fundada em 1978 é uma Instituição dedicada ao ensino fundamental e médio que oferece um curso Técnico de Informática integrado ao ensino médio ofertando 40 vagas para aqueles que desejam ingressar no mercado de trabalho.</p>
-        </div>
-        <div class="carousel">
+         <!-- HTML permanece o mesmo -->
+<div class="matricula">
+ <div class="container-matricula">
+   <!-- Seção de texto -->
+   <div class="text-section">
+     <h1 class="titulo-matricula">Estude no ASN</h1>
+     <p class="texto-matricula">
+       Estudar em uma escola com EJA, ensino médio integrado e
+       integral é uma experiência enriquecedora. A abordagem
+       prática conecta teoria e prática, preparando os alunos para o
+       futuro. A inclusão de aulas de violão desenvolve criatividade e
+       disciplina, enquanto o ensino médio integrado e integral
+       oferece uma formação ampla, preparando-os para o mercado
+       de trabalho e para a vida. É um ambiente colaborativo que
+       forma cidadãos críticos e conscientes, proporcionando
+       diversas oportunidades de aprendizado.</p>
+     <a href="{% url 'matricula' %}" class="cta-button">Como se matricular</a>
+   </div>
+
+
+   <!-- Seção de botões -->
+   <div class="buttons-section">
+     <div class="buttons">
+       <a href="#" class="button" data-text="O ensino médio integral é uma modalidade que oferece uma carga horária maior, integrando disciplinas tradicionais com atividades culturais e esportivas. Os alunos passam mais tempo na escola, promovendo um aprendizado aprofundado e desenvolvendo habilidades essenciais para o vestibular e o mercado de trabalho. Essa abordagem visa uma formação mais completa e imersiva.">
+         <i class="bi bi-mortarboard-fill"></i>
+         Ensino Médio Integral
+       </a>
+       <a href="#" class="button" data-text="O ensino médio integrado combina a formação geral do ensino médio com educação profissional técnica. Os alunos aprendem conteúdos acadêmicos enquanto se preparam para o mercado de trabalho em áreas específicas. Ao final do curso, obtêm tanto o diploma de ensino médio quanto um certificado profissional, tornando-se mais competitivos. Essa abordagem interliga teoria e prática, preparando os jovens para o vestibular e para suas futuras carreiras.">
+         <i class="bi bi-mortarboard-fill"></i>
+         Ensino Médio Integrado
+       </a>
+       <a href="#" class="button" data-text="O ensino fundamental é a etapa da educação básica que abrange do 6º ao 9º ano, focando em proporcionar uma formação sólida em áreas como português, matemática, ciências, história e geografia. Seu objetivo é desenvolver habilidades fundamentais e socioemocionais, preparando os alunos para o ensino médio e para a vida cidadã. Essa fase é obrigatória e visa garantir acesso a uma educação de qualidade para todos.">
+         <i class="bi bi-mortarboard-fill"></i>
+         Ensino Fundamental
+       </a>
+       <a href="#" class="button" data-text="A Educação de Jovens e Adultos (EJA) é um programa que oferece a pessoas que não completaram o ensino fundamental e médio a oportunidade de reingressar no sistema educacional. Com horários e metodologias flexíveis, a EJA permite que os alunos conciliem estudos com trabalho e responsabilidades. Além de concluir os estudos, o programa visa promover a inclusão social, a cidadania e melhorar as perspectivas profissionais.">
+         <i class="bi bi-mortarboard-fill"></i>
+         EJA(Educação de Jovens e Adultos)
+       </a>
+       <a href="#" class="button" data-text="A escola oferece um curso de inglês do 1° ao 3° ano do ensino médio, com foco em desenvolver habilidades de comunicação. O curso abrange níveis do básico ao avançado, enfatizando conversação, gramática, compreensão auditiva e leitura. As aulas são dinâmicas e interativas, utilizando recursos como vídeos e jogos. O professor adapta ao conteúdo e às necessidades dos alunos, preparando-os para usar o inglês em situações do dia a dia e aumentando sua confiança em contextos acadêmicos e profissionais. Oferecendo também a possibilidade de participar do intercâmbio no final do curso. ">
+         <i class="bi bi-mortarboard-fill"></i>
+         Aula de Violão
+       </a>
+       <a href="#" class="button" data-text="A escola oferece aulas de violão para todos os alunos. Com professores experientes, os alunos aprendem técnicas, leitura de partituras, acordes e ritmos, com um currículo adaptado a diferentes gêneros musicais. As aulas em grupo promovem um ambiente colaborativo, estimulando a disciplina, a criatividade e a expressão pessoal, tornando a experiência enriquecedora e prazerosa.">
+         <i class="bi bi-mortarboard-fill"></i>
+         CEI(Centro Estadual de Idiomas)
+       </a>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+       <!-- Explore Mais Sobre Nós -->
+
+
+       <section id="calendar" class="my-5">
+         <h1 class="texto-extra">Explore Mais Sobre Nós</h1>
+         <div class="calendar-events">
+           <a href="{% url 'listar_eventos' %}" style="text-decoration: none;">
+                 <div class="event-item" id="hover1">
+                     <h2>Eventos</h2>
+                     <p class="card-text">Não perca este evento incrível, clique aqui!</p>
+                 </div>
+           </a>
+           <a href="{% url 'nossa_historia' %}" style="text-decoration: none;">
+                 <div class="event-item" id="hover2">
+                     <h2>Nossa História</h2>
+                     <p class="card-text">Clique aqui e descubra a história inspiradora da nossa escola!</p>
+                 </div>
+           </a>  
+           <a href="{% url 'lista_cardapios' %}" style="text-decoration: none;">  
+                 <div class="event-item" id="hover3">
+                     <h2>Cardápio</h2>
+                     <p class="card-text">Clique aqui e confira nosso cardápio delicioso e variado!</p>
+                 </div>
+           </a> 
+         </div>
+     </section>
+             <!-- NOTÍCIA -->
+             <h1 class="titulo-encima">NOTÍCIA</h1>
+             <!-- <div class="linha linha-esquerda"></div>
+             <div class="linha linha-direita"></div> -->
+             <div class="noticia">
+               {% for item in newsone %}
+               <div class="main-news">
+                 <img src="{{ item.image.url }}" alt="Main News">
+                   <div class="main-news-content">
+                       <h1 class="ti-1"><a href="{% url 'view_news_one' item.id %}" style="text-decoration: none;">{{ item.title }}</a></h1>
+                   </div>
+                   <div class="date">
+                       <i class="bi bi-calendar-fill"></i>
+                       <span>{{ item.date_published }}</span>
+                   </div>
+               </div>
+               {% endfor %}
+               <div class="side-news">
+                 {% for noticia in noticias %}
+                                 <div class="news-item">
+                                     <img src="{{ noticia.imagem.url }}" alt="Intercâmbio">
+                                     <div class="news-text">
+                                         <div class="news-content">
+                                             <a href="{% url 'view_news_two' noticia.id %}" style="text-decoration: none;"><h2 class="ti-2">{{ noticia.titulo }}</h2></a>
+                                             <div class="date">
+                                                 <i class="bi bi-calendar-fill"></i>
+                                                 <span>{{ noticia.data_publicacao }}</span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <a href="{% url 'editar_noticia' noticia.id %}">Editar</a> |
+               <a href="{% url 'apagar_noticia' noticia.id %}">Apagar</a>
+                 {% endfor %}
+                                 {% for noti3 in noticia3 %}
+                                 <div class="news-item">
+                                     <img src="{{ noti3.image.url }}" alt="Escola">
+                                     <div class="news-text">
+                                         <div class="news-content">
+                                             <h2 class="ti-2">{{ noti3.title }}</h2>
+                                             <div class="date">
+                                               <i class="bi bi-calendar-fill"></i>
+                                                 <span>{{ noti3.data_publicacao }}</span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 {% endfor %}
+                             </div>
+                         </div>
             
-            <div class="carousel-images">
-                <img src="../../media/{{i.image1}}" alt="">
-                <img src="../../media/{{i.image2}}" alt="">
-                <img src="../../media/{{i.image3}}" alt="">
-            </div>
-            
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            <div class="indicators">
-                <!-- Indicadores serão adicionados dinamicamente -->
-            </div>
-        </div>
-    </div>
+<footer class="custom-footer bg-body-tertiary text-center text-lg-start">
+ <div class="secondary-bar-rodape">
+     <div class="parallelogram-rodape"></div>
+ </div>
+ <div class="blue-2-footer" ></div>
+     <div class="blue-footer" ></div>
+ <div class="yellow-section-footer"></div>
+ <div class="footer-bar">
+     <div class="footer-container">
+         <div class="footer-logo">
+             <img src="https://images.sympla.com.br/65087b3baa195-lg.png" alt="ASN Logo" style="width: 8%;" />
+         </div>
+         <div class="footer-social">
+             <a href="#"><i class="bi bi-instagram" id="instagram"></i></a>
+             <a href="#"><i class="bi bi-whatsapp" id="whatsapp"></i></a>
+         </div>
+         <div class="footer-info">
+             <p><strong>ANTONIO DOS SANTOS NEVES (ASN)</strong></p>
+             <p>Avenida Democrata - Centro</p>
+             <p>CEP: 29845-000 - Boa Esperança - ES</p>
+             <p>Tel: (27) 1234-5678</p>
+         </div>
+     </div>
+ </div>
+</footer>
+<script>
+    /*                 MENU                 */
 
-    <!-- NOTÍCIA -->
-    {% endfor %}
-    <div class="noticia">
-        {% for item in newsone %}
-        <div class="main-news">
-            <img src="{{ item.image.url }}" alt="Main News">
-            <div class="main-news-content">
-                <h1 class="ti-1"><a href="{% url 'view_news_one' item.id %}">{{ item.title }}</a></h1>
-            </div>
-            <div class="date">
-                 <i class="bi bi-calendar-fill"></i>
-                 <span>{{ item.date_published }}</span>
-            </div>
-        </div>
-        {% endfor %} 
-    </div>   
-     <!-- NOTÍCIA 2 -->
+
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
  
-     <ul>
-        {% for noticia in noticias %}
-            <li>
-                <h3>{{ noticia.titulo }}</h3>
-                <p>{{ noticia.descricao1 }}</p>
-                <p>{{ noticia.descricao2 }}</p>
-                <img src="{{ noticia.imagem.url }}" alt="Imagem da Notícia">
-                <p>Data de Publicação: {{ noticia.data_publicacao }}</p>
-                <a href="{% url 'editar_noticia' noticia.id %}">Editar</a> |
-                <a href="{% url 'apagar_noticia' noticia.id %}">Apagar</a>
-            </li>
-        {% endfor %}
-    </ul>
-
-     <!-- NOTÍCIA 3 -->
  
-     <ul>
-        {% for noti3 in noticia3 %}
-            <li>
-                <h3>{{ noti3.title }}</h3>
-                <p>{{ noti3.description1 }}</p>
-                <p>{{ noti3.description2 }}</p>
-                <img src="{{ noti3.image.url }}" alt="Imagem da Notícia">
-                <p>Data de Publicação: {{ noti3.data_publicacao }}</p>
-                <a href="{% url 'editar_noticia3' noti3.id %}">Editar</a> |
-                <a href="{% url 'apagar_noticia3' noti3.id %}">Apagar</a>
-            </li>
-        {% endfor %}
-    </ul>
-    {% endblock content %}
-
-
-   
-    
+    if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+    } else {
+        menu.classList.add('open');
+        menuIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+    }
+ }
  
+ 
+ 
+ 
+ /*                  CARROSSEL                      */
+ 
+ 
+ 
+ 
+        let slideIndex = 0;
+ 
+ 
+        function showSlides(n) {
+            const slides = document.querySelectorAll('.carousel-images img');
+            const indicators = document.querySelectorAll('.indicator');
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+ 
+ 
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+ 
+ 
+            indicators.forEach((indicator, index) => {
+                indicator.className = (index === slideIndex) ? 'indicator active' : 'indicator';
+            });
+        }
+ 
+ 
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+ 
+ 
+        function createIndicators() {
+            const slides = document.querySelectorAll('.carousel-images img');
+            const indicatorsContainer = document.querySelector('.indicators');
+            slides.forEach((_, index) => {
+                const div = document.createElement('div');
+                div.className = 'indicator';
+                div.addEventListener('click', () => {
+                    slideIndex = index;
+                    showSlides(slideIndex);
+                });
+                indicatorsContainer.appendChild(div);
+            });
+        }
+ 
+ 
+        createIndicators();
+        showSlides(slideIndex);
+ 
+ 
+        // Auto-slide every 4 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 4000);
+  
+ // Seleciona todos os botões e o elemento de texto
+ const buttons = document.querySelectorAll('.button');
+ const textSection = document.querySelector('.texto-matricula');
+ 
+ 
+ // Adiciona eventos de mouseover e mouseout a cada botão
+ buttons.forEach(button => {
+  button.addEventListener('mouseover', () => {
+    const newText = button.getAttribute('data-text');
+    textSection.textContent = newText;
+  });
+ 
+ 
+  button.addEventListener('mouseout', () => {
+    // Restaura o texto original quando o mouse sai do botão
+    textSection.textContent = 'Estudar em uma escola com EJA, ensino médio integrado e integral é uma experiência enriquecedora. A abordagem prática conecta teoria e prática, preparando os alunos para o futuro. A inclusão de aulas de violão desenvolve criatividade e disciplina, enquanto o ensino médio integrado e integral oferece uma formação ampla, preparando-os para o mercado de trabalho e para a vida. É um ambiente colaborativo que forma cidadãos críticos e conscientes, proporcionando diversas oportunidades de aprendizado.';
+  });
+ }); 
+</script>
 </body>
 </html>

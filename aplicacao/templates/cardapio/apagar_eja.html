@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Editar Regular Lanche</h1>
-<form method="POST" enctype="multipart/form-data">
+    <h1>Apagar Regular Almoço</h1>
+<p>Você tem certeza que deseja apagar o cardápio "{{ eja.nome_da_comida }}"?</p>
+<form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Salvar</button>
+    <button type="submit">Confirmar</button>
 </form>
 <a href="{% url 'lista_cardapios' %}">Voltar</a>
 

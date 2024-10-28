@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio, apagar_regularlanche, editar_regularlanche, adicionar_regularlanche, adicionar_regularalmoco, editar_regularalmoco, apagar_regularalmoco
+from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio, apagar_regularlanche, editar_regularlanche, adicionar_regularlanche, adicionar_regularalmoco, editar_regularalmoco, apagar_regularalmoco, adicionar_eja, editar_eja, apagar_eja, view_news_two, matricula, calendario
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload_image/', upload_image, name='upload_image'),
@@ -42,13 +42,14 @@ urlpatterns = [
     path('add_news_one/', add_news_one, name='add_news_one'),
     path('/<int:noticia_id>/', view_news_one, name='view_news_one'),
     path('<int:noticia_id>noticia/', apagar_news_one, name='apagar_news_one'),
-     path('criar/', criar_evento, name='criar_evento'),
+    path('criar/', criar_evento, name='criar_evento'),
     path('lista_eventos/', listar_eventos, name='listar_eventos'),
     path('editar/<int:id>/', editar_evento, name='editar_evento'),
     path('apagar/<int:id>/', apagar_evento, name='apagar_evento'),
     path('adicionar/', adicionar_noticia, name='adicionar_noticia'),
     path('editar/<int:id>/', editar_noticia, name='editar_noticia'),
     path('apagar<int:id>/', apagar_noticia, name='apagar_noticia'),
+    path('/<int:id>/', view_news_two, name='view_news_two'),
     path('nossa_historia/', nossa_historia, name='nossa_historia'),
     path('adicionar_historia/', adicionar_historia, name='adicionar_historia'),
     path('editar<int:pk>/', editar_historia, name='editar_historia'),
@@ -66,9 +67,10 @@ urlpatterns = [
     path('adicionar_regularalmoco/', adicionar_regularalmoco, name='adicionar_regularalmoco'),  # Adicionar regular almoço
     path('editar_regularalmoco<int:pk>/', editar_regularalmoco, name='editar_regularalmoco'),  # Editar regular almoço
     path('apagar_regularalmoco<int:pk>/', apagar_regularalmoco, name='apagar_regularalmoco'),  # Apagar regular almoço
-
-
-
-
+    path('adicionar_eja/', adicionar_eja, name='adicionar_eja'),  # Adicionar regular lanche
+    path('editar_eja/', editar_eja, name='editar_eja'),  # Editar regular lanche
+    path('apagar_eja<int:pk>/', apagar_eja, name='apagar_eja'),  # Apagar regular lanche
+    path('matricula/', matricula, name='matricula'),
+    path('calendario/', calendario, name='calendario')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

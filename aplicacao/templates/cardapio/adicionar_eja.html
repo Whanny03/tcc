@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Editar Regular Lanche</h1>
-<form method="POST" enctype="multipart/form-data">
+    <h1>Adicionar Eja</h1>
+    <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Salvar</button>
-</form>
+    </form>
 <a href="{% url 'lista_cardapios' %}">Voltar</a>
 
 </body>

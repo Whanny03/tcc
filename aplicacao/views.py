@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm, RegularLancheForm, RegularAlmocoForm
-from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco
+from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm, RegularLancheForm, RegularAlmocoForm, EjaForm
+from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco, Eja
 
 #Pagina inicial
 def home(request):
@@ -283,7 +283,9 @@ def apagar_noticia(request, id):
         return redirect('home')
     return render(request, 'noticia2/apagar_noticia.html', {'noticia': noticia})
 
-
+def view_news_two(request, id):
+    noticia = get_object_or_404(Noticia2, pk=id)
+    return render(request, 'noticia2/view_news_two.html', {'noticia': noticia})
 
 # NOTICIA 3
 def adicionar_noticia3(request):
@@ -315,8 +317,8 @@ def apagar_noticia3(request, id):
     return render(request, 'noticia3/apagar_noticia3.html', {'noticia': noticia})
 
 
-# CARDAPIO
-# View para adicionar um cardápio
+# INTEGRADO
+# View para adicionar um cardápio DO INTEGRADO
 def adicionar_cardapio(request):
     if request.method == 'POST':
         form = IntegradoForm(request.POST, request.FILES)
@@ -352,7 +354,8 @@ def lista_cardapios(request):
     cardapios = Integrado.objects.all()
     regularlanches = RegularLanche.objects.all()
     regularalmocos = RegularAlmoco.objects.all()
-    return render(request, 'cardapio/lista_cardapios.html', {'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos})
+    ejacardapio = Eja.objects.all()
+    return render(request, 'cardapio/lista_cardapios.html', {'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio})
 
 
 # REGULAR 
@@ -421,3 +424,42 @@ def apagar_regularalmoco(request, pk):
         cardapio.delete()
         return redirect('lista_cardapios')
     return render(request, 'cardapio/apagar_regularalmoco.html', {'cardapio': cardapio})
+
+
+# Eja 
+
+def adicionar_eja(request):
+    if request.method == 'POST':
+        form = EjaForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = EjaForm()
+    return render(request, 'cardapio/adicionar_eja.html', {'form': form})
+
+# View para editar um cardápio existente
+def editar_eja(request, pk):
+    cardapio = get_object_or_404(Eja, pk=pk)
+    if request.method == 'POST':
+        form = EjaForm(request.POST, request.FILES, instance=cardapio)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_cardapios')
+    else:
+        form = EjaForm(instance=cardapio)
+    return render(request, 'cardapio/editar_eja.html', {'form': form})
+
+# View para apagar um cardápio existente
+def apagar_eja(request, pk):
+    cardapio = get_object_or_404(Eja, pk=pk)
+    if request.method == 'POST':
+        cardapio.delete()
+        return redirect('lista_cardapios')
+    return render(request, 'cardapio/apagar_eja.html', {'cardapio': cardapio})
+
+def matricula(request):
+    return render(request, 'matricula.html')
+
+def calendario(request):
+    return render(request, 'calendario/calendario.html')

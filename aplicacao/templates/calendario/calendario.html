@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+   <!-- STYLESHEET -->
+   <style>
+     @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+     :root {
+       --primary-color: #f90a39;
+       --text-color: #1d1d1d;
+       --bg-color: #f1f1fb;
+     }
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: "Poppins", sans-serif;
+     }
+     body {
+       background-color: #fff;
+     }
+     .container {
+       width: 100%;
+       min-height: 100vh;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+     .calendar {
+       width: 100%;
+       max-width: 600px;
+       padding: 30px 20px;
+       border-radius: 10px;
+       background-color: var(--bg-color);
+     }
+     .calendar .header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 20px;
+       padding-bottom: 20px;
+       border-bottom: 2px solid #ccc;
+     }
+     .calendar .header .month {
+       display: flex;
+       align-items: center;
+       font-size: 25px;
+       font-weight: 600;
+       color: var(--text-color);
+     }
+     .calendar .header .btns {
+       display: flex;
+       gap: 10px;
+     }
+     .calendar .header .btns .btn {
+       width: 50px;
+       height: 40px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-radius: 5px;
+       color: #fff;
+       background-color: var(--primary-color);
+       font-size: 16px;
+       cursor: pointer;
+       transition: all 0.3s;
+     }
+     .calendar .header .btns .btn:hover {
+       background-color: #db0933;
+       transform: scale(1.05);
+     }
+     .weekdays {
+       display: flex;
+       gap: 10px;
+       margin-bottom: 10px;
+     }
+     .weekdays .day {
+       width: calc(100% / 7 - 10px);
+       text-align: center;
+       font-size: 16px;
+       font-weight: 600;
+     }
+     .days {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+     }
+     .days .day {
+       width: calc(100% / 7 - 10px);
+       height: 50px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-radius: 5px;
+       font-size: 16px;
+       font-weight: 400;
+       color: var(--text-color);
+       background-color: #fff;
+       transition: all 0.3s;
+     }
+     .days .day:not(.next):not(.prev):hover {
+       color: #fff;
+       background-color: var(--primary-color);
+       transform: scale(1.05);
+     }
+     .days .day.today {
+       color: #fff;
+       background-color: var(--primary-color);
+     }
+     .days .day.next,
+     .days .day.prev {
+       color: #ccc;
+     }
+     .days .day.searched {
+       color: #fff;
+       background-color: #007bff;
+     }
+     /* Credits */
+     .credits a {
+       position: absolute;
+       bottom: 10px;
+       left: 50%;
+       transform: translateX(-50%);
+       font-size: 14px;
+       color: #aaa;
+     }
+     .credits span {
+       color: var(--primary-color);
+     }
+     /* Seus estilos existentes aqui */
+     /* Adicione o estilo para o formulário de pesquisa */
+     .search-form {
+       display: flex;
+       gap: 10px;
+       margin-bottom: 20px;
+     }
+     .search-form input,
+     .search-form button {
+       padding: 10px;
+       font-size: 16px;
+     }
+     .search-form input {
+       flex: 1;
+     }
+     .search-form button {
+       background-color: var(--primary-color);
+       border: none;
+       color: #fff;
+       cursor: pointer;
+       transition: background-color 0.3s;
+     }
+     .search-form button:hover {
+       background-color: #db0933;
+     }
+   </style>
+
+
+   <!-- FONTAWESOME -->
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   />
+   <title>Calendário</title>
+ </head>
+ <body>
+   <div class="container">
+     <div class="calendar">
+       <!-- Formulário de pesquisa -->
+       <div class="search-form">
+         <input type="text" id="date-input" placeholder="Digite uma data (ano-mês-dia)" />
+         <button id="search-btn">Pesquisar</button>
+       </div>
+       <div class="header">
+         <div class="month"></div>
+         <div class="btns">
+           <div class="btn today-btn">
+             <i class="fas fa-calendar-day"></i>
+           </div>
+           <div class="btn prev-btn">
+             <i class="fas fa-chevron-left"></i>
+           </div>
+           <div class="btn next-btn">
+             <i class="fas fa-chevron-right"></i>
+           </div>
+         </div>
+       </div>
+       <div class="weekdays">
+         <div class="day">Dom</div>
+         <div class="day">Seg</div>
+         <div class="day">Ter</div>
+         <div class="day">Qua</div>
+         <div class="day">Qui</div>
+         <div class="day">Sex</div>
+         <div class="day">Sab</div>
+       </div>
+       <div class="days">
+         <!-- vamos adicionar os dias usando js -->
+       </div>
+     </div>
+   </div>
+
+
+   <!-- Credits -->
+   <!-- <div class="credits">
+     <a href="https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ">
+       Created with <span><i class="fas fa-heart"></i></span> by
+       <span>Open Source Coding</span>
+     </a>
+   </div> -->
+
+
+   <!-- SCRIPT -->
+   <script>
+     const daysContainer = document.querySelector(".days"),
+           nextBtn = document.querySelector(".next-btn"),
+           prevBtn = document.querySelector(".prev-btn"),
+           month = document.querySelector(".month"),
+           todayBtn = document.querySelector(".today-btn"),
+           searchBtn = document.querySelector("#search-btn"),
+           dateInput = document.querySelector("#date-input");
+
+
+     const months = [
+       "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+       "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+     ];
+
+
+     const date = new Date();
+
+
+     let currentMonth = date.getMonth();
+     let currentYear = date.getFullYear();
+     let searchedDate = null;
+
+
+     function renderCalendar() {
+       date.setDate(1);
+       const firstDay = new Date(currentYear, currentMonth, 1);
+       const lastDay = new Date(currentYear, currentMonth + 1, 0);
+       const lastDayIndex = lastDay.getDay();
+       const lastDayDate = lastDay.getDate();
+       const prevLastDay = new Date(currentYear, currentMonth, 0);
+       const prevLastDayDate = prevLastDay.getDate();
+       const nextDays = 7 - lastDayIndex - 1;
+
+
+       month.innerHTML = `${months[currentMonth]} ${currentYear}`;
+
+
+       let daysHtml = "";
+
+
+       for (let x = firstDay.getDay(); x > 0; x--) {
+         daysHtml += `<div class="day prev">${prevLastDayDate - x + 1}</div>`;
+       }
+
+
+       for (let i = 1; i <= lastDayDate; i++) {
+         const dayClass = i === (searchedDate && searchedDate.getDate()) ? "searched" : "";
+         if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
+           daysHtml += `<div class="day today ${dayClass}">${i}</div>`;
+         } else {
+           daysHtml += `<div class="day ${dayClass}">${i}</div>`;
+         }
+       }
+
+
+       for (let j = 1; j <= nextDays; j++) {
+         daysHtml += `<div class="day next">${j}</div>`;
+       }
+
+
+       daysContainer.innerHTML = daysHtml;
+       hideTodayBtn();
+     }
+
+
+     function hideTodayBtn() {
+       if (currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
+         todayBtn.style.display = "none";
+       } else {
+         todayBtn.style.display = "flex";
+       }
+     }
+
+
+     function goToDate(dateStr) {
+       const [year, month, day] = dateStr.split('-').map(Number);
+       if (!isNaN(year) && !isNaN(month) && !isNaN(day)) {
+         currentYear = year;
+         currentMonth = month - 1; // months are 0-indexed
+         searchedDate = new Date(year, month - 1, day);
+         renderCalendar();
+       }
+     }
+
+
+     nextBtn.addEventListener("click", () => {
+       currentMonth++;
+       if (currentMonth > 11) {
+         currentMonth = 0;
+         currentYear++;
+       }
+       renderCalendar();
+     });
+
+
+     prevBtn.addEventListener("click", () => {
+       currentMonth--;
+       if (currentMonth < 0) {
+         currentMonth = 11;
+         currentYear--;
+       }
+       renderCalendar();
+     });
+
+
+     todayBtn.addEventListener("click", () => {
+       currentMonth = date.getMonth();
+       currentYear = date.getFullYear();
+       searchedDate = null;
+       renderCalendar();
+     });
+
+
+     searchBtn.addEventListener("click", () => {
+       goToDate(dateInput.value);
+     });
+
+
+     renderCalendar();
+   </script>
+ </body>
+</html>
+
+
+
+

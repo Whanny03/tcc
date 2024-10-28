@@ -151,3 +151,12 @@ class RegularAlmoco(models.Model):
 
     def __str__(self):
         return f"{self.dia_da_semana} - {self.nome_da_comida}"
+
+class Eja(models.Model):
+    dia_da_semana = models.CharField(max_length=100)
+    nome_da_comida = models.CharField(max_length=100)
+    imagem = models.ImageField(upload_to='imagens/')
+    data_do_cardapio = models.DateField()
+    
+    def __str__(self):
+        return f"{self.dia_da_semana} - {self.nome_da_comida}"
