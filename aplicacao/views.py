@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm, RegularLancheForm, RegularAlmocoForm, EjaForm
-from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco, Eja
+from django.contrib.auth import authenticate, login
+from .forms import ImageCarouselForm, EletivaForm, TutoriaForm, SocialLinksForm, MaisSobreForm, LinkEletivaForm,HistoriaForm, NewsOneForm, EventoForm, Noticia2Form, Noticia3Form, IntegradoForm, RegularLancheForm, RegularAlmocoForm, EjaForm, DiretorForm
+from .models import  ImgCarrossel, Eletiva, Tutoria, SocialLinks, ImageCarousel, MaisSobre, LinkEletiva,Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco, Eja, Diretor
 
 #Pagina inicial
 def home(request):
@@ -316,6 +317,9 @@ def apagar_noticia3(request, id):
         return redirect('home')
     return render(request, 'noticia3/apagar_noticia3.html', {'noticia': noticia})
 
+def view_news_3(request, id):
+    noticia = get_object_or_404(Noticia3, pk=id)
+    return render(request, 'noticia3/view_news_tres.html', {'noticia': noticia})
 
 # INTEGRADO
 # View para adicionar um cardápio DO INTEGRADO
@@ -463,3 +467,45 @@ def matricula(request):
 
 def calendario(request):
     return render(request, 'calendario/calendario.html')
+
+def registrar_diretor(request):
+    if request.method == 'POST':
+        form = DiretorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login_diretor')
+    else:
+        form = DiretorForm()
+    return render(request, 'area_diretor/registrar_diretor.html', {'form': form})
+
+def login_diretor(request):
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        email = request.POST['email']
+        senha = request.POST['senha']
+        
+        diretor = Diretor.objects.filter(nome=nome, email=email).first()
+        if diretor and diretor.check_password(senha):
+            login(request, diretor)
+            return redirect('home')
+        else:
+            return render(request, 'area_diretor/login_diretor.html', {'erro': 'Credenciais inválidas'})
+    return render(request, 'area_diretor/login_diretor.html')
+
+def area_diretor(request):
+    newsone = NewsOne.objects.all().order_by('-date_published')
+    noticias = Noticia2.objects.all()
+    noticia3 = Noticia3.objects.all()
+    
+    cardapios = Integrado.objects.all()
+    regularlanches = RegularLanche.objects.all()
+    regularalmocos = RegularAlmoco.objects.all()
+    ejacardapio = Eja.objects.all()
+    
+    eventos = Evento.objects.all()
+    
+    tutorias = Tutoria.objects.all()
+    
+    eletivas = Eletiva.objects.all()
+    link = LinkEletiva.objects.all()
+    return render(request, 'area_diretor/diretor.html', {'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3, 'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio, 'eventos': eventos, 'tutorias': tutorias, 'eletivas': eletivas , 'link': link})

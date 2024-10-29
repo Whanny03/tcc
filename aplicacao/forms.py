@@ -1,5 +1,5 @@
 from django import forms
-from .models import ImageCarousel, Eletiva, Tutoria, SocialLinks, MaisSobre, LinkEletiva, Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco, Eja
+from .models import ImageCarousel, Eletiva, Tutoria, SocialLinks, MaisSobre, LinkEletiva, Historia, NewsOne, Evento, Noticia2, Noticia3, Integrado, RegularLanche, RegularAlmoco, Eja, Diretor
 
 
 class ImageCarouselForm(forms.ModelForm):
@@ -92,3 +92,17 @@ class EjaForm(forms.ModelForm):
     class Meta:
         model = Eja
         fields = ['dia_da_semana', 'nome_da_comida', 'imagem', 'data_do_cardapio']
+        
+class DiretorForm(forms.ModelForm):
+    senha = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = Diretor
+        fields = ['nome', 'email', 'senha']
+
+    def save(self, commit=True):
+        diretor = super().save(commit=False)
+        diretor.set_password(self.cleaned_data['senha'])
+        if commit:
+            diretor.save()
+        return diretor

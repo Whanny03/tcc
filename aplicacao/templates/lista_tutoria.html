@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de eletivas</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'ver_eletivas.css' %}">
+    <link rel="stylesheet" href="{% static 'eletivas/tutoria_eletivas.css' %}">
 </head>
 <body>
     <header class="topo">
-    
         <div class="secondary-bar secondary-bar-top">
             <div class="parallelogram parallelogram-1"></div>
         </div>
@@ -18,10 +19,10 @@
         <div class="triangulo"></div>
         <div class="triangulo-2"></div>
         <h1 class="topo-asn">EEEFM ANTONIO DOS SANTOS NEVES</h1>
-        <img class="logo" src="topo.png" alt="Logo">
+        <img class="logo" src="https://images.sympla.com.br/65087b3baa195-lg.png" alt="Logo">
         <div class="blue-2"></div>
         <div class="yellow-section">
-            <a class="inicio" href=""><i class="bi bi-house"></i>Inicio</a>
+            <a class="inicio" href="{% url 'home' %}"><i class="bi bi-house"></i>Inicio</a>
         </div>
     </header>
     <div class="main-slide">
@@ -36,9 +37,9 @@
                             <img src="{{ tutoria.image.url }}" class="card-img">
                         </div>
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" style="font-family: Arial, Helvetica, sans-serif;">
                         <h2 class="name">{{ tutoria.title }}</h2>
-                        <p class="description">{{ tutoria.description }}</p>
+                        <p class="sub-titulo">{{ tutoria.description }}</p>
                     </div>
                 </div>
             </div>
@@ -46,6 +47,30 @@
         </div>
       </div>
     </div>
-
+    <footer class="custom-footer bg-body-tertiary text-center text-lg-start">
+        <div class="secondary-bar-rodape">
+            <div class="parallelogram-rodape"></div>
+        </div>
+        <div class="blue-2-footer" ></div>
+            <div class="blue-footer" ></div>
+        <div class="yellow-section-footer"></div>
+        <div class="footer-bar">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="https://images.sympla.com.br/65087b3baa195-lg.png" alt="ASN Logo" style="width: 8%;" />
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="bi bi-instagram" id="instagram"></i></a>
+                    <a href="#"><i class="bi bi-whatsapp" id="whatsapp"></i></a>
+                </div>
+                <div class="footer-info">
+                    <p><strong>ANTONIO DOS SANTOS NEVES (ASN)</strong></p>
+                    <p>Avenida Democrata - Centro</p>
+                    <p>CEP: 29845-000 - Boa Esperança - ES</p>
+                    <p>Tel: (27) 1234-5678</p>
+                </div>
+            </div>
+        </div>
+     </footer>
 </body>
 </html>

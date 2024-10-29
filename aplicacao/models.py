@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
 
@@ -160,3 +161,24 @@ class Eja(models.Model):
     
     def __str__(self):
         return f"{self.dia_da_semana} - {self.nome_da_comida}"
+    
+class DiretorManager(BaseUserManager):
+    def create_diretor(self, nome, email, senha=None):
+        if not email:
+            raise ValueError("O campo email é obrigatório")
+        diretor = self.model(nome=nome, email=self.normalize_email(email))
+        diretor.set_password(senha)
+        diretor.save(using=self._db)
+        return diretor
+
+class Diretor(AbstractBaseUser):
+    nome = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
+    
+    objects = DiretorManager()
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['nome']
+
+    def __str__(self):
+        return self.nome
