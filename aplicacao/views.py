@@ -509,3 +509,48 @@ def area_diretor(request):
     eletivas = Eletiva.objects.all()
     link = LinkEletiva.objects.all()
     return render(request, 'area_diretor/diretor.html', {'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3, 'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio, 'eventos': eventos, 'tutorias': tutorias, 'eletivas': eletivas , 'link': link})
+
+def lista_eventos_diretor(request):
+    eventos = Evento.objects.all()
+    return render(request, 'area_diretor/lista_eventos_diretor.html', {'eventos': eventos})
+
+def lista_noticia1(request):
+    newsone = NewsOne.objects.all().order_by('-date_published')
+    return render(request, 'area_diretor/lista_noticia1.html', {'newsone': newsone})
+
+def lista_noticia2(request):
+    noticias = Noticia2.objects.all()
+    return render(request, 'area_diretor/lista_noticia2.html', {'noticias': noticias})
+
+def lista_noticia3(request):
+    noticia3 = Noticia3.objects.all()
+    return render(request, 'area_diretor/lista_noticia3.html', {'noticia3': noticia3})
+
+def lista_integrado(request):
+    cardapios = Integrado.objects.all()
+    return render(request, 'area_diretor/lista_integrado.html', {'cardapios': cardapios})
+
+def lista_regular_lanche(request):
+    regularlanches = RegularLanche.objects.all()
+    return render(request, 'area_diretor/lista_regular_lanche.html', {'regularlanches':regularlanches})
+
+def lista_regular_almoco(request):
+    regularalmocos = RegularAlmoco.objects.all()
+    return render(request, 'area_diretor/lista_regular_almoco.html', {'regularalmocos': regularalmocos})
+
+def lista_eja(request):
+    ejacardapio = Eja.objects.all()
+    return render(request, 'area_diretor/lista_eja.html', {'ejacardapio': ejacardapio})
+
+def lista_eletivas_diretor(request):
+    eletivas = Eletiva.objects.all()
+    link = LinkEletiva.objects.all()
+    return render(request, 'area_diretor/lista_eletivas.html', {'eletivas': eletivas, 'link': link})
+
+def lista_historia(request):
+    historia = Historia.objects.all()
+    return render(request, 'area_diretor/lista_historia.html', {'historia':historia})
+
+def lista_mais(request):
+    mais = MaisSobre.objects.all()
+    return render(request, 'area_diretor/lista_mais.html', {'mais': mais})

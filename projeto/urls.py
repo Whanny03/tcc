@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 
 from django.urls import path
-from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio, apagar_regularlanche, editar_regularlanche, adicionar_regularlanche, adicionar_regularalmoco, editar_regularalmoco, apagar_regularalmoco, adicionar_eja, editar_eja, apagar_eja, view_news_two, matricula, calendario, view_news_3, registrar_diretor, login_diretor, area_diretor
+from aplicacao.views import upload_image, home, add_carrossel, adicionar_eletivas, lista, apagar_eletivas, apagar_tutoria, adicionar_tutoria, lista_tutoria,view_eletivas,add_social_links,mais_sobre,adicionar_maissobre,apagar_maissobre, add_link_eletivas, apagar_link_eletivas,  add_news_one, view_news_one, apagar_news_one, criar_evento, listar_eventos, editar_evento, apagar_evento,adicionar_noticia, editar_noticia, apagar_noticia, nossa_historia, adicionar_historia, editar_historia, deletar_historia, adicionar_noticia3, editar_noticia3, apagar_noticia3, lista_cardapios, adicionar_cardapio, editar_cardapio, apagar_cardapio, apagar_regularlanche, editar_regularlanche, adicionar_regularlanche, adicionar_regularalmoco, editar_regularalmoco, apagar_regularalmoco, adicionar_eja, editar_eja, apagar_eja, view_news_two, matricula, calendario, view_news_3, registrar_diretor, login_diretor, area_diretor, lista_eventos_diretor, lista_noticia1, lista_noticia2, lista_noticia3, lista_integrado, lista_regular_lanche, lista_regular_almoco, lista_eja, lista_eletivas_diretor, lista_historia, lista_mais
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload_image/', upload_image, name='upload_image'),
@@ -75,6 +75,17 @@ urlpatterns = [
     path('calendario/', calendario, name='calendario'),
     path('registrar/', registrar_diretor, name='registrar_diretor'),
     path('login_diretor/', login_diretor, name='login_diretor'),
-    path('diretor/', area_diretor, name='area_diretor')
+    path('diretor/', area_diretor, name='area_diretor'),
+    path('lista_eventos_diretor/',lista_eventos_diretor, name='lista_eventos_diretor'),
+    path('lista_noticia1/', lista_noticia1, name='lista_noticia1'),
+    path('lista_noticia2/', lista_noticia2, name='lista_noticia2'),
+    path('lista_noticia3/', lista_noticia3, name='lista_noticia3'),
+    path('lista_integrado/', lista_integrado, name='lista_integrado'),
+    path('lista_regular_lanche/', lista_regular_lanche, name='lista_regular_lanche'),
+    path('lista_regular_almoco/', lista_regular_almoco, name='lista_regular_almoco'),
+    path('lista_eja/', lista_eja, name='lista_eja'),
+    path('lista_eletivas_diretor/', lista_eletivas_diretor, name='lista_eletivas_diretor'),
+    path('lista_historia/', lista_historia, name='lista_historia'),
+    path('lista_mais/', lista_mais, name='lista_mais')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
