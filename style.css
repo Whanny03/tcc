@@ -533,5 +533,5 @@ justify-content: space-around;
 .vidio{
     width: 100%;
     border: solid cornflowerblue;
-    box-shadow: #000;
+    border-radius: 10px;
 }
