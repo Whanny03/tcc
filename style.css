@@ -243,8 +243,9 @@ footer {
 /* Efeito de Hover para Botões */
 #hover1, #hover2, #hover3 {
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     transition: 0.9s;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.350);
 }
 
 #hover1:hover, #hover2:hover, #hover3:hover {
