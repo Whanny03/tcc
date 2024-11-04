@@ -468,6 +468,9 @@ def matricula(request):
 def calendario(request):
     return render(request, 'calendario/calendario.html')
 
+def agenda(request):
+    return render(request, 'calendario/agenda.html')
+
 def registrar_diretor(request):
     if request.method == 'POST':
         form = DiretorForm(request.POST)
