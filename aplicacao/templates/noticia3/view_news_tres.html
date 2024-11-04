@@ -21,11 +21,11 @@
     </header>
    <div class="completa-noticia">
      <div class="noticia">
-       <h1 class="titulo-noticia">{{ noticia.titulo }}</h1>
+       <h1 class="titulo-noticia">{{ noti3.title }}</h1>
        <div class="data-buttons">
         <div class="data">
             <i class="far fa-calendar-alt"></i>
-            <span>Publicado em {{ noticia.data_publicacao }}</span>
+            <span>Publicado em {{ noti3.data_publicacao }}</span>
         </div>
         <div class="social-buttons">
             <a href="" class="instagram-button"><i class="fab fa-instagram"></i></a>
@@ -35,13 +35,14 @@
 
        <hr class="linha"> <!-- Linha horizontal -->
        
-       <img class="img-noticia" src="{{ noticia.image.url }}">
+       <img class="img-noticia" src="{{ noti3.image.url }}">
              
        
-       <p class="descricao-noticia">{{ noticia.description1 }}</p>
-       <p class="descricao-noticia">{{ noticia.description2 }}</p>
+       <p class="descricao-noticia">{{ noti3.description1 }}</p>
+       <p class="descricao-noticia">{{ noti3.description2 }}</p>
      </div>
     </div>
+
     <footer class="custom-footer bg-body-tertiary text-center text-lg-start">
         <div class="footer-bar">
             <div class="footer-container">
@@ -62,6 +63,6 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> 
 </body>
 </html>
