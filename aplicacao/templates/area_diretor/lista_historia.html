@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'area_diretor/lista.css' %}">
+   <title>Lista de Notícias</title>
+</head>
+<body>
+   <main>
+       <table>
+           <thead>
+               <tr>
+                   <th>Nome</th>
+                   <th>Descrição</th>
+                   <th>Foto</th>
+                   <th>Data</th>
+                   <th>Editar</th>
+                   <th>Apagar</th>
+               </tr>
+           </thead>
+           {% for historia in historias %}
+           <tbody>
+               <tr>
+                   <td>{{ historia.nome }}</td>
+                   <td>{{ evento.descricao }}</td>
+                   <td><img src="{{ historia.imagem.url }}" alt="" style="width: 70%;"></td>
+                   <td>{{ historia.data }}</td>
+                   <td><a href="{% url 'editar_historia' historia.id %}">Editar</a></td>
+                   <td><a href="{% url 'apagar_historia' historia.id %}">Apagar</a></td>
+               </tr>
+           </tbody>
+           {% endfor %}
+       </table>
+   </main>
+</body>
+</html>

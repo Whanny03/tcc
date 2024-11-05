@@ -20,7 +20,7 @@ def upload_image(request):
         form = ImageCarouselForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('area_diretor')
     else:
         form = ImageCarouselForm()
     return render(request, 'upload_image.html', {'form': form})
@@ -55,7 +55,7 @@ def adicionar_eletivas(request):
         form = EletivaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('lista')
+            return redirect('area_diretor')
     else:
         form = EletivaForm()
     return render(request, 'eletivas/adicionar_eletivas.html', {'form': form})
@@ -64,7 +64,7 @@ def apagar_eletivas(request, eletiva_id):
     eletiva = get_object_or_404(Eletiva, pk=eletiva_id)
     if request.method == 'POST':
         eletiva.delete()
-        return redirect('lista')
+        return redirect('area_diretor')
     return render(request, 'eletivas/apagar_eletivas.html', {'eletiva': eletiva})
 
 def view_eletivas(request, eletiva_id):
@@ -78,7 +78,7 @@ def add_link_eletivas(request):
         form = LinkEletivaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('lista')
+            return redirect('area_diretor')
     else:
         form = LinkEletivaForm()
 
@@ -88,7 +88,7 @@ def apagar_link_eletivas(request, link_id):
     link = get_object_or_404(LinkEletiva, pk=link_id)
     if request.method == 'POST':
         link.delete()
-        return redirect('lista')
+        return redirect('area_diretor')
     return render(request, 'eletivas/apagar_link_eletivas.html', {'link': link})
 #tutoria
 
@@ -101,7 +101,7 @@ def adicionar_tutoria(request):
         form = TutoriaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('lista_tutoria')
+            return redirect('area_diretor')
     else:
         form = TutoriaForm()
     return render(request, 'adicionar_tutoria.html', {'form': form})
@@ -110,7 +110,7 @@ def apagar_tutoria(request, tutoria_id):
     tutorias = get_object_or_404(Tutoria, pk=tutoria_id)
     if request.method == 'POST':
         tutorias.delete()
-        return redirect('lista_tutoria')
+        return redirect('area_diretor')
     return render(request, 'apagar_tutoria.html', {'tutorias': tutorias})
 
 # Link
@@ -120,7 +120,7 @@ def add_social_links(request):
         form = SocialLinksForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')  # Redirecione para onde você quiser
+            return redirect('area_diretor')  # Redirecione para onde você quiser
     else:
         form = SocialLinksForm()
 
@@ -137,7 +137,7 @@ def adicionar_maissobre(request):
         form = MaisSobreForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('mais_sobre')
+            return redirect('area_diretor')
     else:
         form = MaisSobreForm()
     return render(request, 'adicionar_maissobre.html', {'form': form})
@@ -147,7 +147,7 @@ def apagar_maissobre(request, maissobre_id):
     maissobre = get_object_or_404(MaisSobre, pk=maissobre_id)
     if request.method == 'POST':
         maissobre.delete()
-        return redirect('mais_sobre')
+        return redirect('area_diretor')
     return render(request, 'apagar_maissobre.html', {'maissobre': maissobre})
 
 
@@ -158,7 +158,7 @@ def criar_evento(request):
         form = EventoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_eventos')  # redireciona para a página de eventos
+            return redirect('area_diretor')  # redireciona para a página de eventos
     else:
         form = EventoForm()
 
@@ -175,7 +175,7 @@ def editar_evento(request, id):
         form = EventoForm(request.POST, instance=evento)
         if form.is_valid():
             form.save()
-            return redirect('listar_eventos')  # Redireciona para a página de listagem de eventos após a edição
+            return redirect('area_diretor')  # Redireciona para a página de listagem de eventos após a edição
     else:
         form = EventoForm(instance=evento)
     
@@ -186,7 +186,7 @@ def apagar_evento(request, id):
     
     if request.method == 'POST':
         evento.delete()
-        return redirect('listar_eventos')  # Redireciona para a página de listagem de eventos após a exclusão
+        return redirect('area_diretor')  # Redireciona para a página de listagem de eventos após a exclusão
     
     return render(request, 'evento/apagar_evento.html', {'evento': evento})
 
@@ -199,7 +199,7 @@ def adicionar_historia(request):
         form = HistoriaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('nossa_historia')
+            return redirect('area_diretor')
     else:
         form = HistoriaForm()
     return render(request, 'historia/adicionar_historia.html', {'form': form})
@@ -210,7 +210,7 @@ def editar_historia(request, pk):
         form = HistoriaForm(request.POST, request.FILES, instance=historia)
         if form.is_valid():
             form.save()
-            return redirect('nossa_historia')
+            return redirect('area_diretor')
     else:
         form = HistoriaForm(instance=historia)
     return render(request, 'historia/editar_historia.html', {'form': form})
@@ -219,7 +219,7 @@ def deletar_historia(request, pk):
     historia = get_object_or_404(Historia, pk=pk)
     if request.method == 'POST':
         historia.delete()
-        return redirect('nossa_historia')
+        return redirect('area_diretor')
     return render(request, 'historia/deletar_historia.html', {'historia': historia})
 
 def nossa_historia(request):
@@ -235,7 +235,7 @@ def add_news_one(request):
         form = NewsOneForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('area_diretor')
     else:
         form = NewsOneForm()
     return render(request, 'noticia1/add_news_one.html', {'form': form})
@@ -251,7 +251,7 @@ def apagar_news_one(request, noticia_id):
     newsone = get_object_or_404(NewsOne, pk=noticia_id)
     if request.method == 'POST':
         newsone.delete()
-        return redirect('home')
+        return redirect('area_diretor')
     return render(request, 'noticia1/apagar_news_one.html', {'noticia': newsone})
 
 
@@ -261,7 +261,7 @@ def adicionar_noticia(request):
         form = Noticia2Form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('area_diretor')
     else:
         form = Noticia2Form()
     return render(request, 'noticia2/adicionar_noticia.html', {'form': form})
@@ -272,7 +272,7 @@ def editar_noticia(request, id):
         form = Noticia2Form(request.POST, request.FILES, instance=noticia)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('area_diretor')
     else:
         form = Noticia2Form(instance=noticia)
     return render(request, 'noticia2/editar_noticia.html', {'form': form, 'noticia': noticia})
@@ -281,7 +281,7 @@ def apagar_noticia(request, id):
     noticia = get_object_or_404(Noticia2, id=id)
     if request.method == 'POST':
         noticia.delete()
-        return redirect('home')
+        return redirect('area_diretor')
     return render(request, 'noticia2/apagar_noticia.html', {'noticia': noticia})
 
 def view_news_two(request, id):
@@ -294,7 +294,7 @@ def adicionar_noticia3(request):
         form = Noticia3Form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('area_diretor')
     else:
         form = Noticia3Form()
     return render(request, 'noticia3/adicionar_noticia3.html', {'form': form})
@@ -305,7 +305,7 @@ def editar_noticia3(request, id):
         form = Noticia3Form(request.POST, request.FILES, instance=noticia)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('area_diretor')
     else:
         form = Noticia3Form(instance=noticia)
     return render(request, 'noticia3/editar_noticia3.html', {'form': form, 'noticia': noticia})
@@ -314,7 +314,7 @@ def apagar_noticia3(request, id):
     noticia = get_object_or_404(Noticia3, id=id)
     if request.method == 'POST':
         noticia.delete()
-        return redirect('home')
+        return redirect('area_diretor')
     return render(request, 'noticia3/apagar_noticia3.html', {'noticia': noticia})
 
 def view_news_3(request, id):
@@ -328,7 +328,7 @@ def adicionar_cardapio(request):
         form = IntegradoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')  # Redireciona para a lista de cardápios
+            return redirect('area_diretor')  # Redireciona para a lista de cardápios
     else:
         form = IntegradoForm()
     return render(request, 'cardapio/adicionar_cardapio.html', {'form': form})
@@ -340,7 +340,7 @@ def editar_cardapio(request, id):
         form = IntegradoForm(request.POST, request.FILES, instance=cardapio)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = IntegradoForm(instance=cardapio)
     return render(request, 'cardapio/editar_cardapio.html', {'form': form, 'cardapio': cardapio})
@@ -350,7 +350,7 @@ def apagar_cardapio(request, id):
     cardapio = get_object_or_404(Integrado, id=id)
     if request.method == 'POST':
         cardapio.delete()
-        return redirect('lista_cardapios')
+        return redirect('area_diretor')
     return render(request, 'cardapio/apagar_cardapio.html', {'cardapio': cardapio})
 
 # View para listar os cardápios
@@ -371,7 +371,7 @@ def adicionar_regularlanche(request):
         form = RegularLancheForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = RegularLancheForm()
     return render(request, 'cardapio/adicionar_regularlanche.html', {'form': form})
@@ -383,7 +383,7 @@ def editar_regularlanche(request, pk):
         form = RegularLancheForm(request.POST, request.FILES, instance=cardapio)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = RegularLancheForm(instance=cardapio)
     return render(request, 'cardapio/editar_regularlanche.html', {'form': form})
@@ -393,7 +393,7 @@ def apagar_regularlanche(request, pk):
     cardapio = get_object_or_404(RegularLanche, pk=pk)
     if request.method == 'POST':
         cardapio.delete()
-        return redirect('lista_cardapios')
+        return redirect('area_diretor')
     return render(request, 'cardapio/apagar_regularlanche.html', {'cardapio': cardapio})
 
 # regular almoço
@@ -404,7 +404,7 @@ def adicionar_regularalmoco(request):
         form = RegularAlmocoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = RegularAlmocoForm()
     return render(request, 'cardapio/adicionar_regularalmoco.html', {'form': form})
@@ -416,7 +416,7 @@ def editar_regularalmoco(request, pk):
         form = RegularAlmocoForm(request.POST, request.FILES, instance=cardapio)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = RegularAlmocoForm(instance=cardapio)
     return render(request, 'cardapio/editar_regularalmoco.html', {'form': form})
@@ -426,7 +426,7 @@ def apagar_regularalmoco(request, pk):
     cardapio = get_object_or_404(RegularAlmoco, pk=pk)
     if request.method == 'POST':
         cardapio.delete()
-        return redirect('lista_cardapios')
+        return redirect('area_diretor')
     return render(request, 'cardapio/apagar_regularalmoco.html', {'cardapio': cardapio})
 
 
@@ -437,7 +437,7 @@ def adicionar_eja(request):
         form = EjaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = EjaForm()
     return render(request, 'cardapio/adicionar_eja.html', {'form': form})
@@ -449,7 +449,7 @@ def editar_eja(request, pk):
         form = EjaForm(request.POST, request.FILES, instance=cardapio)
         if form.is_valid():
             form.save()
-            return redirect('lista_cardapios')
+            return redirect('area_diretor')
     else:
         form = EjaForm(instance=cardapio)
     return render(request, 'cardapio/editar_eja.html', {'form': form})
@@ -459,7 +459,7 @@ def apagar_eja(request, pk):
     cardapio = get_object_or_404(Eja, pk=pk)
     if request.method == 'POST':
         cardapio.delete()
-        return redirect('lista_cardapios')
+        return redirect('area_diretor')
     return render(request, 'cardapio/apagar_eja.html', {'cardapio': cardapio})
 
 def matricula(request):
@@ -469,7 +469,7 @@ def calendario(request):
     return render(request, 'calendario/calendario.html')
 
 def agenda(request):
-    return render(request, 'calendario/agenda.html')
+    return render(request, 'area_diretor/agenda.html')
 
 def registrar_diretor(request):
     if request.method == 'POST':
@@ -490,7 +490,7 @@ def login_diretor(request):
         diretor = Diretor.objects.filter(nome=nome, email=email).first()
         if diretor and diretor.check_password(senha):
             login(request, diretor)
-            return redirect('home')
+            return redirect('area_diretor')
         else:
             return render(request, 'area_diretor/login_diretor.html', {'erro': 'Credenciais inválidas'})
     return render(request, 'area_diretor/login_diretor.html')
@@ -511,7 +511,7 @@ def area_diretor(request):
     
     eletivas = Eletiva.objects.all()
     link = LinkEletiva.objects.all()
-    return render(request, 'area_diretor/diretor.html', {'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3, 'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio, 'eventos': eventos, 'tutorias': tutorias, 'eletivas': eletivas , 'link': link})
+    return render(request, 'area_diretor/area_diretor.html', {'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3, 'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio, 'eventos': eventos, 'tutorias': tutorias, 'eletivas': eletivas , 'link': link})
 
 def lista_eventos_diretor(request):
     eventos = Evento.objects.all()
@@ -557,3 +557,7 @@ def lista_historia(request):
 def lista_mais(request):
     mais = MaisSobre.objects.all()
     return render(request, 'area_diretor/lista_mais.html', {'mais': mais})
+
+def lista_tutorias_diretor(request):
+    tutorias = Tutoria.objects.all()
+    return render(request, 'area_diretor/lista_tutoria_diretor.html', {'tutorias': tutorias})

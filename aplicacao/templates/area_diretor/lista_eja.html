@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'area_diretor/lista.css' %}">
+   <title>Lista de Notícias</title>
+</head>
+<body>
+   <main>
+       <table>
+           <thead>
+               <tr>
+                   <th>Dia da semana</th>
+                   <th>Comida</th>
+                   <th>Foto</th>
+                   <th>Data</th>
+                   <th>Editar</th>
+                   <th>Apagar</th>
+               </tr>
+           </thead>
+           {% for eja in ejacardapio %}
+           <tbody>
+               <tr>
+                   <td>{{ eja.dia_da_semana }}</td>
+                   <td>{{ eja.nome_da_comida }}</td>
+                   <td><img src="{{ eja.imagem.url }}" alt="" style="width: 70%;"></td>
+                   <td>{{ eja.data_do_cardapio }}</td>
+                   <td><a href="#">Editar</a></td>
+                   <td><a href="#">Apagar</a></td>
+               </tr>
+           </tbody>
+           {% endfor %}
+       </table>
+   </main>
+</body>
+</html>

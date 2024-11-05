@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'area_diretor/lista.css' %}">
+   <title>Lista de Notícias</title>
+</head>
+<body>
+   <main>
+       <table>
+           <thead>
+               <tr>
+                   <th>Nome</th>
+                   <th>Descrição</th>
+                   <th>Hora</th>
+                   <th>Data</th>
+                   <th>Editar</th>
+                   <th>Apagar</th>
+               </tr>
+           </thead>
+           {% for evento in eventos %}
+           <tbody>
+               <tr>
+                   <td>{{ evento.nome }}</td>
+                   <td>{{ evento.descricao }}</td>
+                   <td>{{ evento.hora }}</td>
+                   <td>{{ evento.data }}</td>
+                   <td><a href="{% url 'editar_evento' evento.id %}">Editar</a></td>
+                   <td><a href="{% url 'apagar_evento' evento.id %}">Apagar</a></td>
+               </tr>
+           </tbody>
+           {% endfor %}
+       </table>
+   </main>
+</body>
+</html>
