@@ -257,6 +257,7 @@ footer {
     color: rgb(241, 136, 50);
 }
 
+
 /* Efeito de Hover para Botões */
 #hover1, #hover2, #hover3 {
     cursor: pointer;
@@ -328,6 +329,7 @@ a {
 .butao:hover{
     scale: 1.4;
 }
+
 
 /*O pau vai torar agora*/
 
@@ -562,3 +564,5 @@ justify-content: space-around;
     box-shadow: 7px 7px rgba(0, 0, 0, 0.350);
 
 }
+
+
