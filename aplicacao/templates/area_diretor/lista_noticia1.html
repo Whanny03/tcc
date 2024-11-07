@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'area_diretor/lista.css' %}">
+   <title>Lista de Notícias</title>
+</head>
+<body>
+   <main>
+       <table>
+           <thead>
+               <tr>
+                   <th>Título</th>
+                   <th>Data</th>
+                   <th>Foto</th>
+                   <th>Apagar</th>
+               </tr>
+           </thead>
+           {% for item in newsone %}
+           <tbody>
+               <tr>
+                   <td>{{ item.title }}</td>
+                   <td>{{ item.date_published }}</td>
+                   <td><img src="{{ item.image.url }}" alt="" style="width: 70%;"></td>
+                   <td><a href="{% url 'apagar_news_one' item.id %}">Apagar</a></td>
+               </tr>
+           </tbody>
+           {% endfor %}
+       </table>
+   </main>
+</body>
+</html>

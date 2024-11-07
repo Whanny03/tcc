@@ -101,7 +101,7 @@ def adicionar_tutoria(request):
         form = TutoriaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('area_diretor')
+            return redirect('adicionar_tutoria')
     else:
         form = TutoriaForm()
     return render(request, 'adicionar_tutoria.html', {'form': form})

@@ -1,0 +1,411 @@
+       /* Estilos existentes */
+       header {
+        background-color: #004080;
+        border-bottom: 3px solid #ffd500;
+    }
+
+
+    .navbar-brand .icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+
+    .profile-pic img {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        object-fit: cover;
+    }
+
+
+    footer {
+     position: relative;
+  margin-top: 100px;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  position: relative;
+  padding: 20px 0; /* Ajusta o espaçamento interno do footer */
+  overflow: hidden; /* Garante que o conteúdo não vaze do footer */
+  }
+  
+  
+  
+  
+  .footer-container {
+  position: relative;
+  z-index: 1;
+  
+  
+  }
+  .yellow-section-footer {
+  background-color: #004AAD;
+  height: 15%;
+  width: 48%;
+  position: absolute;
+  top: 3%;
+  right: 0;
+  clip-path: polygon(100% 0%, 100% 100%, 6% 100%, 0% 0%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  padding: 0 1rem;
+  z-index: 1;
+  }
+  .blue-footer {
+  background-color: #1C69D1;
+  height: 19%;
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  left: 46%;
+  transform: translateX(-50%);
+  clip-path: polygon(112% 3%, 115% 50%, 0% 439%, 36% -60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: 0;
+  }
+  
+  .blue-2-footer {
+  background-color: #1C69D1;
+  height: 18%;
+  width: 38%;
+  position: absolute;
+  top: 28%;
+  left: 52%;
+  transform: translateX(-50%);
+  clip-path: polygon(100% 0%, 102% 100%, 12% 105%, 0.6% 5%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: 0;
+  }
+  .footer-info{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     bottom: 25px;
+     gap: 20px;
+     margin: 15px;
+     flex-direction: column;
+  }
+  .footer-social {
+     display: flex;
+     bottom: 25px;
+     gap: 8px;
+     margin: 15px;
+     flex-wrap: nowrap;
+     justify-content: center;
+  }
+  
+  
+  
+  
+  .footer-social a {
+  color: black;
+  font-size: 24px;
+  }
+  
+  
+  #whatsapp a {
+  color: #fff;
+  font-size: 24px
+  }
+  
+  
+  
+  
+  #whatsapp:hover{
+  transition: color 0.3s ease;
+  color: rgb(149, 248, 82);
+     transition: color 0.3s ease;
+  
+  
+  
+  
+  }
+  
+  
+  
+  
+  #instagram a {
+  color: #fff;
+  font-size: 24px
+  
+  
+  }
+  
+  
+  
+  
+  #instagram:hover{
+  transition: color 0.3s ease;
+  color: rgb(241, 136, 50);
+  }
+  
+  
+  
+  
+  .footer-logo {
+     display: flex;
+
+   align-items: center;
+   justify-content: center;
+  top: -35px; /* Ajuste o valor conforme necessário */
+  margin-bottom: 10px; /* Espaçamento abaixo da imagem, ajuste conforme necessário */
+  }
+  
+  
+  .secondary-bar-rodape {
+     background-color: #004AAD; /* Example background color */
+     height: 50px; /* Example height */
+     position: relative; /* Required for positioning child elements */
+     width: 36%;
+     z-index: 1;
+   }
+  
+  
+   .parallelogram-rodape {
+     width: 120px; /* Example width */
+     height: 73px; /* Example height */
+     background-color: #004AAD; /* Example color */
+     position: absolute; /* Allows for precise positioning */
+     left: 90%; /* Example horizontal positioning */
+     clip-path: polygon(62% -9%, 100% 100%, 48% 100%, 0% 0%);
+     z-index: 2; /* Ensure this is above .blue */
+   }
+    .menu-vertical {
+        margin-top: 50px;
+width: 260px;
+background-color: #fff;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+float: left;
+margin-left: 100px;
+    }
+
+
+    .menu-item {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+
+    .menu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #444;
+        font-weight: 500;
+        background-color: #f9f9f9;
+        transition: background-color 0.3s, transform 0.2s;
+        cursor: pointer;
+    }
+
+
+    .menu-link.principal {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+
+    .menu-link:hover {
+        background-color: #e7f1ff;
+        transform: translateX(5px);
+    }
+
+
+    .submenu {
+        display: none;
+        background-color: #f1f1f1;
+        padding-left: 10px;
+        border-left: 4px solid #007bff;
+    }
+
+
+    .submenu a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #444;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+
+    .submenu a:hover {
+        background-color: #ddd;
+    }
+
+
+    .bi {
+        transition: transform 0.2s;
+    }
+
+
+    .submenu-visible {
+        display: block;
+    }
+
+
+    .submenu-open .bi-chevron-right {
+        transform: rotate(90deg);
+    }
+
+
+    .submenu-open .bi-chevron-down {
+        transform: rotate(270deg);
+    }
+
+
+    .content {
+        margin-top: 45px;
+margin-right: 200px;
+margin-left: 449px;
+padding: 10px;
+text-align: justify;
+    }
+
+
+    .content h2 {
+        color: #004080;
+    }
+
+
+    /* Mais estilos para o conteúdo */
+    .content p, .content ul {
+        color: #333;
+        line-height: 1.6;
+    }
+    @media (max-width: 1050px) {
+.menu-vertical {
+    float: none;
+    margin: 0 auto;
+    width: 40%;
+}
+
+
+.content {
+    margin: 20px auto;
+    width: 90%;
+    text-align: justify;
+}
+}
+@media (max-width: 600px) {
+h3{
+    font-size: .7em;
+}
+.menu-vertical {
+    float: none;
+    margin: 0 auto;
+    width: 80%;
+}
+}
+
+@media (max-width: 900px){
+ footer {
+     background-color: #004080;
+     color: white;
+     text-align: center;
+     margin-top: 150px; /* Ajusta a margem superior para garantir espaço suficiente */
+ }
+
+
+
+
+ .footer-social {
+     position: relative;
+     bottom: 10px;
+     gap: 20px;
+     margin: 5px;
+ }
+
+
+
+
+ .footer-social a {
+     color: #fff;
+     font-size: 24px;
+ }
+
+
+
+
+ #youtube a {
+     color: #fff;
+     font-size: 24px;
+ }
+
+
+
+
+ #youtube:hover {
+     transition: color 0.3s ease;
+     color: rgb(241, 111, 111);
+ }
+
+
+
+
+ #twitter a {
+     color: #fff;
+     font-size: 24px;
+ }
+
+
+
+
+ #twitter:hover {
+     transition: color 0.3s ease;
+     color: rgb(131, 178, 231);
+ }
+
+
+
+
+ #tiktok a {
+     color: #fff;
+     font-size: 24px;
+ }
+
+
+
+
+ #tiktok:hover {
+     transition: color 0.3s ease;
+     color: rgb(149, 248, 82);
+ }
+
+
+
+
+ #instagram a {
+     color: #fff;
+     font-size: 24px;
+ }
+
+
+
+
+ #instagram:hover {
+     transition: color 0.3s ease;
+     color: rgb(241, 136, 50);
+ }
+
+
+
+
+ .blue-2-footer, .blue-footer, .parallelogram-rodape, .secondary-bar-rodape, .yellow-section-footer, .footer-logo {
+     display: none;
+ }
+}
