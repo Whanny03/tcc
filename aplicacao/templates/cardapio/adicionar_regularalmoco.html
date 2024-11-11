@@ -1,18 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adicionar Regular Almoço</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cardapio/adicionar.css' %}">
+    <link rel="stylesheet" href="{% static 'adicionar.css' %}">
 </head>
 <body>
-    <h1>Adicionar Almoço Regular</h1>
-    <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Salvar</button>
-    </form>
-<a href="{% url 'lista_cardapios' %}">Voltar</a>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <div class="container">
+        <div class="form-container">
+            <h1>Adicionar Novo Cardápio</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_nome_semana">Nome da Semana</label>
+                    {{ form.dia_da_semana }}
+                </div>
 
+                <div class="form-group">
+                    <label for="id_foto_cardapio">Foto do Cardápio</label>
+                    {{ form.imagem }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_nome_comida">Nome da Comida</label>
+                    {{ form.nome_da_comida }}
+                </div>
+
+                <div class="form-group">
+                    <label for="id_data_cardapio">Data do Cardápio</label>
+                    {{ form.data_do_cardapio }}
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Salvar</button>
+                    <a href="{% url 'lista_cardapios' %}" class="btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

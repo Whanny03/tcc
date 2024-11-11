@@ -1,120 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Evento</title>
-    <style>
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.form-evento {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-    color: #555;
-}
-
-input[type="text"],
-textarea,
-input[type="date"],
-input[type="time"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-input[type="text"]:focus,
-textarea:focus,
-input[type="date"]:focus,
-input[type="time"]:focus {
-    outline: none;
-    border-color: #4caf50;
-}
-
-.btn {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #45a049;
-}
-
-
-</style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Adicionar Evento</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'historia/style.css' %}">
+    <link rel="stylesheet" href="{% static 'adicionar.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>Criar Novo Evento</h1>
-        <form method="post" class="form-evento">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="id_nome">Nome do Evento</label>
-                {{ form.nome }}
-            </div>
-            <div class="form-group">
-                <label for="id_descricao">Descrição do Evento</label>
-                {{ form.descricao }}
-            </div>
-            <div class="form-group">
-                <label for="id_data">Data do Evento</label>
-                {{ form.data }}
-            </div>
-            <div class="form-group">
-                <label for="id_hora">Horário do Evento</label>
-                {{ form.hora }}
-            </div>
-            <button type="submit" class="btn">Salvar Evento</button>
-        </form>
-    </div>
+   <section class="wrapper">
+       <div id="stars"></div>
+       <div id="stars2"></div>
+       <div id="stars3"></div>
+   </section>
+   <div class="container">
+       <h1>Criar Novo Evento</h1>
+       <form method="post" class="form-evento">
+           {% csrf_token %}
+           <div class="form-group">
+               <label for="id_nome">Nome do Evento</label>
+               {{ form.nome }}
+           </div>
+           <div class="form-group">
+               <label for="id_descricao">Descrição do Evento</label>
+               {{ form.descricao }}
+           </div>
+           <div class="form-group">
+               <label for="id_data">Data do Evento</label>
+               {{ form.data }}
+           </div>
+           <div class="form-group">
+               <label for="id_hora">Horário do Evento</label>
+               {{ form.hora }}
+           </div>
+           <button type="submit" class="btn">Salvar Evento</button>
+       </form>
+   </div>
+   <div class="cursor"></div>
+   <script>
+     // script.js
+    
+     const cursor = document.querySelector('.cursor');
+    
+     // Função para ativar o efeito de movimento do cursor
+     document.addEventListener('mousemove', (e) => {
+       cursor.style.left = `${e.pageX}px`;
+       cursor.style.top = `${e.pageY}px`;
+       cursor.classList.add('active'); // Adiciona a classe 'active' para aumentar o cursor
+    
+       // Reseta a classe 'inactive' quando o mouse está em movimento
+       cursor.classList.remove('inactive');
+       cursor.classList.remove('out');
+    
+       // Reinicia o temporizador de inatividade
+       resetInactiveTimer();
+     });
+    
+     // Função para esconder o cursor ao sair da janela
+     document.addEventListener('mouseout', () => {
+       cursor.classList.add('out'); // Adiciona a classe 'out' para esconder o cursor
+     });
+    
+     // Timer para identificar inatividade do mouse
+     let inactiveTimer;
+    
+     function resetInactiveTimer() {
+       clearTimeout(inactiveTimer);
+       inactiveTimer = setTimeout(() => {
+         cursor.classList.add('inactive'); // Adiciona a classe 'inactive' quando o mouse para
+       }, 1000); // 1 segundo de inatividade
+     }
+   </script>
 </body>
 </html>
+
+
+

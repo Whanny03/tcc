@@ -1,0 +1,54 @@
+.card {
+    background: #fff; /* White background with transparency */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; /* Reduzido o padding */
+    width: 100%;
+    height: 85%; /* Reduzido a altura do cartão */
+    max-width: 600px;
+    box-sizing: border-box;
+    z-index: 1; /* Garante que o cartão fique à frente da imagem */
+}
+.card h2 {
+    display: flex;
+    font-size: 1.2em;
+    margin-top: 0;
+    justify-content: center;
+}
+.form-group {
+    margin-bottom: .4rem;
+    font-size: .7em;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    height: 5%; /* Reduzida a altura dos campos de formulário */
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form-group img {
+    max-width: 100%;
+    max-height: 200px; /* Reduzida a altura máxima da imagem */
+    display: block;
+    margin-top: 1rem;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Reduzido o tamanho da fonte do botão */
+}
+button:hover {
+    background-color: #0056b3;
+}

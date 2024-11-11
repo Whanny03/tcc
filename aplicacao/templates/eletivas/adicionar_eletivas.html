@@ -4,90 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            overflow: hidden; /* Remove a barra de rolagem se necessário */
-        }
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-            position: relative; /* Para posicionar a imagem e o cartão corretamente */
-            background-color: #fff; /* Cor de fundo para áreas não cobertas pela imagem */
-        }
-        .imagem-body {
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            width: 75%; /* Ocupa 75% da largura da viewport */
-            height: 108%; /* Ocupa 108% da altura da viewport */
-            background-size: cover;
-            background-position: center;
-            transform: translate(-50%, -50%); /* Centraliza a imagem no meio da tela */
-            z-index: -1; /* Garante que a imagem fique atrás do cartão */
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.8); /* White background with transparency */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 1.5rem; /* Reduzido o padding */
-            width: 100%;
-            height: 85%; /* Reduzido a altura do cartão */
-            max-width: 600px;
-            box-sizing: border-box;
-            z-index: 1; /* Garante que o cartão fique à frente da imagem */
-        }
-        .card h2 {
-            display: flex;
-            font-size: 1.2em;
-            margin-top: 0;
-            justify-content: center;
-        }
-        .form-group {
-            margin-bottom: .4rem;
-            font-size: .7em;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .form-group input[type="text"],
-        .form-group textarea,
-        .form-group input[type="file"] {
-            width: 100%;
-            height: 5%; /* Reduzida a altura dos campos de formulário */
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .form-group img {
-            max-width: 100%;
-            max-height: 200px; /* Reduzida a altura máxima da imagem */
-            display: block;
-            margin-top: 1rem;
-        }
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem; /* Reduzido o tamanho da fonte do botão */
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adicionar_eletivas.css' %}">
+    <link rel="stylesheet" href="{% static 'adicionar.css' %}">
 </head>
 <body>
-    <!-- <img src="..//static/topo_asn.jpeg" alt="" class="imagem-body"> -->
     <div class="card">
         <h2>Adicionar Eletivas</h2>
         <form method="POST" enctype="multipart/form-data">

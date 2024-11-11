@@ -137,7 +137,7 @@ def adicionar_maissobre(request):
         form = MaisSobreForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('area_diretor')
+            return redirect('adicionar_maissobre')
     else:
         form = MaisSobreForm()
     return render(request, 'adicionar_maissobre.html', {'form': form})
@@ -371,7 +371,7 @@ def adicionar_regularlanche(request):
         form = RegularLancheForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('area_diretor')
+            return redirect('adicionar_regularlanche')
     else:
         form = RegularLancheForm()
     return render(request, 'cardapio/adicionar_regularlanche.html', {'form': form})
@@ -509,9 +509,11 @@ def area_diretor(request):
     
     tutorias = Tutoria.objects.all()
     
+    maissobre = MaisSobre.objects.all()
+    
     eletivas = Eletiva.objects.all()
     link = LinkEletiva.objects.all()
-    return render(request, 'area_diretor/area_diretor.html', {'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3, 'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio, 'eventos': eventos, 'tutorias': tutorias, 'eletivas': eletivas , 'link': link})
+    return render(request, 'area_diretor/area_diretor.html', {'newsone': newsone, 'noticias': noticias, 'noticia3': noticia3, 'cardapios': cardapios, 'regularlanches': regularlanches, 'regularalmocos': regularalmocos , 'ejacardapio': ejacardapio, 'eventos': eventos, 'tutorias': tutorias, 'eletivas': eletivas , 'link': link, 'maissobre': maissobre})
 
 def lista_eventos_diretor(request):
     eventos = Evento.objects.all()
@@ -555,8 +557,8 @@ def lista_historia(request):
     return render(request, 'area_diretor/lista_historia.html', {'historia':historia})
 
 def lista_mais(request):
-    mais = MaisSobre.objects.all()
-    return render(request, 'area_diretor/lista_mais.html', {'mais': mais})
+    maissobre = MaisSobre.objects.all()
+    return render(request, 'area_diretor/lista_mais.html', {'mais': maissobre})
 
 def lista_tutorias_diretor(request):
     tutorias = Tutoria.objects.all()

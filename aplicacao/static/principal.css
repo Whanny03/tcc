@@ -1563,3 +1563,177 @@ z-index: 1;
    font-size: 16px;
  }
 }
+
+.explore {
+  font-family: 'Poppins', sans-serif;
+   margin-top: 100px;
+   display: flex;
+     font-size: 2.5em;
+     color: #1a73e8;
+     margin-bottom: 40px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     text-align: center;
+     animation: fadeIn 1s ease forwards;
+     opacity: 0;
+     flex-direction: column;
+     align-content: center;
+     justify-content: center;
+     align-items: center;
+     }
+  
+  
+     .container-explore {
+  font-family: 'Poppins', sans-serif;
+       display: flex;
+     gap: 30px;
+     justify-content: center;
+     flex-wrap: wrap;
+     max-width: 1200px;
+     padding: 20px;
+     flex-direction: row;
+     align-content: center;
+     align-items: center;
+     }
+  
+  
+     .card-explore {
+  font-family: 'Poppins', sans-serif;
+         background-color: #ffffff;
+         border-radius: 15px;
+         padding: 30px;
+         width: 250px;
+         height: 180px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         cursor: pointer;
+         position: relative;
+         overflow: hidden;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+     }
+  
+  
+     .card-explore h2 {
+  font-family: 'Poppins', sans-serif;
+         font-size: 1.5em;
+         color: #1a73e8;
+         font-weight: bold;
+         transition: color 0.3s;
+     }
+  
+  
+     .card-explore:hover {
+         transform: translateY(-10px) scale(1.05);
+         box-shadow: 0 15px 25px rgba(26, 115, 232, 0.3);
+         background: linear-gradient(135deg, #1a73e8, #4a90e2);
+     }
+  
+  
+     .card-explore:hover h2 {
+         color: #fff;
+     }
+  
+  
+     .card-explore::before {
+         content: '';
+         position: absolute;
+         top: -50%;
+         left: -50%;
+         width: 200%;
+         height: 200%;
+         background: rgba(255, 255, 255, 0.15);
+         border-radius: 50%;
+         transition: all 0.5s ease;
+         transform: scale(0);
+     }
+  
+  
+     .card-explore:hover::before {
+         transform: scale(1.2);
+         top: 0;
+         left: 0;
+     }
+  
+  
+     /* Animação de fade-in para o título */
+     @keyframes fadeIn {
+         from {
+             opacity: 0;
+             transform: translateY(-20px);
+         }
+         to {
+             opacity: 1;
+             transform: translateY(0);
+         }
+     }
+
+     
+ /* Ajustes da seção de vídeo */
+ .video-section {
+  gap: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.video-container {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+}
+
+
+.vidio {
+  width: 100%;
+  border: solid 1px cornflowerblue;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  object-fit: cover;
+}
+
+
+/* Estilo para o texto */
+.video-context h2 {
+font-family: 'Poppins', sans-serif;
+  color: #0259cae3;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+
+.video-context p {
+font-family: 'Poppins', sans-serif;
+  text-align: justify;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .video-section {
+      flex-direction: column;
+      gap: 15px;
+  }
+ 
+  .video-container {
+      max-width: 100%;
+  }
+ 
+  .video-context h2 {
+      font-size: 1.3em;
+  }
+ 
+  .video-context p {
+      font-size: 0.9em;
+  }
+}

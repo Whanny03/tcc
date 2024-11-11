@@ -6,8 +6,14 @@
     <title>Adicionar História</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'historia/style.css' %}">
+    <link rel="stylesheet" href="{% static 'adicionar.css' %}">
 </head>
 <body>
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
     <div class="container">
         <div class="card">
             <h2>Adicionar História</h2>
@@ -26,7 +32,7 @@
                     <input type="file" name="imagem" id="id_imagem" accept="image/*">
                 </div>
                 <button type="submit" class="btn primary">Salvar</button>
-                <a href="{% url 'nossa_historia' %}" class="btn secondary">Cancelar</a>
+                <a href="{% url 'area_diretor' %}" class="btn secondary">Cancelar</a>
             </form>
         </div>
     </div>
