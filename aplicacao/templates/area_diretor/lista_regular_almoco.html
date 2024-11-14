@@ -23,12 +23,12 @@
            {% for regularalmoco in regularalmocos %}
            <tbody>
                <tr>
-                   <td>{{ regularalmoco.nome_dia_semana }}</td>
-                   <td>{{ regularalmoco.nome_comida }}</td>
+                   <td>{{ regularalmoco.dia_da_semana }}</td>
+                   <td>{{ regularalmoco.nome_da_comida }}</td>
                    <td><img src="{{ regularalmoco.imagem.url }}" alt="" style="width: 70%;"></td>
-                   <td>{{ regularalmoco.data_cardapio }}</td>
-                   <td><a href="#">Editar</a></td>
-                   <td><a href="#">Apagar</a></td>
+                   <td>{{ regularalmoco.data_do_cardapio }}</td>
+                   <td><a href="{% url 'editar_regularalmoco' regularalmoco.id %}">Editar</a></td>
+                   <td><a href="{% url 'apagar_regularalmoco' regularalmoco.id %}">Apagar</a></td>
                </tr>
            </tbody>
            {% endfor %}

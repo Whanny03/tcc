@@ -85,7 +85,7 @@
 
    <div class="NoIdeaForClassName">
        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards regular" id="regular">
-           Regular
+           Integral 
        </h1>
 
 
@@ -100,7 +100,7 @@
 
 
        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards fundamental"  >
-           Fundamental Lanche
+           Fundamental
        </h1>
 
 
@@ -128,18 +128,18 @@
    <section class="sectionRegular" id="Regular">
        <div class="NoIdeaForClassName">
            <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933; font-size: 2em;"class="regularCards regular" id="regular">
-               Regular Almoço
+               Integral Almoço
            </h1>
        </div>
        <div class="regulares">
            <!-- Monday Card -->
            {% for regularalmoco in regularalmocos %}
            <div class="regularCards regular" id="regular">
-               <h2 class="textRegular">{{ regularalmoco.nome_dia_semana }}</h2>
+               <h2 class="textRegular">{{ regularalmoco.dia_da_semana }}</h2>
                <div class="cardRegular">
-                   <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder">
-                   <h3>{{ regularalmoco.nome_comida }}</h3>
-                   <h3>{{ regularalmoco.data_cardapio }}</h3>
+                   <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder" style="width: 65px;">
+                   <h3>{{ regularalmoco.nome_da_comida }}</h3>
+                   <h3>{{ regularalmoco.data_do_cardapio }}</h3>
                </div>
            </div>
            {% endfor %}
@@ -156,7 +156,7 @@
            <div class="regularCards integrado">
                <h2 class="textRegular">{{ cardapio.nome_semana }}</h2>
                <div class="cardRegular">
-                   <img src="{{ cardapio.imagem.url }}" alt="Placeholder">
+                   <img src="{{ cardapio.foto_cardapio.url }}" alt="Placeholder" style="width: 65px;">
                    <h3>{{ cardapio.nome_comida }}</h3>
                    <h3>{{ cardapio.data_cardapio }}</h3>
                </div>
@@ -166,65 +166,34 @@
        </div>
    </section>
 <!--integral------------------------------------------------------------------------------------>
-   <section class="sectionRegular" id="integral">
-       <div class="regulares">
-           <!-- Monday Card -->
-           <div class="regularCards integral">
-               <h2 class="textRegular">Segunda-feira</h2>
-               <div class="cardRegular">
-                   <img src="https://placehold.jp/80x80.png" alt="Placeholder">
-                   <h3>PÃO COM OVO E SUCO.</h3>
-                   <h3>10/10/2024</h3>
-               </div>
-           </div>
   
-           <!-- Tuesday Card -->
-           <div class="regularCards integral">
-               <h2 class="textRegular">Terça-feira</h2>
-               <div class="cardRegular">
-                   <img src="https://placehold.jp/80x80.png" alt="Placeholder">
-                   <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
-                   <h3>10/10/2024</h3>
-               </div>
-           </div>
-  
-           <!-- Wednesday Card -->
-           <div class="regularCards integral">
-               <h2 class="textRegular">Quarta-feira</h2>
-               <div class="cardRegular">
-                   <img src="https://placehold.jp/80x80.png" alt="Placeholder">
-                   <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
-                   <h3>10/10/2024</h3>
-               </div>
-           </div>
-  
-           <!-- Thursday Card -->
-           <div class="regularCards integral">
-               <h2 class="textRegular">Quinta-feira</h2>
-               <div class="cardRegular">
-                   <img src="https://placehold.jp/80x80.png" alt="Placeholder">
-                   <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
-                   <h3>10/10/2024</h3>
-               </div>
-           </div>
-  
-           <!-- Friday Card -->
-           <div class="regularCards integral">
-               <h2 class="textRegular">Sexta-feira</h2>
-               <div class="cardRegular">
-                   <img src="https://placehold.jp/80x80.png" alt="Placeholder">
-                   <h3>ARROZ, FEIJÃO,<br> CARNE BOVINA <br> E SUCO DE UVA</h3>
-                   <h3>10/10/2024</h3>
-               </div>
-           </div>
-       </div>
-   </section>
+<!--fundamental almoço-------------------------------------------------------------------------------------->
+<section class="sectionRegular" id="fundamental">
+    <div class="NoIdeaForClassName">
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933; font-size: 2em;"class="regularCards fundamental">
+            Fundamental Lanche
+        </h1>
+    </div>
+    <div class="regulares">
+         <!-- Monday Card -->
+         {% for regularalmoco in regularalmocos %}
+         <div class="regularCards regular">
+             <h2 class="textRegular">{{ regularalmoco.dia_da_semana }}</h2>
+             <div class="cardRegular">
+                 <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder">
+                 <h3>{{ regularalmoco.nome_da_comida }}</h3>
+                 <h3>{{ regularalmoco.data_do_cardapio }}</h3>
+             </div>
+         </div>
+         {% endfor %}
+    </div>
+</section>
 <!--fundamental lanche-------------------------------------------------------------------------------------->
    <section class="sectionRegular" id="fundamental">
        <div class="regulares">
             <!-- Monday Card -->
             {% for regularlanche in regularlanches %}
-            <div class="regularCards regular" id="regular">
+            <div class="regularCards regular">
                 <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
                 <div class="cardRegular">
                     <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
@@ -235,27 +204,7 @@
             {% endfor %}
        </div>
    </section>
-<!--fundamental almoço-------------------------------------------------------------------------------------->
-   <section class="sectionRegular" id="fundamental">
-       <div class="NoIdeaForClassName">
-           <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933; font-size: 2em;"class="regularCards fundamental">
-               Fundamental Lanche
-           </h1>
-       </div>
-       <div class="regulares">
-            <!-- Monday Card -->
-            {% for regularalmoco in regularalmocos %}
-            <div class="regularCards regular" id="regular">
-                <h2 class="textRegular">{{ regularalmoco.nome_dia_semana }}</h2>
-                <div class="cardRegular">
-                    <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder">
-                    <h3>{{ regularalmoco.nome_comida }}</h3>
-                    <h3>{{ regularalmoco.data_cardapio }}</h3>
-                </div>
-            </div>
-            {% endfor %}
-       </div>
-   </section>
+
 <!--EJA--------------------------------------------------------------------------------------------->
    <section class="sectionRegular" id="eja">
        <div class="regulares">
@@ -342,6 +291,27 @@ function showMenu(menuId) {
        section.style.display = 'block';
    });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Seleciona todos os elementos <h3>
+    const headings = document.querySelectorAll('h3');
+
+    headings.forEach((heading) => {
+        const words = heading.innerHTML.split(' '); // Divide o texto em palavras
+        let formattedText = '';
+
+        // Adiciona uma quebra de linha a cada duas palavras
+        words.forEach((word, index) => {
+            formattedText += word + ' ';
+            if ((index + 1) % 2 === 0) {
+                formattedText += '<br>';
+            }
+        });
+
+        heading.innerHTML = formattedText.trim(); // Substitui o conteúdo do <h3>
+    });
+});
+
      </script>
 </body>
 </html>
