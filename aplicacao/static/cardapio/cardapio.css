@@ -333,6 +333,7 @@ margin-bottom: 10px; /* Espaçamento abaixo da imagem, ajuste conforme necessár
 
 
 .cardRegular{
+   font-family: Arial, Helvetica, sans-serif;
    height: 305px;
    background-color: white;
    border: solid #d0a933 12px;
@@ -422,7 +423,7 @@ h3{
 
 
 .side-bar .menu .item a:hover {
-   background: rgb(189, 189, 253); /* Cor de fundo ao passar o mouse */
+   background: rgb(105, 151, 252); /* Cor de fundo ao passar o mouse */
    transition: 0.3s ease; /* Transição suave para a cor de fundo */
 }
 

@@ -27,8 +27,8 @@
                    <td>{{ eja.nome_da_comida }}</td>
                    <td><img src="{{ eja.imagem.url }}" alt="" style="width: 70%;"></td>
                    <td>{{ eja.data_do_cardapio }}</td>
-                   <td><a href="#">Editar</a></td>
-                   <td><a href="#">Apagar</a></td>
+                   <td><a href="">Editar</a></td>
+                   <td><a href="{% url 'apagar_eja' eja.id %}">Apagar</a></td>
                </tr>
            </tbody>
            {% endfor %}

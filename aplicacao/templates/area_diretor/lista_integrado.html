@@ -27,8 +27,8 @@
                    <td>{{ cardapio.nome_comida }}</td>
                    <td><img src="{{ cardapio.foto_cardapio.url }}" alt="" style="width: 70%;"></td>
                    <td>{{ cardapio.data_cardapio }}</td>
-                   <td><a href="#">Editar</a></td>
-                   <td><a href="#">Apagar</a></td>
+                   <td><a href="{% url 'editar_cardapio' cardapio.id %}">Editar</a></td>
+                   <td><a href="{% url 'apagar_cardapio' cardapio.id %}">Apagar</a></td>
                </tr>
            </tbody>
            {% endfor %}

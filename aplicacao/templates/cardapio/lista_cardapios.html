@@ -45,13 +45,13 @@
        <div class="close-btn" id="close-icon">&times;</div>
        <div class="menu">
            <div class="item">
-               <a href="#" onclick="showMenu('regular')">Regular</a>
+               <a href="#" onclick="showMenu('regular')">Integral</a>
            </div>
            <div class="item">
                <a href="#" onclick="showMenu('integrado')">Integrado</a>
            </div>
            <div class="item">
-               <a href="#" onclick="showMenu('integral')">Integral</a>
+               <a href="#" onclick="showMenu('integral')">Regular</a>
            </div>
            <div class="item">
                <a href="#" onclick="showMenu('fundamental')">Fundamental</a>
@@ -85,17 +85,16 @@
 
    <div class="NoIdeaForClassName">
        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards regular" id="regular">
-           Integral 
+           Integral
        </h1>
-
-
+      
        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards integrado"  >
            Integrado Lanche
        </h1>
 
 
        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards integral"  >
-           Integral
+           Regular
        </h1>
 
 
@@ -105,7 +104,7 @@
 
 
        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards eja" >
-           Eja
+           EJA
        </h1>
    </div>
 <!--regular lanche----------------------------------------------------------------------------->
@@ -113,7 +112,7 @@
        <div class="regulares">
            <!-- Monday Card -->
            {% for regularlanche in regularlanches %}
-           <div class="regularCards regular" id="regular">
+           <div class="regularCards regular" id="regular" style="font-family: Arial, Helvetica, sans-serif;">
                <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
                <div class="cardRegular">
                    <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
@@ -122,19 +121,20 @@
                </div>
            </div>
            {% endfor %}
+           
        </div>
-   </section>
+   </section>   
 <!--regular almoço----------------------------------------------------------------------------->
-   <section class="sectionRegular" id="Regular">
-       <div class="NoIdeaForClassName">
-           <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933; font-size: 2em;"class="regularCards regular" id="regular">
-               Integral Almoço
-           </h1>
-       </div>
+<section class="sectionRegular" id="Regular">
+    <div class="NoIdeaForClassName">
+        <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933"class="regularCards regular" id="regular">
+            Integral Almoço
+        </h1>
+    </div>
        <div class="regulares">
            <!-- Monday Card -->
            {% for regularalmoco in regularalmocos %}
-           <div class="regularCards regular" id="regular">
+           <div class="regularCards regular" id="regular" style="font-family: Arial, Helvetica, sans-serif;">
                <h2 class="textRegular">{{ regularalmoco.dia_da_semana }}</h2>
                <div class="cardRegular">
                    <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder" style="width: 65px;">
@@ -142,18 +142,15 @@
                    <h3>{{ regularalmoco.data_do_cardapio }}</h3>
                </div>
            </div>
-           {% endfor %}
-           
+           {% endfor %}           
        </div>
-
-
    </section>
 <!--integrado----------------------------------------------------------------------------->
    <section class="sectionRegular" id="integrado">
-       <div class="regulares">
+       <div class="regulares" id="integrado">
            <!-- Monday Card -->
            {% for cardapio in cardapios %}
-           <div class="regularCards integrado">
+           <div class="regularCards integrado" style="font-family: Arial, Helvetica, sans-serif;">
                <h2 class="textRegular">{{ cardapio.nome_semana }}</h2>
                <div class="cardRegular">
                    <img src="{{ cardapio.foto_cardapio.url }}" alt="Placeholder" style="width: 65px;">
@@ -166,21 +163,52 @@
        </div>
    </section>
 <!--integral------------------------------------------------------------------------------------>
-  
+<section class="sectionRegular" >
+    <div class="regulares" id="integral">
+        <!-- Monday Card -->
+        {% for regularlanche in regularlanches %}
+        <div class="regularCards regular" style="font-family: Arial, Helvetica, sans-serif;">
+            <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
+            <div class="cardRegular">
+                <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
+                <h3>{{ regularlanche.nome_comida }}</h3>
+                <h3>{{ regularlanche.data_cardapio }}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section> 
+<!--fundamental lanche-------------------------------------------------------------------------------------->
+<section class="sectionRegular" id="fundamental">
+    <div class="regulares">
+         <!-- Monday Card -->
+         {% for regularlanche in regularlanches %}
+         <div class="regularCards fundamental" id="fundamental" style="font-family: Arial, Helvetica, sans-serif;">
+             <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
+             <div class="cardRegular">
+                 <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
+                 <h3>{{ regularlanche.nome_comida }}</h3>
+                 <h3>{{ regularlanche.data_cardapio }}</h3>
+             </div>
+         </div>
+         {% endfor %}
+    </div>
+</section>
+
 <!--fundamental almoço-------------------------------------------------------------------------------------->
 <section class="sectionRegular" id="fundamental">
     <div class="NoIdeaForClassName">
         <h1 style="font-family: 'Playlist', sans-serif; color:#d0a933; font-size: 2em;"class="regularCards fundamental">
-            Fundamental Lanche
+            Fundamental Almoço
         </h1>
     </div>
     <div class="regulares">
          <!-- Monday Card -->
          {% for regularalmoco in regularalmocos %}
-         <div class="regularCards regular">
+         <div class="regularCards fundamental" id="fundamental" style="font-family: Arial, Helvetica, sans-serif;">
              <h2 class="textRegular">{{ regularalmoco.dia_da_semana }}</h2>
              <div class="cardRegular">
-                 <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder">
+                 <img src="{{ regularalmoco.imagem.url }}" alt="Placeholder" style="width: 65px;">
                  <h3>{{ regularalmoco.nome_da_comida }}</h3>
                  <h3>{{ regularalmoco.data_do_cardapio }}</h3>
              </div>
@@ -188,32 +216,16 @@
          {% endfor %}
     </div>
 </section>
-<!--fundamental lanche-------------------------------------------------------------------------------------->
-   <section class="sectionRegular" id="fundamental">
-       <div class="regulares">
-            <!-- Monday Card -->
-            {% for regularlanche in regularlanches %}
-            <div class="regularCards regular">
-                <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
-                <div class="cardRegular">
-                    <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
-                    <h3>{{ regularlanche.nome_comida }}</h3>
-                    <h3>{{ regularlanche.data_cardapio }}</h3>
-                </div>
-            </div>
-            {% endfor %}
-       </div>
-   </section>
 
 <!--EJA--------------------------------------------------------------------------------------------->
    <section class="sectionRegular" id="eja">
        <div class="regulares">
            <!-- Monday Card -->
            {% for eja in ejacardapio %}
-           <div class="regularCards eja">
+           <div class="regularCards eja" style="font-family: Arial, Helvetica, sans-serif;">
                <h2 class="textRegular">{{ eja.dia_da_semana }}</h2>
                <div class="cardRegular">
-                   <img src="{{ eja.imagem.url }}" alt="Placeholder">
+                   <img src="{{ eja.imagem.url }}" alt="Placeholder" style="width: 65px;">
                    <h3>{{ eja.nome_da_comida }}</h3>
                    <h3>{{ eja.data_do_cardapio }}</h3>
                </div>
