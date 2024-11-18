@@ -16,124 +16,143 @@
    }
  
    .secondary-bar {
-       background-color: #ffd500; /* Example background color */
-       height: 50px; /* Example height */
-       position: relative; /* Required for positioning child elements */
-       width: 36%;
-       z-index: 1;
-       }
-     
-       .parallelogram {
-       width: 120px; /* Example width */
-       height: 63px; /* Example height */
-       background-color: #ffd500; /* Example color */
-       position: absolute; /* Allows for precise positioning */
-       left: 90%; /* Example horizontal positioning */
-       clip-path: polygon(62% -9%, 100% 100%, 48% 100%, 0% 0%);
-       z-index: 2; /* Ensure this is above .blue */
-       }
-     
-       .yellow-section {
-       background-color: #ffd500;
-       height: 8%;
-       width: 62%;
-       position: absolute;
-       top: 20%;
-       right: 0;
-       clip-path: polygon(100% 0%, 100% 100%, 7% 100%, 0% 0%);
-       display: flex;
-       align-items: center;
-       justify-content: flex-end; /* Alinha o conteúdo à direita */
-       padding: 0 1rem;
-       z-index: 1;
-       }
-     
-       .triangulo{
-       width: 130px;
-       height: 120px;
-       background-color: #1C69D1;
-       position: absolute;
-       left: 49%;
-       clip-path: polygon(162% -40%, 96% -2%, 45% 94%, 6% -1%);
-       z-index: 1;
-       top: 1%;
-       }
-       .triangulo-2{
-       width: 130px;
-       height: 90px;
-       background-color: #1C69D1;
-       position: absolute;
-       left: 49%;
-       clip-path: polygon(29% -43%, 74% 85%, 20% 97%, 57% -40%);
-       z-index: 1;
-       top: 12%;
-       }
-       .blue {
-       background-color: #005bbb;
-       height: 8%;
-       width: 94%;
-       position: absolute;
-       top: 1%;
-       right: 0;
-       clip-path: polygon(112% 3%, 115% 50%, 0% 447%, 36% -46%);
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       padding: 0 1rem;
-       z-index: 0;
-       }
-     
-       .blue-2 {
-       background-color: #005bbb;
-       height: 11%;
-       width: 70%;
-       position: absolute;
-       top: 9%;
-       right: 0;
-       clip-path: polygon(100% 0%, 100% 100%, 9% 105%, 0% 0%);
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       padding: 0 1rem;
-       z-index: 0;
-       }
-       .blue-1{
-       top: 5%;
-       background-color: #005bbb;
-       height: 50px;
-       position: absolute;
-       width: 22%;
-       z-index: 1;
-       clip-path: polygon(100% -8%, 86% 100%, -6% 105%, 0% 0%);
-       }
-       .topo-asn {
-       position: absolute;
-       left: 46%;
-            color: #fff;
-            font-size: 1.2rem; /* Adjust the font size as needed */
-            text-align: center; /* Center text horizontally */
-            flex-grow: 1;
-            z-index: 1;
-            font-family: Arial, sans-serif;
-        }
-     
-       .logo{
-       position: absolute;
-       top: -2%;
-       left: 84%;
-       width: 9%; /* Set the logo size */
-       height: auto; /* Maintain aspect ratio */
-        /* Adjust this value to lower the image */
-       z-index: 1;
-     
-        }
+    background-color: #ffd500; /* Example background color */
+    height: 50px; /* Example height */
+    position: relative; /* Required for positioning child elements */
+    width: 36%;
+    z-index: 1;
+    }
+   
+    .parallelogram {
+    width: 120px; /* Example width */
+    height: 63px; /* Example height */
+    background-color: #ffd500; /* Example color */
+    position: absolute; /* Allows for precise positioning */
+    left: 90%; /* Example horizontal positioning */
+    clip-path: polygon(62% -9%, 100% 100%, 48% 100%, 0% 0%);
+    z-index: 2; /* Ensure this is above .blue */
+    }
+   
+    .yellow-section {
+    background-color: #ffd500;
+    height: 5%;
+    width: 62%;
+    position: absolute;
+    top: 16%;
+    right: 0;
+    clip-path: polygon(100% 0%, 100% 100%, 7% 100%, 0% 0%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
+    padding: 0 1rem;
+    z-index: 1;
+    }
+   
+    .inicio {
+     margin: 8px;
+    font-size: 20px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    display: flex;
+    align-items: center;
+    }
+   
+    .inicio i {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    width: 20px;
+    }
+   
+    .inicio:hover {
+    color: #003d7a; /* Cor do texto ao passar o mouse */
+    }
+   
+    .triangulo{
+    width: 130px;
+    height: 120px;
+    background-color: #1C69D1;
+    position: absolute;
+    left: 49%;
+    clip-path: polygon(162% -40%, 96% -2%, 45% 94%, 6% -1%);
+    z-index: 1;
+    top: 1%;
+    }
+    .triangulo-2{
+    width: 130px;
+    height: 90px;
+    background-color: #1C69D1;
+    position: absolute;
+    left: 49%;
+    clip-path: polygon(29% -43%, 74% 85%, 20% 97%, 57% -40%);
+    z-index: 1;
+    top: 10%;
+    }
+    .blue {
+    background-color: #005bbb;
+    height: 8%;
+    width: 94%;
+    position: absolute;
+    top: 1%;
+    right: 0;
+    clip-path: polygon(112% 3%, 115% 50%, 0% 447%, 36% -46%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: 0;
+    }
+   
+    .blue-2 {
+    background-color: #005bbb;
+    height: 7%;
+    width: 70%;
+    position: absolute;
+    top: 9%;
+    right: 0;
+    clip-path: polygon(100% 0%, 100% 100%, 9% 105%, 0% 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: 0;
+    }
+    .blue-1{
+    top: 4%;
+    background-color: #005bbb;
+    height: 50px;
+    position: absolute;
+    width: 22%;
+    z-index: 1;
+    clip-path: polygon(100% -8%, 86% 100%, -6% 105%, 0% 0%);
+    }
+    .topo-asn {
+      top: 8%;
+    position: absolute;
+    left: 46%;
+         color: #fff;
+         font-size: 1.2rem; /* Adjust the font size as needed */
+         text-align: center; /* Center text horizontally */
+         flex-grow: 1;
+         z-index: 1;
+         font-family: Arial, sans-serif;
+     }
+   
+    .logo{
+    position: absolute;
+    top: -1%;
+    left: 84%;
+    width: 130px; /* Set the logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Adjust this value to lower the image */
+    z-index: 1;
+   
+     }
  
  
                                                            /* FOOTER */
  
    footer {
                position: relative;
-           margin-top: 100px;
+           margin-top: -46px;
            background-color: #fff;
            color: black;
            text-align: center;
@@ -373,7 +392,7 @@
     display: flex;
     width: 100vw; /* Ocupa toda a largura da tela */
     height: 100vh; /* Ocupa toda a altura da tela */
-    margin-top: 12%;
+    margin-top: -3%;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
     gap: 20px; /* Espaço entre os elementos, ajuste conforme necessário */
@@ -387,7 +406,7 @@
     text-align: center;
     max-width: 500px; /* Ajuste conforme necessário */
     text-align: justify;
-    margin-right: 30px;
+    margin-left: 200px;
 }
 
 .wrapper {
@@ -883,13 +902,12 @@
         <h1>ASN: UM PILAR PARA A EDUCAÇÃO DE BOA ESPERANÇA.</h1>
         <p style="text-align: justify;">A Escola Estadual Antônio dos Santos Neves, em Boa Esperança, foi fundada na década de 1970 e se tornou um importante centro educacional local. Nos seus primeiros anos, destacou-se pela qualidade acadêmica e pelo envolvimento em atividades culturais e esportivas, refletindo o espírito de comunidade e esperança da região. Ao longo das décadas, a escola continuou a evoluir, mantendo-se como um pilar fundamental na educação da área.</p>
         <div class="return-button">
-            <button>RETORNAR</button>
-            <button>MAIS SOBRE</button>
+            <button><a href="{% url 'lista' %}" style="text-decoration: none; color: #fff;">RETORNAR</a></button>
         </div>
     </div>
     <div class="wrapper">
         <div class="outer">
-            <div class="card" style="--delay:-1;">
+            <div class="card" style="--delay:0;">
                 <div class="content">
                     <div class="img"><img src="../../../media/imagens/5.jpg" alt="" style="width: 100%;"></div>
                     <div class="details">
@@ -898,54 +916,54 @@
                     </div>
                 </div>
             </div>
-            <div class="card" style="--delay:0;">
+            <div class="card" style="--delay:1;">
                 <div class="content">
-                    <div class="img"><img src="../../media/imagens/1.PNG" alt=""></div>
+                    <div class="img"><img src="../../../media/imagens/1.JPG" alt=""></div>
                     <div class="details">
                         <span class="name">Quadra</span>
                         <p><i class="bi bi-calendar-event"></i>4 de agosto de 2012</p>
                     </div>
                 </div>
             </div>
-            <div class="card" style="--delay:1;">
+            <div class="card" style="--delay:2;">
                 <div class="content">
-                    <div class="img"><img src="../../media/imagens/2.PNG" alt=""></div>
+                    <div class="img"><img src="../../../media/imagens/2.JPG" alt=""></div>
                     <div class="details">
                         <span class="name">Auditório</span>
                         <p><i class="bi bi-calendar-event"></i>4 de setembro de 2012</p>
                     </div>
                 </div>
             </div>
-            <div class="card" style="--delay:2;">
+            <div class="card" style="--delay:3;">
                 <div class="content">
-                    <div class="img"><img src="../../media/imagens/3.PNG" alt=""></div>
+                    <div class="img"><img src="../../../media/imagens/3.jpg" alt=""></div>
                     <div class="details">
                         <span class="name">Quadra</span>
                         <p><i class="bi bi-calendar-event"></i>16 de junho de 2021</p>
                     </div>
                 </div>
             </div>
-            <div class="card" style="--delay:3;">
+            <div class="card" style="--delay:4;">
                 <div class="content">
-                    <div class="img"><img src="../../media/imagens/4.PNG" alt=""></div>
+                    <div class="img"><img src="../../../media/imagens/4.PNG" alt=""></div>
                     <div class="details">
                         <span class="name">Lado da quadra</span>
                         <p><i class="bi bi-calendar-event"></i>16 de agosto de 2022</p>
                     </div>
                 </div>
             </div>
-            <div class="card" style="--delay:4;">
+            <div class="card" style="--delay:5;">
               <div class="content">
-                  <div class="img"><img src="../../media/imagens/IMG-20240828-WA0001.jpg" alt=""></div>
+                  <div class="img"><img src="../../../media/imagens/IMG-20240828-WA0001.jpg" alt=""></div>
                   <div class="details">
                       <span class="name">Escola</span>
                       <p><i class="bi bi-calendar-event"></i>25 de novembro de 2022</p>
                   </div>
               </div>
           </div>
-          <div class="card" style="--delay:4;">
+          <div class="card" style="--delay:6;">
             <div class="content">
-                <div class="img"><img src="../../media/imagens/IMG-20240828-WA0000.jpg" alt=""></div>
+                <div class="img"><img src="../../../media/imagens/IMG-20240828-WA0000.jpg" alt=""></div>
                 <div class="details">
                     <span class="name">Escola atualmente</span>
                     <p><i class="bi bi-calendar-event"></i>26 de dezembro de 2023</p>

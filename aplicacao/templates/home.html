@@ -107,15 +107,21 @@
 <section class="explore-section">
     <h1 class="explore">Explore Mais Sobre Nós</h1>
     <div class="container-explore">
+        <a href="{% url 'listar_eventos' %}" style="text-decoration: none;">
         <div class="card-explore">
-            <h2><a href="{% url 'listar_eventos' %}" style="text-decoration: none;">Eventos</a></h2>
+            <h2>Eventos</h2>
         </div>
+        </a>
+        <a href="{% url 'nossa_historia' %}" style="text-decoration: none;">
         <div class="card-explore">
-            <h2><a href="{% url 'nossa_historia' %}" style="text-decoration: none;">Nossa História</a></h2>
+            <h2>Nossa História</h2>
         </div>
+        </a>
+        <a href="{% url 'lista_cardapios' %}" style="text-decoration: none;">
         <div class="card-explore">
-            <h2><a href="{% url 'lista_cardapios' %}" style="text-decoration: none;">Cardápio</a></h2>
+            <h2>Cardápios</h2>
         </div>
+        </a>
     </div>
    </section>
    
