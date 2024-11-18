@@ -1498,10 +1498,6 @@ footer {
                <div class="event-title">{{ evento.nome }}</div>
                <div class="event-description">{{ evento.descricao }}</div>
            </div>
-	<a href="{% url 'editar_evento' evento.id %}">Editar</a> |
-     <a href="{% url 'apagar_evento' evento.id %}">Apagar</a>
-
-
        </div>
 	 {% endfor %}
 

@@ -317,7 +317,7 @@ def apagar_noticia3(request, id):
         return redirect('area_diretor')
     return render(request, 'noticia3/apagar_noticia3.html', {'noticia': noticia})
 
-def view_news_3(request, id):
+def view_news_3(request,id):
     noticia = get_object_or_404(Noticia3, pk=id)
     return render(request, 'noticia3/view_news_tres.html', {'noticia': noticia})
 

@@ -34,7 +34,7 @@
  <div class="container">
      <div class="texto">
          <h1 class="asn">Estude no ASN</h1>
-         <p class="intro">A escola EEEFM “Antonio dos Santos Neves”, fundada em 1978 é uma Instituição dedicada ao ensino fundamental e médio que oferece um curso Técnico de Informática integrado ao ensino médio ofertando 40 vagas para aqueles que desejam ingressar no mercado de trabalho.</p>
+         <p class="intro" style="font-size: 1.5em;">A escola EEEFM “Antonio dos Santos Neves”, fundada em 1978 é uma Instituição dedicada ao ensino fundamental e médio que oferece um curso Técnico de Informática integrado ao ensino médio ofertando 40 vagas para aqueles que desejam ingressar no mercado de trabalho.</p>
      </div>
      <div class="carousel">
          <div class="carousel-images">
@@ -52,7 +52,6 @@
 {% endfor %}
 
 
-         <!-- HTML permanece o mesmo -->
 <div class="matricula">
  <div class="container-matricula">
    <!-- Seção de texto -->
@@ -103,19 +102,19 @@
    </div>
  </div>
 </div>
-
+<img src="../../media/" alt="">
        <!-- Explore Mais Sobre Nós -->
 <section class="explore-section">
     <h1 class="explore">Explore Mais Sobre Nós</h1>
     <div class="container-explore">
         <div class="card-explore">
-            <h2>Eventos</h2>
+            <h2><a href="{% url 'listar_eventos' %}" style="text-decoration: none;">Eventos</a></h2>
         </div>
         <div class="card-explore">
-            <h2>Nossa História</h2>
+            <h2><a href="{% url 'nossa_historia' %}" style="text-decoration: none;">Nossa História</a></h2>
         </div>
         <div class="card-explore">
-            <h2>Cardápio</h2>
+            <h2><a href="{% url 'lista_cardapios' %}" style="text-decoration: none;">Cardápio</a></h2>
         </div>
     </div>
    </section>
@@ -152,8 +151,6 @@
                                          </div>
                                      </div>
                                  </div>
-                                 <a href="{% url 'editar_noticia' noticia.id %}">Editar</a> |
-               <a href="{% url 'apagar_noticia' noticia.id %}">Apagar</a>
                  {% endfor %}
                                  {% for noti3 in noticia3 %}
                                  <div class="news-item">
@@ -161,7 +158,6 @@
                                      <div class="news-text">
                                          <div class="news-content">
                                             <a href="{% url 'view_news_3' noti3.id %}" style="text-decoration: none;"><h2 class="ti-2">{{ noti3.title }}</h2></a>
-                                             <h2 class="ti-2">{{ noti3.title }}</h2>
                                              <div class="date">
                                                <i class="bi bi-calendar-fill"></i>
                                                  <span>{{ noti3.data_publicacao }}</span>

@@ -49,5 +49,40 @@
             </form>
         </div>
     </div>
+    <div class="cursor"></div>
+   <script>
+     // script.js
+    
+     const cursor = document.querySelector('.cursor');
+    
+     // Função para ativar o efeito de movimento do cursor
+     document.addEventListener('mousemove', (e) => {
+       cursor.style.left = `${e.pageX}px`;
+       cursor.style.top = `${e.pageY}px`;
+       cursor.classList.add('active'); // Adiciona a classe 'active' para aumentar o cursor
+    
+       // Reseta a classe 'inactive' quando o mouse está em movimento
+       cursor.classList.remove('inactive');
+       cursor.classList.remove('out');
+    
+       // Reinicia o temporizador de inatividade
+       resetInactiveTimer();
+     });
+    
+     // Função para esconder o cursor ao sair da janela
+     document.addEventListener('mouseout', () => {
+       cursor.classList.add('out'); // Adiciona a classe 'out' para esconder o cursor
+     });
+    
+     // Timer para identificar inatividade do mouse
+     let inactiveTimer;
+    
+     function resetInactiveTimer() {
+       clearTimeout(inactiveTimer);
+       inactiveTimer = setTimeout(() => {
+         cursor.classList.add('inactive'); // Adiciona a classe 'inactive' quando o mouse para
+       }, 1000); // 1 segundo de inatividade
+     }
+   </script>
 </body>
 </html>
