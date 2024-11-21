@@ -163,19 +163,19 @@
        </div>
    </section>
 <!--integral------------------------------------------------------------------------------------>
-<section class="sectionRegular" >
-    <div class="regulares" id="integral">
+<section class="sectionRegular" id="integral">
+    <div class="regulares">
         <!-- Monday Card -->
         {% for regularlanche in regularlanches %}
-        <div class="regularCards regular" style="font-family: Arial, Helvetica, sans-serif;">
-            <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
-            <div class="cardRegular">
-                <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
-                <h3>{{ regularlanche.nome_comida }}</h3>
-                <h3>{{ regularlanche.data_cardapio }}</h3>
-            </div>
-        </div>
-        {% endfor %}
+           <div class="regularCards integral" style="font-family: Arial, Helvetica, sans-serif;">
+               <h2 class="textRegular">{{ regularlanche.nome_dia_semana }}</h2>
+               <div class="cardRegular">
+                   <img src="{{ regularlanche.imagem.url }}" alt="Placeholder">
+                   <h3>{{ regularlanche.nome_comida }}</h3>
+                   <h3>{{ regularlanche.data_cardapio }}</h3>
+               </div>
+           </div>
+           {% endfor %}
     </div>
 </section> 
 <!--fundamental lanche-------------------------------------------------------------------------------------->
