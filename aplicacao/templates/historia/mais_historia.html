@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Sobre | Nossa História</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Header section */
+header{
+    width: 100%;
+    max-width: 100%;
+    padding-left: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+header nav a{
+    color: #fff;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+a.active{
+    background: #005bbb;
+    border-radius: 2px;
+}
+a:hover{
+    background: #005bbb;
+    border-radius: 2px;
+}
+/* Header section */
+/* carousel */
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -50px;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    width: 120px;
+    height: 250px;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-70%);
+    left: 70%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+}
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2){
+    top: 180px;
+    left: 200px;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 77%;
+    height: 77%;
+}
+.carousel .list .item:nth-child(3){
+    left: 67%;
+}
+.carousel .list .item:nth-child(4){
+    left: calc(67% + 200px);
+}
+.carousel .list .item:nth-child(5){
+    left: calc(67% + 400px);
+}
+.carousel .list .item:nth-child(6){
+    left: calc(67% + 600px);
+}
+.carousel .list .item:nth-child(n+7){
+    left: calc(67% + 800px);
+    opacity: 0;
+}
+.list .item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: #fff;
+    display: none;
+}
+.list .item:nth-child(2) .content{
+    display: block;
+}
+.content .title{
+    font-size: 100px;
+    text-transform: uppercase;
+    color: #005bbb;
+    font-weight: bold;
+    line-height: 1;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.content .name{
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 4px 5px 5px black;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    margin-left: 5px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+.content .btn{
+    margin-left: 5px;
+
+
+
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 1.2s 1 forwards;
+}
+.content .btn button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid #fff;
+}
+.content .btn button:nth-child(1){
+    margin-right: 15px;
+}
+.content .btn button:nth-child(2){
+    background: transparent;
+    color: #005bbb;
+    border: 2px solid #fff;
+    transition: 0.3s;
+}
+.content .btn button:nth-child(2):hover{
+    background-color: #005bbb;
+    color: #fff;
+    border-color: #005bbb;
+}
+
+@keyframes animate {
+   
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+/* Carousel */
+
+/* next prev arrows */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 42%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #005bbb;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+.arrows button:hover{
+    background: #fff;
+    color: #000;
+}
+
+
+/* time running */
+.carousel .timeRunning{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 4px;
+    background-color: #005bbb;
+    left: 0;
+    top: 0;
+    animation: runningTime 7s linear 1 forwards;
+}
+@keyframes runningTime {
+   
+    from{width: 0%;}
+    to{width: 100%;}
+}
+/* Responsive Design */
+@media screen and (max-width: 999px){
+   
+    header{
+        padding-left: 50px;
+    }
+    .list .item .content{
+        left: 50px;
+    }
+    .content .title, .content .name{
+        font-size: 70px;
+    }
+    .content .des{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 690px){
+    header nav a{
+        font-size: 14px;
+        margin-right: 0;
+    }
+    .list .item .content{
+        top: 40%;
+    }
+    .content .title, .content .name{
+        font-size: 45px;
+    }
+    .content .btn button{
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body> 
+    <header>
+        <nav>
+            <a href="" class="active">História</a>
+        </nav>
+    </header>
+    <div class="carousel">
+        <div class="list">
+            <div class="item" style="background-image: url(../../../media/imagens/5.jpg);">
+                <div class="content">
+                    <div class="title">FRENTE</div>
+                    <div class="name">DA ESCOLA</div>
+                    <div class="des">Em 14 de março de 2011, a frente antiga da escola refletia a história e o legado de anos de aprendizado, testemunhando o passar do tempo e as transformações da comunidade escolar.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(../../../media/imagens/1.JPG);">
+               
+                <div class="content">
+                    <div class="title">QUADRA</div>
+                    <div class="name">DA ESCOLA</div>
+                    <div class="des">Em 4 de agosto de 2012, a quadra antiga da escola ainda ecoava risos e competições, guardando memórias de muitos momentos de diversão e superação dos alunos.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(../../../media/imagens/2.JPG);">
+
+                <div class="content">
+                    <div class="title">AUDITÓRIO</div>
+                    <div class="name">DA ESCOLA</div>
+                    <div class="des">No dia 24 de setembro de 2012, o auditório antigo da escola, com suas paredes revestidas de madeira e o eco de vozes passadas, foi palco de mais um momento marcante na história do ensino daquela comunidade.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(../../../media/imagens/3.jpg);">
+               
+                <div class="content">
+                    <div class="title">QUADRA</div>
+                    <div class="name">DA ESCOLA</div>
+                    <div class="des">Em 16 de junho de 2021, a quadra antiga da escola, ainda guardando o brilho das competições passadas, foi o cenário de mais um dia de confraternização e esporte entre os alunos.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(../../../media/imagens/4.PNG);">
+               
+                <div class="content">
+                    <div class="title">LADO DA QUADRA</div>
+                    <div class="name">DA ESCOLA</div>
+                    <div class="des" style="font-size: 1em;">Em 16 de agosto de 2022, a área ao lado da quadra, com seus antigos suportes de ferro para bicicletas, continuava sendo um ponto de encontro dos estudantes que chegavam pedalando, mantendo viva a memória de muitos outros que também ali estacionaram suas bikes ao longo dos anos.</div>
+                    </div>
+            </div>
+            <div class="item" style="background-image: url(../../../media/imagens/IMG-20240828-WA0001.jpg);">
+               
+                <div class="content">
+                    <div class="title">FRENTE</div>
+                    <div class="name">DA ESCOLA</div>
+                    <div class="des">Na frente da escola, em 25 de novembro de 2022, as novas fachadas modernas refletiam a inovação e o dinamismo da educação contemporânea, recebendo alunos e visitantes com um ar de renovação e futuro.</div>
+                    </div>
+            </div>
+            <div class="item" style="background-image: url(../../../media/imagens/IMG-20240828-WA0000.jpg);">
+               
+                <div class="content">
+                    <div class="title">ESCOLA</div>
+                    <div class="name">ATUALMENTE</div>
+                    <div class="des">Na frente da escola, em 26 de dezembro de 2023, a arquitetura contemporânea se mesclava com os toques verdes do jardim, criando um ambiente acolhedor e inspirador para aqueles que chegavam em busca de aprendizado e crescimento.</div>
+                    </div>
+            </div>
+        </div>
+        <!--next prev button-->
+        <div class="arrows">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="timeRunning"></div>
+    </div>
+
+    <script>
+        var nextBtn = document.querySelector('.next'),
+    prevBtn = document.querySelector('.prev'),
+    carousel = document.querySelector('.carousel'),
+    list = document.querySelector('.list'),
+    item = document.querySelectorAll('.item'),
+    runningTime = document.querySelector('.carousel .timeRunning')
+
+let timeRunning = 3000
+let timeAutoNext = 7000
+
+nextBtn.onclick = function(){
+    showSlider('next')
+}
+
+prevBtn.onclick = function(){
+    showSlider('prev')
+}
+
+let runTimeOut
+
+let runNextAuto = setTimeout(() => {
+    nextBtn.click()
+}, timeAutoNext)
+
+
+function resetTimeAnimation() {
+    runningTime.style.animation = 'none'
+    runningTime.offsetHeight /* trigger reflow */
+    runningTime.style.animation = null
+    runningTime.style.animation = 'runningTime 7s linear 1 forwards'
+}
+
+
+function showSlider(type) {
+    let sliderItemsDom = list.querySelectorAll('.carousel .list .item')
+    if(type === 'next'){
+        list.appendChild(sliderItemsDom[0])
+        carousel.classList.add('next')
+    } else{
+        list.prepend(sliderItemsDom[sliderItemsDom.length - 1])
+        carousel.classList.add('prev')
+    }
+
+    clearTimeout(runTimeOut)
+
+    runTimeOut = setTimeout( () => {
+        carousel.classList.remove('next')
+        carousel.classList.remove('prev')
+    }, timeRunning)
+
+    clearTimeout(runNextAuto)
+    runNextAuto = setTimeout(() => {
+        nextBtn.click()
+    }, timeAutoNext)
+
+    resetTimeAnimation() // Reset the running time animation
+}
+
+// Start the initial animation
+resetTimeAnimation()
+    </script>
+</body>
+</html>

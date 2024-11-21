@@ -226,6 +226,8 @@ def nossa_historia(request):
     historias = Historia.objects.all()
     return render(request, 'historia/nossa_historia.html', {'historias': historias})
 
+def mais_historia(request):
+    return render(request, 'historia/mais_historia.html')
 
 
 #NOTICIAS 1
