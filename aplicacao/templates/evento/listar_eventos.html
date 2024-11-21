@@ -927,261 +927,183 @@ footer {
    flex: 0 0 300px; /* Define uma largura fixa para o menu */
    margin-right: 20px; /* Espaço entre o menu e a lista de eventos */
 }
-
-
-
-
-       .menu-item {
-           margin-bottom: 10px;
+.menu-item {
+    margin-bottom: 10px;
        }
-
-
-       .menu-button {
-           width: 100%;
-           padding: 15px;
-           font-size: 16px;
-           background-color: #e0e0e0;
-           border: none;
-           cursor: pointer;
-           text-align: left;
-           position: relative; /* Para posicionar a setinha */
+.menu-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    position: relative; /* Para posicionar a setinha */
        }
-
-
-       .menu-button:hover {
-           background-color: #d0d0d0;
+.menu-button:hover {
+    background-color: #d0d0d0;
        }
-
-
-       .submenu {
-           display: none;
-           padding-left: 20px;
+.submenu {
+    display: none;
+    padding-left: 20px;
        }
-
-
-       .submenu a {
-           display: block;
-           padding: 10px 0;
-           text-decoration: none;
-           color: #333;
+.submenu a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
        }
-
-
-       .submenu a:hover {
-           text-decoration: underline;
+.submenu a:hover {
+    text-decoration: underline;
        }
-
-
-       .arrow {
-           position: absolute;
-           right: 10px; /* Distância do lado direito */
-           top: 50%;
-           transform: translateY(-50%);
-           transition: transform 0.3s; /* Animação ao girar */
+.arrow {
+    position: absolute;
+    right: 10px; /* Distância do lado direito */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s; /* Animação ao girar */
        }
-
-
-       .submenu-active .arrow {
-           transform: translateY(-50%) rotate(90deg); /* Rotaciona a setinha quando ativo */
+.submenu-active .arrow {
+    transform: translateY(-50%) rotate(90deg); /* Rotaciona a setinha quando ativo */
        }
 }
 @media (max-width: 900px){
    .blue {
-      top: 0;
-      width: 100%;
-      height: 20%;
-      clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
-      display: flex;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    display: flex;
   }
   .topo-asn {
-      top: 8%;
-      position: absolute;
-      left: 5%;
-      font-size: 1rem;
-      flex-grow: 0;
+    top: 8%;
+    position: absolute;
+    left: 5%;
+    font-size: 1rem;
+    flex-grow: 0;
   }
   .logo {
-      position: absolute;
-      left: 71%;
-      width: 130px;
-      margin-top: 20px;
+    position: absolute;
+    left: 71%;
+    width: 130px;
+    margin-top: 20px;
   }
   .yellow-section {
-      width: 100%;
-      clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    width: 100%;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  }
+.blue-1, .blue-2, .secondary-bar, .triangulo, .triangulo-2 {
+    display: none;
+  }
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    margin-top: 150px; /* Ajusta a margem superior para garantir espaço suficiente */
+  }
+.footer-social {
+    position: relative;
+    bottom: 10px;
+    gap: 20px;
+    margin: 5px;
+  }
+.footer-social a {
+    color: #fff;
+    font-size: 24px;
+  }
+#youtube a {
+    color: #fff;
+    font-size: 24px;
+  }
+#youtube:hover {
+    transition: color 0.3s ease;
+    color: rgb(241, 111, 111);
+  }
+#twitter a {
+    color: #fff;
+    font-size: 24px;
+  }
+#twitter:hover {
+    transition: color 0.3s ease;
+    color: rgb(131, 178, 231);
+  }
+#tiktok a {
+    color: #fff;
+    font-size: 24px;
+  }
+#tiktok:hover {
+    transition: color 0.3s ease;
+    color: rgb(149, 248, 82);
+  }
+#instagram a {
+    color: #fff;
+    font-size: 24px;
+  }
+#instagram:hover {
+    transition: color 0.3s ease;
+    color: rgb(241, 136, 50);
+  }
+.blue-2-footer, .blue-footer, .parallelogram-rodape, .secondary-bar-rodape, .yellow-section-footer, .footer-logo {
+    display: none;
   }
 
 
-
-
-  .blue-1, .blue-2, .secondary-bar, .triangulo, .triangulo-2 {
-      display: none;
-  }
-  footer {
-      background-color: #004080;
-      color: white;
-      text-align: center;
-      margin-top: 150px; /* Ajusta a margem superior para garantir espaço suficiente */
-  }
-
-
-
-
-  .footer-social {
-      position: relative;
-      bottom: 10px;
-      gap: 20px;
-      margin: 5px;
-  }
-
-
-
-
-  .footer-social a {
-      color: #fff;
-      font-size: 24px;
-  }
-
-
-
-
-  #youtube a {
-      color: #fff;
-      font-size: 24px;
-  }
-
-
-
-
-  #youtube:hover {
-      transition: color 0.3s ease;
-      color: rgb(241, 111, 111);
-  }
-
-
-
-
-  #twitter a {
-      color: #fff;
-      font-size: 24px;
-  }
-
-
-
-
-  #twitter:hover {
-      transition: color 0.3s ease;
-      color: rgb(131, 178, 231);
-  }
-
-
-
-
-  #tiktok a {
-      color: #fff;
-      font-size: 24px;
-  }
-
-
-
-
-  #tiktok:hover {
-      transition: color 0.3s ease;
-      color: rgb(149, 248, 82);
-  }
-
-
-
-
-  #instagram a {
-      color: #fff;
-      font-size: 24px;
-  }
-
-
-
-
-  #instagram:hover {
-      transition: color 0.3s ease;
-      color: rgb(241, 136, 50);
-  }
-
-
-
-
-  .blue-2-footer, .blue-footer, .parallelogram-rodape, .secondary-bar-rodape, .yellow-section-footer, .footer-logo {
-      display: none;
-  }
-
-
-  .event {
-           border-top: 1px solid #D1D3D4;
-           border-bottom: 1px solid #D1D3D4;
-           padding: 17px 0;
-           margin: 0;
-           display: flex;
-           align-items: flex-start; /* Alinha verticalmente no início */
-           font-family: archivo black;
+.event {
+    border-top: 1px solid #D1D3D4;
+    border-bottom: 1px solid #D1D3D4;
+    padding: 17px 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start; /* Alinha verticalmente no início */
+    font-family: archivo black;
        }
-       .event-list {
+.event-list {
    flex: 1; /* Permite que a lista de eventos use o espaço restante */
    margin-top: 2%;
 }
-
-
 .date {
    display: flex;
    align-items: center;
    margin-right: 10px; /* Espaço entre o ícone e a data */
 }
-
-
 .date i {
    margin-right: 5px; /* Espaço entre o ícone e o texto da data */
    color: #003d7a;
 }
-
-
-       .event-datetime {
-           font-size: 14px;
-           color: #333;
-           margin-right: 12px; /* Espaço entre data/hora e título */
-           display: flex;
-           flex-direction: column;
-           text-align: justify;
-           padding: 10px;
-           margin-top: 12px;
-       }
-
-
-       .separator {
-           width: 1px;
-           background-color: #D1D3D4; /* Cor da linha */
-           height: 111px; /* Altura da linha */
-           margin-right: 20px; /* Espaço entre a linha e o texto */
-       }
-
-
-       .event-title {
-           font-size: 18px;
-           font-weight: bold;
-           margin-bottom: 10px;
-           text-align: justify;
-       }
-
-
-       .event-description {
-           font-size: 16px;
-           color: #333;
-           text-align: justify;
-       }
-       .icon{
-           color: #003d7a;
-       }
+.event-datetime {
+    font-size: 14px;
+    color: #333;
+    margin-right: 12px; /* Espaço entre data/hora e título */
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+    margin-top: 12px;
+}
+.separator {
+    width: 1px;
+    background-color: #D1D3D4; /* Cor da linha */
+    height: 111px; /* Altura da linha */
+    margin-right: 20px; /* Espaço entre a linha e o texto */
+}
+.event-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.event-description {
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+.icon{
+    color: #003d7a;
+}
 
 
        /* MENU */
-       .main-container {
+.main-container {
    display: flex; /* Ativa o layout flex */
    justify-content: space-between; /* Espaça os itens uniformemente */
    padding: 20px; /* Espaçamento interno */
@@ -1190,69 +1112,49 @@ footer {
    margin: 0 auto; /* Centraliza o container horizontalmente */
    margin-top: 25%;
 }
-
-
 .menu {
    flex: 0 0 300px; /* Define uma largura fixa para o menu */
    margin-right: 20px; /* Espaço entre o menu e a lista de eventos */
 }
-
-
-
-
-       .menu-item {
-           margin-bottom: 10px;
-       }
-
-
-       .menu-button {
-           width: 100%;
-           padding: 15px;
-           font-size: 16px;
-           background-color: #e0e0e0;
-           border: none;
-           cursor: pointer;
-           text-align: left;
-           position: relative; /* Para posicionar a setinha */
-       }
-
-
-       .menu-button:hover {
-           background-color: #d0d0d0;
-       }
-
-
-       .submenu {
-           display: none;
-           padding-left: 20px;
-       }
-
-
-       .submenu a {
-           display: block;
-           padding: 10px 0;
-           text-decoration: none;
-           color: #333;
-       }
-
-
-       .submenu a:hover {
-           text-decoration: underline;
-       }
-
-
-       .arrow {
-           position: absolute;
-           right: 10px; /* Distância do lado direito */
-           top: 50%;
-           transform: translateY(-50%);
-           transition: transform 0.3s; /* Animação ao girar */
-       }
-
-
-       .submenu-active .arrow {
-           transform: translateY(-50%) rotate(90deg); /* Rotaciona a setinha quando ativo */
-       }
+.menu-item {
+    margin-bottom: 10px;
+}
+.menu-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    position: relative; /* Para posicionar a setinha */
+}
+.menu-button:hover {
+    background-color: #d0d0d0;
+}
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+.submenu a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+}
+.submenu a:hover {
+    text-decoration: underline;
+}
+.arrow {
+    position: absolute;
+    right: 10px; /* Distância do lado direito */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s; /* Animação ao girar */
+}
+.submenu-active .arrow {
+    transform: translateY(-50%) rotate(90deg); /* Rotaciona a setinha quando ativo */
+}
 }
 @media (max-width: 800px) {
    .main-container {
@@ -1265,19 +1167,13 @@ footer {
    margin: 0 auto; /* Centraliza o container horizontalmente */
    margin-top: 30%;
 }
-
-
 .menu {
    width: 100%; /* Ajusta a largura do menu para ocupar 100% */
    margin-bottom: 20px; /* Espaço entre o menu e a lista de eventos */
 }
-
-
 .event-list {
    flex: 1; /* Permite que a lista de eventos use o espaço restante */
 }
-
-
 .event {
    border-top: 1px solid #D1D3D4;
    border-bottom: 1px solid #D1D3D4;
@@ -1286,12 +1182,7 @@ footer {
    display: flex;
    align-items: flex-start; /* Alinha verticalmente no início */
    font-family: 'Archivo Black', sans-serif; /* Corrija a fonte caso necessário */
-}
-
-
-/* O restante do seu CSS permanece inalterado */
-
-
+    }
 }
 
 
@@ -1313,10 +1204,10 @@ footer {
    margin-top: 40%;
 }
 .separator {
-           width: 1px;
-           background-color: #D1D3D4; /* Cor da linha */
-           height: 150px; /* Altura da linha */
-           margin-right: 20px; /* Espaço entre a linha e o texto */
+    width: 1px;
+    background-color: #D1D3D4; /* Cor da linha */
+    height: 150px; /* Altura da linha */
+    margin-right: 20px; /* Espaço entre a linha e o texto */
        }
 }
 @media (max-width: 480px) {
@@ -1338,94 +1229,74 @@ footer {
    margin: 0 auto; /* Centraliza o container horizontalmente */
    margin-top: 62%;
 }
-
-
-       .event {
-           border-top: 1px solid #D1D3D4;
-           border-bottom: 1px solid #D1D3D4;
-           padding: 17px 0;
-           margin: 0;
-           display: flex;
-           align-items: flex-start; /* Alinha verticalmente no início */
-           font-family: archivo black;
-       }
-       .event-list {
+.event {
+    border-top: 1px solid #D1D3D4;
+    border-bottom: 1px solid #D1D3D4;
+    padding: 17px 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start; /* Alinha verticalmente no início */
+    font-family: archivo black;
+    }
+.event-list {
    flex: 1; /* Permite que a lista de eventos use o espaço restante */
    margin-top: 2%;
 }
-
-
 .date {
    display: flex;
    align-items: center;
    margin-right: 10px; /* Espaço entre o ícone e a data */
 }
-
-
 .date i {
    margin-right: 5px; /* Espaço entre o ícone e o texto da data */
    color: #003d7a;
 }
-
-
-       .event-datetime {
-           font-size: 14px;
-           color: #333;
-           margin-right: 12px; /* Espaço entre data/hora e título */
-           display: flex;
-           flex-direction: column;
-           text-align: justify;
-           padding: 10px;
-           margin-top: 50px;
-       }
-
-
-       .separator {
-           width: 1px;
-           background-color: #D1D3D4; /* Cor da linha */
-           height: 200px; /* Altura da linha */
-           margin-right: 20px; /* Espaço entre a linha e o texto */
-       }
-
-
-       .event-title {
-           font-size: 14px;
-           font-weight: bold;
-           margin-bottom: 10px;
-           text-align: justify;
-       }
-
-
-       .event-description {
-           font-size: 12px;
-           color: #333;
-           text-align: justify;
-       }
-       .icon{
-           color: #003d7a;
-       }
-       .search-container {
+.event-datetime {
+    font-size: 14px;
+    color: #333;
+    margin-right: 12px; /* Espaço entre data/hora e título */
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+    margin-top: 50px;
+}
+.separator {
+    width: 1px;
+    background-color: #D1D3D4; /* Cor da linha */
+    height: 200px; /* Altura da linha */
+    margin-right: 20px; /* Espaço entre a linha e o texto */
+}
+.event-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.event-description {
+    font-size: 12px;
+    color: #333;
+    text-align: justify;
+}
+.icon{
+    color: #003d7a;
+}
+.search-container {
    display: flex;
    justify-content: center; /* Centraliza a barra de pesquisa */
    margin: 20px 0; /* Espaçamento acima e abaixo */
 }
-
-
 .search-input {
    width: 270px; /* Largura da barra de pesquisa */
    padding: 10px; /* Espaçamento interno */
    border: 1px solid #ccc; /* Borda da barra */
    border-radius: 5px; /* Bordas arredondadas */
+    }
 }
-}
-
-
-   </style>
+</style>
 </head>
 <body>
-
-
-   <header class="topo">
+    <header class="topo">
        <div class="secondary-bar secondary-bar-top">
            <div class="parallelogram parallelogram-1"></div>
        </div>
@@ -1474,7 +1345,7 @@ footer {
                <span class="arrow"><i class="bi bi-chevron-right"></i></span>
            </button>
            <div class="submenu" id="legislacao-submenu">
-               <a href="{% url 'nossa_historia' %}">Mais sobre</a>
+               <a href="{% url 'nossa_historia' %}">História</a>
            </div>
        </div>
        <div class="menu-item">
